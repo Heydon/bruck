@@ -1,6 +1,5 @@
 i-mage {
   display: block;
   border: var(--border-thin) solid var(--color-dark);
-  background-color: var(--color-light);
   background-image: paint(image-cross);
 }

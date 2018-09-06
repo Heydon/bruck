@@ -5,7 +5,7 @@ class CrossPainter {
 
   paint(ctx, size, props) {
     ctx.lineWidth = props.get('--border-thin-h').value;
-    ctx.strokeStyle = props.get('--color-dark-h').value;
+    ctx.strokeStyle = props.get('--color-dark-h').toString();
     ctx.beginPath();
     ctx.moveTo(0, 0);
     ctx.lineTo(size.width, size.height);

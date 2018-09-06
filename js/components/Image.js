@@ -20,7 +20,7 @@ export default class Image extends HTMLElement {
     tmpl.innerHTML = `
       <style>
         :host {
-          padding-bottom: ${padding};
+          padding-bottom: ${padding} !important;
         }
       </style>
       <slot></slot>
