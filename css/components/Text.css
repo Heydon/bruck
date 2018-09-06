@@ -1,0 +1,18 @@
+t-ext {
+  display: block;
+}
+
+t-ext span {
+  color: transparent;
+  position: relative;
+}
+
+t-ext span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - (var(--border-thin) / 2));
+  bottom: calc(50% - (var(--border-thin) / 2));
+  background-color: var(--color-dark);
+}

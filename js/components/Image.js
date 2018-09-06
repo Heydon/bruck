@@ -1,6 +1,6 @@
 /*
 Usage: 
-  <i-mage ratio="16:9" />
+  <i-mage ratio="16:9"></i-mage>
 Attributes: 
   - ratio: [integer]:[integer] (default: 1:1)
 */

@@ -19,7 +19,7 @@
    --5: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
 
    /* Border widths */
-   --border-thin: 2px;
-   --border-thick: 4px;
+   --border-thin: 3px;
+   --border-thick: 6px;
 }
 

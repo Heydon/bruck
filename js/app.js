@@ -1,5 +1,6 @@
 /* Components */
 import Image from './components/Image.js';
+import Text from './components/Text.js';
 
 /* Paint worker properties */
 if ('registerProperty' in CSS) {
