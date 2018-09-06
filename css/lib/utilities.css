@@ -1,0 +1,4 @@
+/* Invert the colors of the component or element */
+.invert {
+  filter: invert(100%);
+}
