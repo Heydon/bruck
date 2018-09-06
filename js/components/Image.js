@@ -1,3 +1,9 @@
+/*
+Usage: <i-mage ratio="16:9" />
+Attributes: 
+  - ratio: [integer]:[integer]
+*/
+
 import ratioHeight from '../utilities/ratioHeight.js';
 
 export default class Image extends HTMLElement {
