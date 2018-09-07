@@ -4,20 +4,25 @@
   --color-light: hsl(0, 0%, 90%);
   
   /* Scale */
-  --ratio: 1.5;
-  ---5: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  ---4: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  ---3: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  ---2: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  ---1: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio));
-   --0: 1rem;
+  --ratio: 1.25;
+  ---s5: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  ---s4: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  ---s3: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  ---s2: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  ---s1: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio));
+   --s0: 1rem;
    --none: 0;
-   --1: calc(1rem * var(--ratio));
-   --2: calc(1rem * var(--ratio) * var(--ratio));
-   --3: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio));
-   --4: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-   --5: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-
+   --s1: calc(1rem * var(--ratio));
+   --s2: calc(1rem * var(--ratio) * var(--ratio));
+   --s3: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio));
+   --s4: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+   --s5: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+   --s6: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+   --s7: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+   --s8: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+   --s9: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s10: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+   
    /* Border widths */
    --border-thin: 3px;
    --border-thick: 6px;

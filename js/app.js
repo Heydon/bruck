@@ -1,6 +1,8 @@
 /* Components */
 import Image from './components/Image.js';
 import Text from './components/Text.js';
+import Stack from './components/Stack.js';
+import Grid from './components/Grid.js';
 
 /* Paint worker properties */
 if ('registerProperty' in CSS) {

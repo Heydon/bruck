@@ -11,4 +11,16 @@ html {
   padding: 0;
   font-family: inherit;
   background-color: inherit;
+  box-sizing: border-box;
 }
+
+h1, h2, h3, h4, h5 {
+  line-height: calc(0.75 * var(--ratio));
+}
+
+h1, .h1 { font-size: var(--s6) }
+h2, .h2 { font-size: var(--s5) }
+h3, .h3 { font-size: var(--s4) }
+h4, .h4 { font-size: var(--s3) }
+h5, .h5 { font-size: var(--s2) }
+h6, .h6 { font-size: var(--s1) }

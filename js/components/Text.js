@@ -2,7 +2,7 @@
 Usage: 
   <t-ext words="20,25"></t-ext>
 Attributes: 
-  - words: [least],[most] (default: '15,20')
+  - words: [least],[most] (default: 15,20)
 */
 
 import textSample from '../utilities/textSample.js';
