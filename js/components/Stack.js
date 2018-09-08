@@ -18,7 +18,6 @@ export default class Stack extends HTMLElement {
     tmpl.innerHTML = `
       <style>
         :host {
-          display: grid;
           grid-gap: var(--s${gap});
         }
       </style>
@@ -27,6 +26,12 @@ export default class Stack extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
+  }
+
+  connectedCallback() {
+    const childAmount = this.children.length;
+    this.setAttribute('role', 'group');
+    this.setAttribute('aria-label', `Column of ${childAmount} items`);
   }
 }
 

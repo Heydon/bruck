@@ -14,14 +14,14 @@ export default class Grid extends HTMLElement {
   constructor() {
     super();
 
-    const itemWidth = this.getAttribute('itemWidth') || '15rem';
+    this.itemWidth = this.getAttribute('itemWidth') || '15rem';
     const gap = this.getAttribute('gap') || '1';
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `
       <style>
         :host {
-          grid-template-columns: repeat(auto-fill, minmax(${itemWidth}, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(${this.itemWidth}, 1fr));
           grid-gap: var(--s${gap});
         }
       </style>
@@ -30,6 +30,12 @@ export default class Grid extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
+  }
+
+  connectedCallback() {
+    const childAmount = this.children.length;
+    this.setAttribute('role', 'group');
+    this.setAttribute('aria-label', `Grid of ${childAmount} ${this.itemWidth} wide items`);
   }
 }
 

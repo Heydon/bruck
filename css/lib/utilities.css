@@ -1,4 +1,4 @@
 /* Invert the colors of the component or element */
-.invert {
+.invert, [data-invert] {
   filter: invert(100%);
 }
