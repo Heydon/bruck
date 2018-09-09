@@ -3,6 +3,9 @@ import Image from './components/Image.js';
 import Text from './components/Text.js';
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
+import Box from './components/Box.js';
+import Repeat from './components/Repeat.js';
+import Comment from './components/Comment.js';
 
 /* Paint worker properties */
 if ('registerProperty' in CSS) {

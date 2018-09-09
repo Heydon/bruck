@@ -2,3 +2,9 @@
 .invert, [data-invert] {
   filter: invert(100%);
 }
+
+/* Text alignment */
+
+.text-left, [data-text-left] { text-align: left }
+.text-right, [data-text-right] { text-align: right }
+.text-center, [data-text-center] { text-align: center }

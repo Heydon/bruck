@@ -5,6 +5,7 @@ t-ext {
 t-ext span {
   color: transparent;
   position: relative;
+  pointer-events: none;
 }
 
 t-ext span::before {
@@ -15,4 +16,5 @@ t-ext span::before {
   top: calc(50% - (var(--border-thin) / 2));
   bottom: calc(50% - (var(--border-thin) / 2));
   background-color: var(--color-dark);
+  pointer-events: none;
 }

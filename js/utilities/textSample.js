@@ -22,7 +22,7 @@ export default function textSample(range) {
   const wordNum = Math.floor(Math.random() * (rangeArr[1] - rangeArr[0] + 1)) + rangeArr[0];
   const wordsOut = [];
   for (let i = 0; i <= wordNum; i++) {
-    wordsOut.push('<span>' + words[Math.floor(Math.random() * words.length)] + '</span>');
+    wordsOut.push(`<span>${words[Math.floor(Math.random() * words.length)]}</span>`);
   }
   return wordsOut.join(' ');
 }
