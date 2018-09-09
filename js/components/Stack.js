@@ -7,18 +7,20 @@ Usage:
   </s-tack>
 Attributes: 
   - gap: [-5 to 10] (default: 1)
+  - repeat: [integer] (default: 0);
 */
 
 export default class Stack extends HTMLElement {
   constructor() {
     super();
-    const gap = this.getAttribute('gap') || '1';
+    this.gap = this.getAttribute('gap') || '1';
+    this.repeat = this.getAttribute('repeat') || '0';
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `
       <style>
         :host {
-          grid-gap: var(--s${gap});
+          grid-gap: var(--s${this.gap});
         }
       </style>
       <slot></slot>
@@ -29,6 +31,13 @@ export default class Stack extends HTMLElement {
   }
 
   connectedCallback() {
+    if (this.repeat > 0) {
+      this.content = this.innerHTML;
+      for (let i = 1; i < this.repeat; i++) {
+        this.innerHTML += this.content;
+      }
+    }
+
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
     this.setAttribute('aria-label', `Column of ${childAmount} items`);

@@ -14,6 +14,7 @@ html {
   box-sizing: border-box;
 }
 
+/* Headings */
 h1, h2, h3, h4, h5 {
   line-height: calc(0.75 * var(--ratio));
 }
@@ -24,3 +25,27 @@ h3, .h3 { font-size: var(--s4) }
 h4, .h4 { font-size: var(--s3) }
 h5, .h5 { font-size: var(--s2) }
 h6, .h6 { font-size: var(--s1) }
+
+/* Buttons */
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+  padding: 0.5rem;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-weight: bold;
+  font-size: inherit;
+}
+
+/* Focus styles */
+:focus {
+  outline: var(--outline);
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}

@@ -15,14 +15,15 @@ export default class Grid extends HTMLElement {
     super();
 
     this.itemWidth = this.getAttribute('itemWidth') || '15rem';
-    const gap = this.getAttribute('gap') || '1';
+    this.gap = this.getAttribute('gap') || '1';
+    this.repeat = this.getAttribute('repeat') || '0';
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `
       <style>
         :host {
           grid-template-columns: repeat(auto-fill, minmax(${this.itemWidth}, 1fr));
-          grid-gap: var(--s${gap});
+          grid-gap: var(--s${this.gap});
         }
       </style>
       <slot></slot>
@@ -33,6 +34,13 @@ export default class Grid extends HTMLElement {
   }
 
   connectedCallback() {
+    if (this.repeat > 0) {
+      this.content = this.innerHTML;
+      for (let i = 1; i < this.repeat; i++) {
+        this.innerHTML += this.content;
+      }
+    }
+
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
     this.setAttribute('aria-label', `Grid of ${childAmount} ${this.itemWidth} wide items`);

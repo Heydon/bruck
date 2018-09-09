@@ -6,5 +6,7 @@
 /* Components */
 @import 'components/Image.css';
 @import 'components/Text.css';
+@import 'components/Box.css';
 @import 'components/Grid.css';
 @import 'components/Stack.css';
+@import 'components/Comment.css';
