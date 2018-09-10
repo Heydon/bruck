@@ -4,14 +4,14 @@
   --color-light: hsl(0, 0%, 90%);
   
   /* Scale */
-  --ratio: 1.25;
+  --ratio: 1.5;
   --s-5: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
   --s-4: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
   --s-3: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
   --s-2: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
   --s-1: calc(1rem * var(--ratio) / var(--ratio) / var(--ratio));
    --s0: 1rem;
-   --sNone: 0;
+   --snone: 0;
    --s1: calc(1rem * var(--ratio));
    --s2: calc(1rem * var(--ratio) * var(--ratio));
    --s3: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio));
@@ -29,5 +29,8 @@
 
    /* Outline (focus) style */
    --outline: 2px solid;
+
+   /* Measure (line length) */
+   --measure: 65ch;
 }
 

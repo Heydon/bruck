@@ -1,6 +1,6 @@
 /*
 Usage: 
-  <g-rid gap="2">
+  <g-rid gap="1">
     <p>Child</p>
     <div>Child</div>
     <t-ext words="20,30"></t-ext>
@@ -13,7 +13,6 @@ Attributes:
 export default class Grid extends HTMLElement {
   constructor() {
     super();
-
     this.itemWidth = this.getAttribute('itemWidth') || '15rem';
     this.gap = this.getAttribute('gap') || '1';
     this.repeat = this.getAttribute('repeat') || '0';
