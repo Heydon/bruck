@@ -10,13 +10,13 @@ import Comment from './components/Comment.js';
 /* Paint worker properties */
 if ('registerProperty' in CSS) {
   CSS.registerProperty({
-    name: '--border-thin-h',
+    name: '--border-thin',
     syntax: '<length>',
     initialValue: getComputedStyle(document.documentElement).getPropertyValue("--border-thin")
   });
 
   CSS.registerProperty({
-    name: '--color-dark-h',
+    name: '--color-dark',
     syntax: '<color>',
     initialValue: getComputedStyle(document.documentElement).getPropertyValue("--color-dark")
   });
