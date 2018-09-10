@@ -4,6 +4,7 @@ import Text from './components/Text.js';
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
 import Box from './components/Box.js';
+import Spread from './components/Spread.js';
 import Repeat from './components/Repeat.js';
 import Comment from './components/Comment.js';
 

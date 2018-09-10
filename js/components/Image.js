@@ -28,7 +28,7 @@ export default class Image extends HTMLElement {
 
         :host > div {
           max-width: ${maxWidth};
-          padding-top: ${padding} !important;
+          padding-top: ${padding};
         }
       </style>
       <div>

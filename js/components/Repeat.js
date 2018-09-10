@@ -1,17 +1,17 @@
 /*
 Usage: 
-  <r-epeat times="3">
+  <r-epeat repeat="3">
     <p>Child</p>
     <div>Another child</div>
   </r-epeat>
 Attributes: 
-  - times [integer] (default: 3)
+  - repeat [integer] (default: 3)
 */
 
 export default class Repeat extends HTMLElement {
   constructor() {
     super();
-    this.times = this.getAttribute('times') || '3';
+    this.times = this.getAttribute('repeat') || '3';
     this.content = this.innerHTML;
   }
   connectedCallback() {
