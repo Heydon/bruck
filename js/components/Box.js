@@ -8,6 +8,7 @@ Usage:
 Attributes: 
   - pad: [-5 to 10] (default: 1)
   - border: [Boolean] (default: true)
+  - maxWidth: [CSS max-width value] (default: 'none');
 */
 
 export default class Box extends HTMLElement {
@@ -15,13 +16,16 @@ export default class Box extends HTMLElement {
     super();
     this.padding = this.getAttribute('pad') || '1';
     this.border = this.hasAttribute('border');
+    this.maxWidth = this.getAttribute('maxWidth');
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `
       <style>
         :host {
           padding: var(--s${this.padding}) !important;
-          border: ${this.border ? `var(--border-thin)` : `0`} solid !important;
+          border-width: ${this.border ? `var(--border-thin)` : `0`};
+          border-style: solid;
+          max-width: ${this.maxWidth};
         }
       </style>
       <slot></slot>

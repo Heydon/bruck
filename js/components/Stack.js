@@ -28,9 +28,7 @@ export default class Stack extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
-  }
 
-  connectedCallback() {
     if (this.repeat > 0) {
       this.content = this.innerHTML;
       for (let i = 1; i < this.repeat; i++) {

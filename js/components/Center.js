@@ -18,7 +18,7 @@ export default class Center extends HTMLElement {
     tmpl.innerHTML = `
       <style>
         :host {
-          max-width: ${this.maxWidth}
+          max-width: ${this.maxWidth};
         }
       </style>
       <slot></slot>

@@ -4,6 +4,7 @@ Usage:
 Attributes: 
   - ratio: [integer]:[integer] (default: 1:1)
   - maxWidth: [CSS width value] (default: none)
+  - minWidth: [CSS width value] (default: none)
 */
 
 import ratioHeight from '../utilities/ratioHeight.js';
@@ -11,23 +12,20 @@ import ratioHeight from '../utilities/ratioHeight.js';
 export default class Image extends HTMLElement {
   constructor() {
     super();
-    this.setAttribute('role', 'img');
-
     const ratio = this.getAttribute('ratio') || '1:1';
-    this.setAttribute('aria-label', `Image with ${ratio} ratio`);
     const padding = ratioHeight(ratio) + '%';
-
     const maxWidth = this.getAttribute('maxWidth') || 'none';
+    const minWidth = this.getAttribute('minWidth') || 'none';
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `
       <style>
         :host {
           max-width: ${maxWidth};
+          min-width: ${minWidth};
         }
 
         :host > div {
-          max-width: ${maxWidth};
           padding-top: ${padding};
         }
       </style>
@@ -38,6 +36,9 @@ export default class Image extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
+
+    this.setAttribute('role', 'img');
+    this.setAttribute('aria-label', `Image with ${ratio} ratio`);
   }
 }
 

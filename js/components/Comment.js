@@ -63,7 +63,8 @@ export default class Comment extends HTMLElement {
         }
 
         .wording {
-          margin-top: var(--s4);
+          text-align: left;
+          margin-top: var(--s1);
           outline: none;
         }
       </style>

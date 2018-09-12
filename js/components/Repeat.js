@@ -15,13 +15,6 @@ export default class Repeat extends HTMLElement {
     this.content = this.innerHTML;
   }
   connectedCallback() {
-    if (this.repeat > 0) {
-      this.content = this.innerHTML;
-      for (let i = 1; i < this.repeat; i++) {
-        this.innerHTML += this.content;
-      }
-    }
-
     for (let i = 1; i < this.times; i++) {
       this.innerHTML += this.content;
     }
