@@ -14,15 +14,15 @@ Attributes:
 export default class Box extends HTMLElement {
   constructor() {
     super();
-    this.padding = this.getAttribute('pad') || '1';
+    this.pad = this.getAttribute('pad');
     this.border = this.hasAttribute('border');
-    this.maxWidth = this.getAttribute('maxWidth');
+    this.maxWidth = this.getAttribute('maxWidth') || 'none';
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `
       <style>
         :host {
-          padding: var(--s${this.padding}) !important;
+          padding: ${this.pad ? `var(--s${this.pad})` : '0'} !important;
           border-width: ${this.border ? `var(--border-thin)` : `0`};
           border-style: solid;
           max-width: ${this.maxWidth};

@@ -6,6 +6,7 @@ import Grid from './components/Grid.js';
 import Box from './components/Box.js';
 import Spread from './components/Spread.js';
 import Cluster from './components/Cluster.js';
+import Line from './components/Line.js';
 import Center from './components/Center.js';
 import Screen from './components/Screen.js';
 import Repeat from './components/Repeat.js';

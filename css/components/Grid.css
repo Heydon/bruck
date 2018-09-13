@@ -1,3 +1,4 @@
 g-rid {
   display: grid;
+  overflow: hidden;
 }
