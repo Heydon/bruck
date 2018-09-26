@@ -1,6 +1,6 @@
 /*
 Usage: 
-  <t-ext words="20,25"></t-ext>
+  <t-ext words="20,25" dummy lorem></t-ext>
 Attributes: 
   - words: [least],[most] (default: 15,20)
 */

@@ -1,7 +1,8 @@
 :root {
   /* Colors */
   --color-dark: hsl(0, 0%, 20%);
-  --color-light: hsl(0, 0%, 90%);
+  --color-light: hsl(0, 0%, 80%);
+  --color-mid: hsl(0, 0%, 50%);
   
   /* Scale */
   --ratio: 1.5;
@@ -22,13 +23,17 @@
    --s8: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
    --s9: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
   --s10: calc(1rem * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-   
+  
+  /* Line height */
+  --line-height: var(--ratio);
+  --line-height-small: calc(0.75 * var(--ratio));
+
    /* Border widths */
    --border-thin: 3px;
    --border-thick: 6px;
 
    /* Outline (focus) style */
-   --outline: 2px solid;
+   --outline: var(--border-thin) solid var(--color-mid);
 
    /* Measure (line length) */
    --measure: 65ch;

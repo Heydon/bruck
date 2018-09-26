@@ -1,20 +1,20 @@
 /*
 Usage: 
-  <s-tack gap="2">
+  <s-tack repeat="3">
     <p>Child</p>
-    <div>Child</div>
-    <t-ext words="20,30"></t-ext>
+    <div>Another child</div>
   </s-tack>
 Attributes: 
-  - gap: [-5 to 10] (default: 1)
-  - repeat: [integer] (default: 0);
+  - repeat [integer] (default: 3)
+  - gap [-5 to 10 or none] (default: 1)
 */
 
 export default class Stack extends HTMLElement {
   constructor() {
     super();
     this.gap = this.getAttribute('gap') || '1';
-    this.repeat = this.getAttribute('repeat') || '0';
+    this.times = this.getAttribute('repeat') || '0';
+    this.content = this.innerHTML;
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `
@@ -28,10 +28,11 @@ export default class Stack extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
+  }
 
-    if (this.repeat > 0) {
-      this.content = this.innerHTML;
-      for (let i = 1; i < this.repeat; i++) {
+  connectedCallback() {
+    if (this.times > 0) {
+      for (let i = 1; i < this.times; i++) {
         this.innerHTML += this.content;
       }
     }

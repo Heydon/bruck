@@ -1,0 +1,11 @@
+g-o, g-o a {
+  display: inline-block;
+}
+
+g-o a {
+  line-height: var(--line-height-small);
+  font-weight: bold;
+  padding: var(--s-1);
+  border-width: var(--border-thin);
+  text-decoration: none;
+}

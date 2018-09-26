@@ -1,6 +1,6 @@
 html {
   font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: var(--line-height);
   font-size: calc(1vw * 1rem);
   color: var(--color-dark);
   background-color: var(--color-light);
@@ -10,20 +10,38 @@ html {
   margin: 0;
   padding: 0;
   font-family: inherit;
+  color: inherit;
   background-color: inherit;
   box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5 {
-  line-height: calc(0.75 * var(--ratio));
+  line-height: var(--line-height-small);
 }
 
-h1, .h1 { font-size: var(--s4) }
-h2, .h2 { font-size: var(--s3) }
-h3, .h3 { font-size: var(--s2) }
-h4, .h4 { font-size: var(--s1) }
+h1, .h1 { font-size: var(--s3) }
+h2, .h2 { font-size: var(--s2) }
+h3, .h3 { font-size: var(--s1) }
+h4, .h4 { font-size: var(--s0) }
 h5, .h5 { font-size: var(--s-1) }
+
+/* Lists */
+ol, ul {
+  margin-left: var(--s1);
+}
+
+dl {
+  display: grid;
+  grid-gap: var(--s-1);
+  grid-template-columns: minmax(min-content, calc(var(--measure) * 0.333)) minmax(0, var(--measure));
+}
+
+dt {
+  font-weight: bold;
+}
 
 /* Buttons */
 ::-moz-focus-inner {
@@ -32,8 +50,10 @@ h5, .h5 { font-size: var(--s-1) }
 }
 
 button {
-  border: 0;
-  padding: 0.5rem;
+  line-height: var(--line-height-small);
+  border-width: var(--border-thin);
+  border-color: var(--color-dark);
+  padding: var(--s-1);
   background-color: var(--color-dark);
   color: var(--color-light);
   font-weight: bold;
@@ -50,7 +70,20 @@ button {
 }
 
 /* Hidden polyfill */
-
 [hidden] {
   display: none;
 }
+
+/* SVG icons */
+[viewBox="0 0 16 16"] {
+  stroke: currentColor;
+  stroke-width: 3;
+  fill: none;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  overflow: visible;
+}
+
+/* Form elements */
+

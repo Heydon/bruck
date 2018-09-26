@@ -1,21 +1,19 @@
 /*
 Usage: 
-  <s-pread gap="2">
+  <c-luster gap="2" align="top">
     <p>Child</p>
     <div>Child</div>
     <t-ext words="20,30"></t-ext>
-  </s-pread>
+  </c-luster>
 Attributes: 
   - gap [-5 to 10 or none] (default: 1)
-  - spaces [around || between] (default: between)
   - align [top, bottom, or center] (default: center)
 */
 
-export default class Spread extends HTMLElement {
+export default class Cluster extends HTMLElement {
   constructor() {
     super();
     this.gap = this.getAttribute('gap') || '1';
-    this.spaces = this.getAttribute('spaces') === 'around' ? 'around' : 'between';
     const alignMap = {
       top: 'flex-start',
       bottom: 'flex-end',
@@ -28,7 +26,7 @@ export default class Spread extends HTMLElement {
       <style>
         .inner {
           display: flex;
-          justify-content: space-${this.spaces};
+          justify-content: center;
           align-items: ${this.align};
           flex-wrap: wrap;
           margin: calc((var(--s${this.gap}) * 0.5) * -1) !important;
@@ -51,8 +49,8 @@ export default class Spread extends HTMLElement {
   connectedCallback() {
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
-    this.setAttribute('aria-label', `Distributed row of ${childAmount} items`);
+    this.setAttribute('aria-label', `Cluster of ${childAmount} items`);
   }
 }
 
-customElements.define('s-pread', Spread);
+customElements.define('c-luster', Cluster);
