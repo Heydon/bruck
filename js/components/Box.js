@@ -23,8 +23,7 @@ export default class Box extends HTMLElement {
       <style>
         :host {
           padding: ${this.pad ? `var(--s${this.pad})` : '0'} !important;
-          border-width: ${this.border ? `var(--border-thin)` : `0`};
-          border-style: solid;
+          border-width: ${this.border ? `var(--border-thin)` : `0`} !important;
           max-width: ${this.maxWidth};
         }
       </style>

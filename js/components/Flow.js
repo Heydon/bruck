@@ -29,7 +29,8 @@ export default class Flow extends HTMLElement {
           transform: translateY(-50%);
         }
 
-        button:focus {
+        button:focus,
+        :host(:hover) button {
           left: auto;
         }
 

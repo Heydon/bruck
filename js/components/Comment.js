@@ -90,7 +90,6 @@ export default class Comment extends HTMLElement {
     this.closeButton = this.comment.querySelector('button');
 
     this.open = () => {
-      console.log(this.comment);
       this.comment.hidden = false;
       this.wording.focus();
     }

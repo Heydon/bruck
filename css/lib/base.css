@@ -15,6 +15,7 @@ html {
   box-sizing: border-box;
   border-style: solid;
   border-width: 0;
+  scroll-behavior: smooth;
 }
 
 /* Headings */
@@ -28,6 +29,20 @@ h3, .h3 { font-size: var(--s1) }
 h4, .h4 { font-size: var(--s0) }
 h5, .h5 { font-size: var(--s-1) }
 
+/* Inline text */
+small {
+  font-size: var(--s-1);
+  line-height: 1;
+}
+
+mark {
+  display: inline-block;
+  padding: 0.125em 0.25em;
+  line-height: var(--line-height-small);
+  filter: invert(100%);
+  line-height: 1;
+}
+
 /* Lists */
 ol, ul {
   margin-left: var(--s1);
@@ -35,8 +50,8 @@ ol, ul {
 
 dl {
   display: grid;
-  grid-gap: var(--s-1);
-  grid-template-columns: minmax(min-content, calc(var(--measure) * 0.333)) minmax(0, var(--measure));
+  grid-gap: var(--s-2);
+  grid-template-columns: max-content minmax(0, var(--measure));
 }
 
 dt {
@@ -85,5 +100,35 @@ button {
   overflow: visible;
 }
 
-/* Form elements */
+/* Code */
+code {
+  line-height: 1;
+  font-family: monospace;
+  padding: 0.25em;
+  line-height: var(--line-height-small);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+pre code {
+  display: block;
+  padding: var(--s1);
+  white-space: pre-wrap;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border-width: var(--border-thin);
+  padding: var(--s0);
+}
+
+/* Horizontal rule */
+hr {
+  display: block;
+  border-bottom-width: var(--border-thick);
+}
 

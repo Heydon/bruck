@@ -3,6 +3,7 @@ t-ext {
 }
 
 t-ext span {
+  display: inline-block;
   color: transparent;
   position: relative;
   pointer-events: none;

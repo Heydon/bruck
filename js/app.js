@@ -1,5 +1,6 @@
 /* Components */
 import Image from './components/Image.js';
+import Icon from './components/Icon.js';
 import Text from './components/Text.js';
 import Box from './components/Box.js';
 import Spread from './components/Spread.js';
@@ -12,6 +13,7 @@ import Comment from './components/Comment.js';
 import Clone from './components/Clone.js';
 import Drawer from './components/Drawer.js';
 import Flow from './components/Flow.js';
+import Sidebar from './components/Sidebar.js';
 /* Components that support repetition must be imported last */
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
@@ -38,9 +40,6 @@ if ('paintWorklet' in CSS) {
   CSS.paintWorklet.addModule('js/houdini/image-cross.js');
 }
 
-/* TODO: abstract check for existing screen 
-into function and use on page load to set current on the existing hash too */
-
 /* Handle <s-creen> elements on hash change */
 const screens = document.querySelectorAll('s-creen');
 const setScreen = () => {
@@ -56,7 +55,7 @@ const setScreen = () => {
 }
 
 window.addEventListener('load', () => {
-  if (!window.location.hash) {
+  if (!window.location.hash && document.querySelector('s-creen')) {
     window.location.hash = '#index';
   } else {
     setScreen();
