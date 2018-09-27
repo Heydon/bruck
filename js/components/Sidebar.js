@@ -23,8 +23,8 @@ export default class Sidebar extends HTMLElement {
     this.to = this.getAttribute('to') || 'left';
     this.gap = this.getAttribute('gap') || '1';
 
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = `
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
       <style>
         .inner {
           display: flex;
@@ -48,10 +48,8 @@ export default class Sidebar extends HTMLElement {
       </div>
     `;
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
-
     const not = this.to === 'left' ? 1 : 0;
+
     this.children[not].classList.add('not-sidebar');
   }
 
