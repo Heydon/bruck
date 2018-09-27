@@ -5,20 +5,21 @@
 }
 
 /* text alignment (affects children too) */
-.u-text-center, .u-text-center * {
+.u-text-center {
   text-align: center;
 }
 
-.u-text-left, .u-text-left * {
+.u-text-left {
   text-align: left;
 }
 
-.u-text-right, .u-text-right * {
+.u-text-right {
   text-align: right;
 }
 
 /* call-to-action */
 .u-cta {
+  text-align: center;
   display: inline-block;
   line-height: var(--line-height-small);
   font-weight: bold;

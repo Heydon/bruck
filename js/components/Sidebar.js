@@ -21,7 +21,7 @@ export default class Sidebar extends HTMLElement {
 
     this.width = this.getAttribute('width') || '15rem';
     this.to = this.getAttribute('to') || 'left';
-    this.gap = this.getAttribute('gap') || 'none';
+    this.gap = this.getAttribute('gap') || '1';
 
     const tmpl = document.createElement('template');
     tmpl.innerHTML = `

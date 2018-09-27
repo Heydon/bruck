@@ -73,6 +73,7 @@ button {
   color: var(--color-light);
   font-weight: bold;
   font-size: inherit;
+  text-align: center;
 }
 
 /* Focus styles */
