@@ -28,7 +28,7 @@ export default class Icon extends HTMLElement {
       <slot></slot>
     `;
 
-    fetch(`../../icons/${this.name}.svg`)
+    fetch(`./icons/${this.name}.svg`)
       .then(res => {
         res.text()
           .then(svg => {
