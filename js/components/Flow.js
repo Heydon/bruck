@@ -27,6 +27,7 @@ export default class Flow extends HTMLElement {
           top: 50%;
           left: -9999px;
           transform: translateY(-50%);
+          z-index: 2;
         }
 
         button:focus,

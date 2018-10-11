@@ -28,15 +28,15 @@ export default class Stack extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
-  }
 
-  connectedCallback() {
     if (this.times > 0) {
       for (let i = 1; i < this.times; i++) {
         this.innerHTML += this.content;
       }
     }
+  }
 
+  connectedCallback() {
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
     this.setAttribute('aria-label', `Column of ${childAmount} items`);

@@ -16,8 +16,8 @@ export default class Line extends HTMLElement {
   constructor() {
     super();
     const justifyMap = {
-      top: 'flex-start',
-      bottom: 'flex-end',
+      left: 'flex-start',
+      right: 'flex-end',
       center: 'center'
     };
     this.justify = justifyMap[this.getAttribute('justify')] || 'center';
@@ -55,6 +55,8 @@ export default class Line extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
+
+    console.log('constructed');
 
     if (this.between) {
       separateNodes(

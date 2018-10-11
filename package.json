@@ -1,0 +1,26 @@
+{
+  "name": "bruck",
+  "version": "0.0.1",
+  "description": "A web components-based accessible prototyping tool",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heydon/bruck.git"
+  },
+  "author": "Heydon Pickering <heydon@heydonworks.com> (http://www.heydonworks.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Heydon/bruck/issues"
+  },
+  "homepage": "https://github.com/Heydon/bruck#readme",
+  "dependencies": {
+    "components": "^0.1.0",
+    "lib": "^3.0.2",
+    "parcel-bundler": "^1.10.1"
+  }
+}

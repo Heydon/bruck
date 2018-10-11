@@ -1,9 +1,9 @@
-/* Lib */
+/* lib */
 @import 'lib/variables.css';
 @import 'lib/base.css';
 @import 'lib/utilities.css';
 
-/* Components */
+/* components */
 @import 'components/Image.css';
 @import 'components/Text.css';
 @import 'components/Box.css';

@@ -1,11 +1,10 @@
-/* Components */
+/* ./components */
 import Image from './components/Image.js';
 import Icon from './components/Icon.js';
 import Text from './components/Text.js';
 import Box from './components/Box.js';
 import Spread from './components/Spread.js';
 import Cluster from './components/Cluster.js';
-import Line from './components/Line.js';
 import Center from './components/Center.js';
 import Screen from './components/Screen.js';
 import Go from './components/Go.js';
@@ -13,8 +12,9 @@ import Comment from './components/Comment.js';
 import Clone from './components/Clone.js';
 import Drawer from './components/Drawer.js';
 import Flow from './components/Flow.js';
+import Line from './components/Line.js';
 import Sidebar from './components/Sidebar.js';
-/* Components that support repetition must be imported last */
+/* ./components that support repetition must be imported last */
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
 
