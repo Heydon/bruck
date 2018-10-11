@@ -30,13 +30,19 @@ export default class Flow extends HTMLElement {
           z-index: 2;
         }
 
-        button:focus,
-        :host(:hover) button {
-          left: auto;
+        button:focus {
+          outline: var(--outline);
         }
 
-        [aria-label="next"] {
-          right: 0;
+        [aria-label="previous"]:focus,
+        :host(:hover) [aria-label="previous"] {
+          left: var(--s-1);
+        }
+
+        [aria-label="next"]:focus,
+        :host(:hover) [aria-label="next"] {
+          left: auto;
+          right: var(--s-1);
         }
 
         svg {
