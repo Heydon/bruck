@@ -56,8 +56,6 @@ export default class Line extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-    console.log('constructed');
-
     if (this.between) {
       separateNodes(
         this.children,
