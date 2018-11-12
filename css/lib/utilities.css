@@ -1,5 +1,5 @@
 /* Invert the colors of the component or element */
-.u-invert, [u-invert] {
+.u-invert {
   filter: invert(100%);
   background-color: var(--color-light);
 }

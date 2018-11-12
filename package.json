@@ -18,9 +18,6 @@
     "url": "https://github.com/Heydon/bruck/issues"
   },
   "homepage": "https://github.com/Heydon/bruck#readme",
-  "dependencies": {
-    "components": "^0.1.0",
-    "lib": "^3.0.2",
-    "parcel-bundler": "^1.10.1"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

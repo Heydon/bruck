@@ -1,7 +1,7 @@
 html {
   font-family: Helvetica, Arial, sans-serif;
   line-height: var(--line-height);
-  font-size: calc(1vw * 1rem);
+  font-size: calc(1vw + 0.5rem);
   color: var(--color-dark);
   background-color: var(--color-light);
 }
@@ -23,11 +23,11 @@ h1, h2, h3, h4, h5 {
   line-height: var(--line-height-small);
 }
 
-h1, .h1 { font-size: var(--s3) }
-h2, .h2 { font-size: var(--s2) }
-h3, .h3 { font-size: var(--s1) }
-h4, .h4 { font-size: var(--s0) }
-h5, .h5 { font-size: var(--s-1) }
+h1, .u-h1 { font-size: var(--s3) }
+h2, .u-h2 { font-size: var(--s2) }
+h3, .u-h3 { font-size: var(--s1) }
+h4, .u-h4 { font-size: var(--s0) }
+h5, .u-h5 { font-size: var(--s-1) }
 
 /* Inline text */
 small {
