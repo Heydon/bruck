@@ -6,7 +6,7 @@ Usage:
   </s-idebar>
 Attributes: 
   - gap [-5 to 10 or none] (default: 'none')
-  - to [where the sidebar is: 'left' or 'right'] (default: 'left')
+  - on [where the sidebar is: 'left' or 'right'] (default: 'left')
   - width [CSS width value] (default: '15rem')
 */
 
@@ -20,7 +20,7 @@ export default class Sidebar extends HTMLElement {
     }
 
     this.width = this.getAttribute('width') || '15rem';
-    this.to = this.getAttribute('to') || 'left';
+    this.on = this.getAttribute('on') === 'right' ? 'right' : 'left';
     this.gap = this.getAttribute('gap') || '1';
 
     this.attachShadow({ mode: 'open' });
@@ -48,7 +48,7 @@ export default class Sidebar extends HTMLElement {
       </div>
     `;
 
-    const not = this.to === 'left' ? 1 : 0;
+    const not = this.on === 'left' ? 1 : 0;
     this.children[not].classList.add('not-sidebar');
   }
 

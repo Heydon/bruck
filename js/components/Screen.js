@@ -6,7 +6,6 @@ Usage:
 Attributes: 
   - id: [unique HTML id value] (required)
   - label: [string] (default: the id value)
-  - current: [Boolean] (default: false)
 */
 
 export default class Screen extends HTMLElement {

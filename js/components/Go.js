@@ -1,10 +1,10 @@
 /*
 Usage: 
-  <g-o screen="About">
+  <g-o to="About">
     About page
   </g-o>
 Attributes: 
-  - screen: [string matching a <s-creen> element's `id` value] (required)
+  - to: [string matching a <s-creen> element's `id` value] (required)
 */
 
 export default class Go extends HTMLElement {
