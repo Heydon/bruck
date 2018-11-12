@@ -5,9 +5,9 @@ Bruck is a lo-fi prototyping system made with web components. Quickly create and
 ## Get started
 
 1. Clone this repository
-2. Use HTML with the specified helper components (below) in the `index.html` and `editor.html` files
-3. Serve by using something like [http-server](https://www.npmjs.com/package/http-server) at the root.
-4. That's pretty much it. Requests and contribution offers welcome.
+2. Write HTML with the help of the components (below) in the `index.html` and `editor.html` files
+3. Serve by using something like [http-server](https://www.npmjs.com/package/http-server) at the root
+4. That's pretty much it. Requests and contribution offers welcome
 
 ## Components
 
