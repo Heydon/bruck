@@ -606,5 +606,5 @@ For realigning text.
 
 ### `u-h1`, `u-h2`, `u-h3`, `u-h4`, `u-h5`, `u-h6`
 
-For emulating the font sizes of semantic headings without introducing a heading element.
+For emulating the font sizes of semantic headings without introducing heading elements (mapped to h1—h6 sizes).
 
