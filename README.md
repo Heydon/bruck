@@ -62,8 +62,8 @@ The `<i-mage>` element creates an accessible dummy/placeholder image (with a X-t
       caption
     </th>
     <td>
-      <p>The text for a caption, which is placed in a <code><figcaption></code> element after the image itself e.g. <code>caption="A giant crab monster"</code>.</p>
-      <p><strong>Default:</strong> nothing (<code><figcaption></code> omitted)</p>
+      <p>The text for a caption, which is placed in a <code>&lt;figcaption></code> element after the image itself e.g. <code>caption="A giant crab monster"</code>.</p>
+      <p><strong>Default:</strong> nothing (<code>&lt;figcaption></code> omitted)</p>
     </td>
   </tr>
   <tr>
@@ -336,7 +336,7 @@ A basic collapsible section, as you might find in an accordion. The first child 
       level
     </th>
     <td>
-      <p>An integer between 1 <code><h1></code> and 6 <code><h6></code> e.g. <code>level="3"</code>.</p>
+      <p>An integer between 1 <code>&lt;h1></code> and 6 <code>&lt;h6></code> e.g. <code>level="3"</code>.</p>
       <p><strong>Default:</strong> <code>2</code></p>
     </td>
   </tr>
@@ -345,7 +345,7 @@ A basic collapsible section, as you might find in an accordion. The first child 
       open
     </th>
     <td>
-      <p>An integer between 1 <code><h1></code> and 6 <code><h6></code> e.g. <code>level="3"</code>.</p>
+      <p>An integer between 1 <code>&lt;h1></code> and 6 <code>&lt;h6></code> e.g. <code>level="3"</code>.</p>
     </td>
   </tr>
 </table>
@@ -404,7 +404,7 @@ A call-to-action type component, specifically for linking between `<s-creen>` el
       to (required)
     </th>
     <td>
-      <p>A valid <code>id</code> attribute value for a <code><s-creen></code> component e.g. <code>to="index"</code>.</p>
+      <p>A valid <code>id</code> attribute value for a <code>&lt;s-creen></code> component e.g. <code>to="index"</code>.</p>
     </td>
   </tr>
 </table>
@@ -458,7 +458,7 @@ The `<c-lone>` lets you instantiate content from a named `<template>`. It's the 
       of (required)
     </th>
     <td>
-      <p>The <code>id</code> of a <code><template></code> element e.g. <code>of="header"</code>.</p>
+      <p>The <code>id</code> of a <code>&lt;template></code> element e.g. <code>of="header"</code>.</p>
       <p><strong>Default:</strong> 'TBD'</p>
     </td>
   </tr>
