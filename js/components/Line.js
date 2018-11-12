@@ -1,14 +1,4 @@
-/*
-Usage: 
-  <l-ine gap="2">
-    <!-- set of items -->
-  </l-ine>
-Attributes: 
-  - gap [-5 to 10] (default: 1)
-  - align [top, bottom, or center] (default: center)
-  - justify [left, right, or center] (default: center)
-  - sep [HTML/entity to separate child nodes] (default: none)
-*/
+// https://github.com/Heydon/bruck#l-ine
 
 import separateNodes from '../utilities/separateNodes.js';
 
@@ -21,7 +11,7 @@ export default class Line extends HTMLElement {
       center: 'center'
     };
     this.justify = justifyMap[this.getAttribute('justify')] || 'center';
-    this.gap = this.getAttribute('justify') | '1';
+    this.gap = this.getAttribute('gap') || '1';
     this.between = this.getAttribute('between');
 
     const tmpl = document.createElement('template');

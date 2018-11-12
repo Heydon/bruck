@@ -11,6 +11,7 @@ Bruck is a lo-fi prototyping system made with web components. Quickly create and
 * [`<g-rid>`](#g-rid)
 * [`<c-luster>`](#c-luster)
 * [`<s-pread>`](#s-pread)
+* [`<l-ine>`](#l-ine)
 * [`<d-rawer>`](#d-rawer)
 * [`<s-creen>`](#s-creen)
 * [`<g-o>`](#g-o)
@@ -278,6 +279,51 @@ The `<s-pread>` component uses Flexbox to let you separate items horizontally. I
     </th>
     <td>
       <p>Maps to the Flexbox <code>align-items</code> property. Choice of <code>center</code> (default), <code>top</code> (<code>flex-start</code>), or <code>bottom</code> (<code>flex-end</code>).</p>
+      <p><strong>Default:</strong> <code>center</code></p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<s-pread gap="2">
+  <div>Will be pushed to the left</div>
+  <div>Will appear in the center</div>
+  <div>Will be pushed to the right</div>
+</s-pread>
+```
+
+### `<l-ine>`
+
+The `<l-ine>` component configures child elements inline, with the option to add a separator. The separator can be any character or HTML.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      between
+    </th>
+    <td>
+      <p>Some HTML to separate each item e.g. <code>sep="&middot;"</code> or <code>sep="|"</code> (inline SVG can be used too!)</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      gap
+    </th>
+    <td>
+      <p>A point on the modular scale (<code>-5</code> to <code>10</code>, or <code>none</code>) e.g. <code>gap="2"</code>.</p>
+      <p><strong>Default:</strong> <code>1</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      justify
+    </th>
+    <td>
+      <p>Maps to the Flexbox <code>justify-content</code> property. One of <code>left</code> (<code>flex-start</code>), center (default), or <code>right</code> (<code>flex-end</code>).</p>
       <p><strong>Default:</strong> <code>center</code></p>
     </td>
   </tr>
