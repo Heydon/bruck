@@ -33,7 +33,7 @@ export default class Grid extends HTMLElement {
 
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
-    this.setAttribute('aria-label', `Grid of ${childAmount} items, ${this.itemWidth} wide.`);
+    this.setAttribute('aria-label', `Grid of ${childAmount} items, each ${this.itemWidth} wide.`);
   }
 }
 

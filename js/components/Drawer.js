@@ -45,7 +45,7 @@ export default class Drawer extends HTMLElement {
     });
 
     this.setAttribute('role', 'region');
-    this.setAttribute('aria-label', 'Collapsible section.');
+    this.setAttribute('aria-label', 'Collapsible section');
   }
 
   static get observedAttributes() {

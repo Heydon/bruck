@@ -33,7 +33,7 @@ export default class Box extends HTMLElement {
 
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
-    this.setAttribute('aria-label', `Box of ${childAmount} items`);
+    this.setAttribute('aria-label', `${this.border ? 'Bordered' : ''} box containing ${childAmount} elements`);
   }
 }
 

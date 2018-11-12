@@ -11,7 +11,7 @@ export default class Screen extends HTMLElement {
     this.label = this.getAttribute('label') || this.id;
 
     this.setAttribute('role', 'document');
-    this.setAttribute('aria-label', `Screen: ${this.label}`);
+    this.setAttribute('aria-label', this.label);
     this.setAttribute('tabindex', '-1');
     this.hidden = true;
 

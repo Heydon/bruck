@@ -57,7 +57,7 @@ export default class Line extends HTMLElement {
   connectedCallback() {
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
-    this.setAttribute('aria-label', `Line of ${childAmount} items`);
+    this.setAttribute('aria-label', `Line of ${childAmount} elements`);
   }
 }
 

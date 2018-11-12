@@ -30,7 +30,7 @@ export default class Stack extends HTMLElement {
   connectedCallback() {
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
-    this.setAttribute('aria-label', `Column of ${childAmount} items`);
+    this.setAttribute('aria-label', `Column of ${childAmount} elements`);
   }
 }
 

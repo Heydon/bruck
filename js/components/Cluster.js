@@ -39,7 +39,7 @@ export default class Cluster extends HTMLElement {
   connectedCallback() {
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
-    this.setAttribute('aria-label', `Cluster of ${childAmount} items`);
+    this.setAttribute('aria-label', `Set of ${childAmount} centrally grouped elements`);
   }
 }
 

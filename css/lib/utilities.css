@@ -16,14 +16,3 @@
 .u-text-right {
   text-align: right;
 }
-
-/* call-to-action */
-.u-cta {
-  text-align: center;
-  display: inline-block;
-  line-height: var(--line-height-small);
-  font-weight: bold;
-  padding: var(--s-1);
-  border-width: var(--border-thin);
-  text-decoration: none;
-}
