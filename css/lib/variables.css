@@ -28,14 +28,17 @@
   --line-height: var(--ratio);
   --line-height-small: calc(0.75 * var(--ratio));
 
-   /* Border widths */
-   --border-thin: 3px;
-   --border-thick: 6px;
+  /* Border widths */
+  --border-thin: 3px;
+  --border-thick: 6px;
 
-   /* Outline (focus) style */
-   --outline: var(--border-thin) solid var(--color-mid);
+  /* Outline (focus) style */
+  --outline: var(--border-thin) solid var(--color-mid);
 
-   /* Measure (line length) */
-   --measure: 65ch;
+  /* Measure (line length) */
+  --measure: 65ch;
+
+  /* z-index */
+  --zHighest: 999;
 }
 

@@ -20,14 +20,6 @@ export default class Comment extends HTMLElement {
           overflow: hidden;         
         }
 
-        .comment {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0; 
-        }
-
         button {
           all: unset;
           color: var(--color-light);
@@ -35,6 +27,7 @@ export default class Comment extends HTMLElement {
           font-weight: bold;
           line-height: 1;
           padding: var(--s-2);
+          z-index: 1;
         }
 
         button:focus {
@@ -55,11 +48,16 @@ export default class Comment extends HTMLElement {
         }
 
         .comment {
-          z-index: 1000;
           background-color: var(--color-dark);
           color: var(--color-light);
           padding: var(--s1);
           overflow-y: auto;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0; 
+          z-index: var(--zHighest);
         }
 
         .wording {
@@ -69,13 +67,13 @@ export default class Comment extends HTMLElement {
         }
       </style>
       <div class="container">
-        <button aria-haspopup="true" aria-label="read comment">?</button>
         <div class="comment" hidden tabindex="-1">
         <div class="wording" tabindex="-1">
           ${wording}
         </div>
         <button aria-label="close comment">X</button>
       </div>
+      <button aria-haspopup="true" aria-label="read comment">?</button>
       <slot></slot>
     `;
 
@@ -92,6 +90,7 @@ export default class Comment extends HTMLElement {
     this.open = () => {
       this.comment.hidden = false;
       this.wording.focus();
+      this.comment.scrollTop = 0;
     }
 
     this.close = () => {
