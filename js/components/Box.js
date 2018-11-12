@@ -6,15 +6,15 @@ Usage:
     <t-ext words="20,30"></t-ext>
   </b-ox>
 Attributes: 
-  - pad: [-5 to 10] (default: 1)
-  - border: [Boolean] (default: true)
-  - maxWidth: [CSS max-width value] (default: 'none');
+  - pad: [-5 to 10 or none] (default: 1)
+  - border: [Boolean] (default: false)
+  - maxWidth: [CSS max-width value] (default: none);
 */
 
 export default class Box extends HTMLElement {
   constructor() {
     super();
-    this.pad = this.getAttribute('pad');
+    this.pad = this.getAttribute('pad') || 1;
     this.border = this.hasAttribute('border');
     this.maxWidth = this.getAttribute('maxWidth') || 'none';
 
