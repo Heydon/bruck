@@ -459,7 +459,6 @@ The `<c-lone>` lets you instantiate content from a named `<template>`. It's the 
     </th>
     <td>
       <p>The <code>id</code> of a <code>&lt;template></code> element e.g. <code>of="header"</code>.</p>
-      <p><strong>Default:</strong> 'TBD'</p>
     </td>
   </tr>
 </table>
