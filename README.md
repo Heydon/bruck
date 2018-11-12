@@ -62,8 +62,8 @@ The `<i-mage>` element creates an accessible dummy/placeholder image (with a X-t
       caption
     </th>
     <td>
-      <p>The text for a caption, which is placed in a `<figcaption>` element after the image itself e.g. <code>caption="A giant crab monster"</code>.</p>
-      <p><strong>Default:</strong> nothing (`<figcaption>` omitted)</p>
+      <p>The text for a caption, which is placed in a <code><figcaption></code> element after the image itself e.g. <code>caption="A giant crab monster"</code>.</p>
+      <p><strong>Default:</strong> nothing (<code><figcaption></code> omitted)</p>
     </td>
   </tr>
   <tr>
@@ -71,7 +71,7 @@ The `<i-mage>` element creates an accessible dummy/placeholder image (with a X-t
       minWidth
     </th>
     <td>
-      <p>Any CSS `min-width` value e.g. <code>minWidth="5rem"</code>.</p>
+      <p>Any CSS <code>min-width</code> value e.g. <code>minWidth="5rem"</code>.</p>
       <p><strong>Default:</strong> <code>0</code></p>
     </td>
   </tr>
@@ -80,7 +80,7 @@ The `<i-mage>` element creates an accessible dummy/placeholder image (with a X-t
       maxWidth
     </th>
     <td>
-      <p>Any CSS `max-width` value e.g. <code>maxWidth="5rem"</code>.</p>
+      <p>Any CSS <code>max-width</code> value e.g. <code>maxWidth="5rem"</code>.</p>
       <p><strong>Default:</strong> <code>none</code></p>
     </td>
   </tr>
@@ -193,7 +193,7 @@ The `<g-rid>` element let's you easily compose a responsive grid using CSS's Gri
       itemWidth
     </th>
     <td>
-      <p>The 'ideal' width of the grid item as a CSS length value e.g. <code>itemWidth="10ch"</code>. CSS Grid's `auto-fit` and `minmax` features ensure the layout is responsive.</p>
+      <p>The 'ideal' width of the grid item as a CSS length value e.g. <code>itemWidth="10ch"</code>. CSS Grid's <code>auto-fit</code> and <code>minmax</code> features ensure the layout is responsive.</p>
       <p><strong>Default:</strong> <code>15rem</code></p>
     </td>
   </tr>
@@ -355,8 +355,8 @@ A basic collapsible section, as you might find in an accordion. The first child 
 ```html
 <d-rawer>
   <any-element>Collapsible section title</any-element>
-  <p>This content appears when the handle is clicked&hellip;</p>
-  <p>&hellip;and so does this content.</p>
+  <p>This content appears when the handle is clicked...</p>
+  <p>...and so does this content.</p>
 </d-rawer>
 ```
 
@@ -404,7 +404,7 @@ A call-to-action type component, specifically for linking between `<s-creen>` el
       to (required)
     </th>
     <td>
-      <p>A valid `id` attribute value for a <code><s-creen></code> component e.g. <code>to="index"</code>.</p>
+      <p>A valid <code>id</code> attribute value for a <code><s-creen></code> component e.g. <code>to="index"</code>.</p>
     </td>
   </tr>
 </table>
