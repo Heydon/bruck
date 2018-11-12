@@ -11,6 +11,9 @@ Bruck is a lo-fi prototyping system made with web components. Quickly create and
 * [`<g-rid>`](#g-rid)
 * [`<c-luster>`](#c-luster)
 * [`<s-pread>`](#s-pread)
+* [`<d-rawer>`](#d-rawer)
+* [`<s-creen>`](#s-creen)
+* [`<g-o>`](#g-o)
 * [`<c-omment>` (meta)](#s-pread)
 * [`<c-lone>` (meta)](#c-lone)
 
@@ -319,6 +322,42 @@ The `<c-enter>` component simply creates a centralized column (with horizontal m
     </s-tack>
   </s-tack>
 </c-enter>
+```
+
+### `<d-rawer>` 
+
+A basic collapsible section, as you might find in an accordion. The first child (light DOM) element is use to form a button. This is wrapped in a heading, for which the level can be adjusted using the `level` prop. 
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      level
+    </th>
+    <td>
+      <p>An integer between 1 <code><h1></code> and 6 <code><h6></code> e.g. <code>level="3"</code>.</p>
+      <p><strong>Default:</strong> <code>2</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      open
+    </th>
+    <td>
+      <p>An integer between 1 <code><h1></code> and 6 <code><h6></code> e.g. <code>level="3"</code>.</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<d-rawer>
+  <any-element>Collapsible section title</any-element>
+  <p>This content appears when the handle is clicked&hellip;</p>
+  <p>&hellip;and so does this content.</p>
+</d-rawer>
 ```
 
 ### `<s-creen>` 
