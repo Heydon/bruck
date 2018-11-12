@@ -1,11 +1,4 @@
-/*
-Usage: 
-  <c-omment wording="This is x">
-    <!-- section being commented on -->
-  </c-omment>
-Attributes: 
-  - wording: [string] (default: 'TBC')
-*/
+// https://github.com/Heydon/bruck#c-omment
 
 export default class Comment extends HTMLElement {
   constructor() {

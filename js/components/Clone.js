@@ -1,9 +1,4 @@
-/*
-Usage: 
-  <c-lone of="navigation"></c-lone>
-Attributes: 
-  - of [template element id] (required)
-*/
+// https://github.com/Heydon/bruck#c-lone
 
 export default class Clone extends HTMLElement {
   constructor() {

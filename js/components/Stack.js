@@ -1,13 +1,4 @@
-/*
-Usage: 
-  <s-tack repeat="3">
-    <p>Child</p>
-    <div>Another child</div>
-  </s-tack>
-Attributes: 
-  - repeat [integer] (default: 3)
-  - gap [-5 to 10 or none] (default: 1)
-*/
+// https://github.com/Heydon/bruck#s-tack
 
 export default class Stack extends HTMLElement {
   constructor() {

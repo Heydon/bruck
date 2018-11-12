@@ -1,15 +1,4 @@
-/*
-Usage: 
-  <b-ox pad="2">
-    <p>Child</p>
-    <div>Child</div>
-    <t-ext words="20,30"></t-ext>
-  </b-ox>
-Attributes: 
-  - pad: [-5 to 10 or none] (default: 1)
-  - border: [Boolean] (default: false)
-  - maxWidth: [CSS max-width value] (default: none);
-*/
+// https://github.com/Heydon/bruck#b-ox
 
 export default class Box extends HTMLElement {
   constructor() {

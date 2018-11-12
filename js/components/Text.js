@@ -1,9 +1,4 @@
-/*
-Usage: 
-  <t-ext words="20,25" dummy lorem></t-ext>
-Attributes: 
-  - words: [least],[most] (default: 15,20)
-*/
+// https://github.com/Heydon/bruck#t-ext
 
 import textSample from '../utilities/textSample.js';
 

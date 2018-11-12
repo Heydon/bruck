@@ -1,11 +1,4 @@
-/*
-Usage: 
-  <g-o to="About">
-    About page
-  </g-o>
-Attributes: 
-  - to: [string matching a <s-creen> element's `id` value] (required)
-*/
+// https://github.com/Heydon/bruck#g-o
 
 export default class Go extends HTMLElement {
   constructor() {

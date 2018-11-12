@@ -1,14 +1,4 @@
-/*
-Usage: 
-  <c-luster gap="2" align="top">
-    <p>Child</p>
-    <div>Child</div>
-    <t-ext words="20,30"></t-ext>
-  </c-luster>
-Attributes: 
-  - gap [-5 to 10 or none] (default: 1)
-  - align [top, bottom, or center] (default: center)
-*/
+// https://github.com/Heydon/bruck#c-luster
 
 export default class Cluster extends HTMLElement {
   constructor() {

@@ -1,12 +1,4 @@
-/*
-Usage: 
-  <s-creen id="about" label="About us" current>
-    <!-- any stuff ->
-  </s-creen>
-Attributes: 
-  - id: [unique HTML id value] (required)
-  - label: [string] (default: the id value)
-*/
+// https://github.com/Heydon/bruck#s-creen
 
 export default class Screen extends HTMLElement {
   constructor() {

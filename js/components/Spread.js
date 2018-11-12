@@ -1,15 +1,4 @@
-/*
-Usage: 
-  <s-pread gap="2">
-    <p>Child</p>
-    <div>Child</div>
-    <t-ext words="20,30"></t-ext>
-  </s-pread>
-Attributes: 
-  - gap [-5 to 10 or none] (default: 1)
-  - spaces [around || between] (default: between)
-  - align [top, bottom, or center] (default: center)
-*/
+// https://github.com/Heydon/bruck#s-pread
 
 export default class Spread extends HTMLElement {
   constructor() {

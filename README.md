@@ -14,8 +14,8 @@ Bruck is a lo-fi prototyping system made with web components. Quickly create and
 * [`<d-rawer>`](#d-rawer)
 * [`<s-creen>`](#s-creen)
 * [`<g-o>`](#g-o)
-* [`<c-omment>` (meta)](#s-pread)
-* [`<c-lone>` (meta)](#c-lone)
+* [`<c-omment>`](#c-omment)
+* [`<c-lone>`](#c-lone)
 
 ### `<t-ext>`
 
@@ -128,7 +128,7 @@ The simplest of components: just wraps some content with some padding, and a bor
 </b-ox>
 ```
 
-### `<s-tack>` (repeater)
+### `<s-tack>`
 
 The `<s-tack>` component lets you inject whitespace between flow elements. Wrap it around a set of elements and separate them visually. Critically, it accepts a `repeat` prop that lets you multiply its contents a set number of times.
 
@@ -163,7 +163,7 @@ The `<s-tack>` component lets you inject whitespace between flow elements. Wrap 
 </s-tack>
 ```
 
-### `<g-rid>` (repeater)
+### `<g-rid>`
 
 The `<g-rid>` element let's you easily compose a responsive grid using CSS's Grid algorithm. Like `<s-tack>` it lets you repeat the contents/children you supply. Useful for quickly mocking up a set of card components or similar.
 
@@ -415,7 +415,7 @@ A call-to-action type component, specifically for linking between `<s-creen>` el
 <g-o to="index">Home</g-o>
 ```
 
-### `<c-omment>` (meta)
+### `<c-omment>`
 
 Allows you to write a comment for any part of the interface, simply by wrapping it and supplying text for the `wording` prop. The comment is revealed by pressing a '?' button that is revealed on both hover and focus.
 
@@ -446,7 +446,7 @@ Allows you to write a comment for any part of the interface, simply by wrapping 
 </c-omment>
 ```
 
-### `<c-lone>` (meta)
+### `<c-lone>`
 
 The `<c-lone>` lets you instantiate content from a named `<template>`. It's the easiest way to reuse compound components.
 

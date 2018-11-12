@@ -1,12 +1,4 @@
-/*
-Usage: 
-  <i-mage ratio="16:9"></i-mage>
-Attributes: 
-  - ratio: [integer]:[integer] (default: 1:1)
-  - maxWidth: [CSS width value] (default: none)
-  - minWidth: [CSS width value] (default: none)
-  - caption: [string] (default: none)
-*/
+// https://github.com/Heydon/bruck#i-mage
 
 import ratioHeight from '../utilities/ratioHeight.js';
 
