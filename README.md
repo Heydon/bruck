@@ -3,7 +3,7 @@
 **Bruck** is a lo-fi prototyping system made with web components. Quickly create and comment on interface layouts. The output is screen reader accessible, and responsive without you having to author breakpoints. 
 
 <figure>
-![Split screen showing the web component code compared to the outputted design](split_screen.png)
+<img alt="Split screen showing the web component code compared to the outputted design" src="split_screen.png" />
 <figcaption>You can mock up real or dummy content with a set of primitive layout components.</figcaption>
 </figure>
 
