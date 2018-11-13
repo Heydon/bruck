@@ -1,10 +1,4 @@
-/*
-Usage: 
-  <i-con name="cross"></i-con>
-Attributes: 
-  - name [name of icon file, without extension] (required)
-  - size [CSS size value determining both width and height] (default: '1em')
-*/
+// https://github.com/Heydon/bruck#i-con
 
 export default class Icon extends HTMLElement {
   constructor() {
@@ -14,25 +8,39 @@ export default class Icon extends HTMLElement {
       console.error('Each <i-con> component needs a name attribute');
       return;
     }
-    this.size = this.getAttribute('size') || '1em';
+
+    this.label = this.getAttribute('label') || undefined;
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
       <style>
         :host {
           display: inline-block;
-          font-size: ${this.size};
-          vertical-align: middle;
+          width: 1em;
+        }
+
+        svg {
+          stroke: currentColor;
+          stroke-width: 3;
+          fill: none;
+          width: 100%;
+          height: auto;
+          vertical-align: -0.125em;
+          overflow: visible;
         }
       </style>
-      <slot></slot>
     `;
 
     fetch(`./icons/${this.name}.svg`)
       .then(res => {
         res.text()
           .then(svg => {
-            this.innerHTML = svg;
+            this.shadowRoot.innerHTML += svg;
+            if (this.label) {
+              const image = this.shadowRoot.querySelector('svg');
+              image.setAttribute('role', 'img');
+              image.setAttribute('aria-label', this.label);
+            }
           });
       });
   }

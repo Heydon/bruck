@@ -16,3 +16,8 @@
 .u-text-right {
   text-align: right;
 }
+
+/* rounded edges */
+.u-rounded {
+  border-radius: 50%;
+}

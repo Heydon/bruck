@@ -9,10 +9,11 @@
 
 ## Get started
 
-1. Clone this repository
-2. Write HTML with the help of the components (below) in the `index.html` and `editor.html` files
-3. Serve by using something like [http-server](https://www.npmjs.com/package/http-server) at the root
-4. That's pretty much it. Requests and contribution offers welcome
+1. Clone this repository.
+2. (No `npm install` because there's no dependencies.)
+3. Write HTML with the help of the components (below) in the `index.html` and split-screen `editor.html` files. Check out a demo in `demo.html`.
+4. Serve by using something like [http-server](https://www.npmjs.com/package/http-server) at the root
+5. That's pretty much it. Requests and contribution offers welcome.
 
 ## Components
 
@@ -26,6 +27,7 @@
 * [`<c-luster>`](#c-luster)
 * [`<s-pread>`](#s-pread)
 * [`<l-ine>`](#l-ine)
+* [`<i-con>`](#i-con)
 * [`<d-rawer>`](#d-rawer)
 * [`<s-creen>`](#s-creen)
 * [`<g-o>`](#g-o)
@@ -385,6 +387,42 @@ The `<l-ine>` component configures child elements inline, with the option to add
 
 _"Line of [# of child elements] elements"_
 
+### `<i-con>`
+
+The `<i-con>` component inserts an inline SVG icon, by name, from the **icons** folder (using fetch). The size of the icon is determined by its parent's `font-size`, or you can use the `u-h1` — `u-h6` utility classes on the `<i-con>` itself.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      name (required)
+    </th>
+    <td>
+      <p>The name of the icon, matching the filename (without extension) from the <strong>icons</strong> folder.</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      label
+    </th>
+    <td>
+      <p>A string to describe the SVG as an image. Not necessary if the icon has accompanying, descriptive text (for example, alongside a <code>&lt;button&gt;</code>'s text content).</p>
+      <p><strong>Default:</strong> omitted (no label or image role)</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<i-con name="tick" label="Correct!"></i-con>
+```
+
+#### Accessibility information
+
+None by default (it is assumed the icon will be accompanied by text). Or you can supply a label via the `label` prop. This will also include the `img` ARIA role.
+
 ### `<c-enter>`
 
 The `<c-enter>` component simply creates a centralized column (with horizontal margins set to `auto`). The `max-width` is set to the `--measure` custom property value (under **css/lib/variables.css**) by default.
@@ -614,4 +652,8 @@ For realigning text.
 ### `u-h1`, `u-h2`, `u-h3`, `u-h4`, `u-h5`, `u-h6`
 
 For emulating the font sizes of semantic headings without introducing heading elements (mapped to h1—h6 sizes).
+
+### `u-rounded`
+
+Rounds the edges of an element with a `50%` border radius (making square elements circles).
 
