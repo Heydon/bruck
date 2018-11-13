@@ -1,6 +1,11 @@
 # ![Bruck](logo.png)
 
-Bruck is a lo-fi prototyping system made with web components. Quickly create and comment on interface layouts.
+**Bruck** is a lo-fi prototyping system made with web components. Quickly create and comment on interface layouts. The output is screen reader accessible, and responsive without you having to author breakpoints. 
+
+<figure>
+![Split screen showing the web component code compared to the outputted design](split_screen.png)
+<figcaption>You can mock up real or dummy content with a set of primitive layout components.</figcaption>
+</figure>
 
 ## Get started
 
@@ -10,6 +15,8 @@ Bruck is a lo-fi prototyping system made with web components. Quickly create and
 4. That's pretty much it. Requests and contribution offers welcome
 
 ## Components
+
+(Used in conjunction with the [utility styles](#utility-styles).)
 
 * [`<t-ext>`](#t-ext)
 * [`<i-mage>`](#i-mage)
