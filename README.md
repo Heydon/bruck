@@ -94,7 +94,7 @@ The `<w-ords>` component lets you generate sets of words, picked at random from 
       sentence
     </th>
     <td>
-      <p>Capitalizes the first letter and appends a period followed by a space (Boolean)</p>
+      <p>Capitalizes the first letter of the first word, and appends a period followed by a space (Boolean)</p>
     </td>
   </tr>
   <tr>
