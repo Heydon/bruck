@@ -22,7 +22,7 @@
 (Used in conjunction with the [utility styles](#utility-styles).)
 
 * [`<t-ext>`](#t-ext)
-* [`<w-ords>`](#t-ext)
+* [`<w-ords>`](#w-ords)
 * [`<i-mage>`](#i-mage)
 * [`<b-ox>`](#b-ox)
 * [`<s-tack>`](#s-tack)
