@@ -119,7 +119,7 @@ The following will produce a paragraph or 3-4 sentences.
 
 #### Accessibility information
 
-Just the lorem ipsum text underlying the emblematic line-words.
+Just the lorem ipsum text verbatim.
 
 ### `<i-mage>`
 
