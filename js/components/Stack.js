@@ -1,10 +1,12 @@
 // https://github.com/Heydon/bruck#s-tack
 
+import rangeToNum from '../utilities/rangeToNum.js';
+
 export default class Stack extends HTMLElement {
   constructor() {
     super();
     this.gap = this.getAttribute('gap') || '1';
-    this.times = this.getAttribute('repeat') || '0';
+    this.times = this.getAttribute('repeat') || undefined;
     this.content = this.innerHTML;
 
     const tmpl = document.createElement('template');
@@ -20,8 +22,9 @@ export default class Stack extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-    if (this.times > 0) {
-      for (let i = 1; i < this.times; i++) {
+    if (this.times) {
+      const count = rangeToNum(this.times);
+      for (let i = 1; i < count; i++) {
         this.innerHTML += this.content;
       }
     }

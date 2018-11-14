@@ -1,7 +1,7 @@
 html {
   font-family: Helvetica, Arial, sans-serif;
   line-height: var(--line-height);
-  font-size: calc(1vw + 0.5rem);
+  font-size: calc(1rem + 0.25vw);
   color: var(--color-dark);
   background-color: var(--color-light);
 }
@@ -90,20 +90,8 @@ button {
   display: none;
 }
 
-/* SVG icons */
-[viewBox="0 0 16 16"] {
-  stroke: currentColor;
-  stroke-width: 3;
-  fill: none;
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.125em;
-  overflow: visible;
-}
-
 /* Code */
 code {
-  line-height: 1;
   font-family: monospace;
   padding: 0.25em;
   line-height: var(--line-height-small);

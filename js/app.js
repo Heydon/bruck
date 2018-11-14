@@ -17,6 +17,7 @@ import Sidebar from './components/Sidebar.js';
 /* ./components that support repetition must be imported last */
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
+import Words from './components/Words.js';
 
 /* Paint worker properties */
 if ('registerProperty' in CSS) {

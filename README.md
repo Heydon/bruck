@@ -22,6 +22,7 @@
 (Used in conjunction with the [utility styles](#utility-styles).)
 
 * [`<t-ext>`](#t-ext)
+* [`<w-ords>`](#t-ext)
 * [`<i-mage>`](#i-mage)
 * [`<b-ox>`](#b-ox)
 * [`<s-tack>`](#s-tack)
@@ -58,6 +59,62 @@ The `<t-ext>` component lets you generate a paragraph of dummy text. Each word i
 
 ```html
 <t-ext words="50,75"></t-ext>
+```
+
+#### Accessibility information
+
+Just the lorem ipsum text underlying the emblematic line-words.
+
+### `<w-ords>`
+
+The `<w-ords>` component lets you generate sets of words, picked at random from lorem ipsum. It is an inline element, so can be used to generate text inside a `<p>` or `<h2>` etc.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      count
+    </th>
+    <td>
+      <p>The number of words. Can be a set integer e.g. <code>count="5"</code> or a random integer picked from a supplied range e.g. <code>count="5,10"</code>.</p>
+      <p><strong>Default:</strong> <code>2,3</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      capitalize
+    </th>
+    <td>
+      <p>Capitalizes the first letter of each word (Boolean)</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      sentence
+    </th>
+    <td>
+      <p>Capitalizes the first letter and appends a period followed by a space (Boolean)</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      repeat
+    </th>
+    <td>
+      <p>How many times to repeat the pattern (i.e. how many sentences to produce). Can be a set integer e.g. <code>count="5"</code> or a random integer picked from a supplied range e.g. <code>count="5,10"</code>.</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+The following will produce a paragraph or 3-4 sentences.
+
+```html
+<p>
+  <w-ords sentence repeat="3,4"></w-ords>
+</p>
 ```
 
 #### Accessibility information
@@ -180,7 +237,7 @@ The `<s-tack>` component lets you inject whitespace between flow elements. Wrap 
       repeat
     </th>
     <td>
-      <p>The number of times the content (light DOM children) will be repeated e.g. <code>repeat="5"</code>.</p>
+      <p>The number of times the content (light DOM children) will be repeated. Can be an integer e.g. <code>repeat="5"</code> or a range e.g. <code>repeat="5,10"</code> (a random integer within the range is picked).</p>
       <p><strong>Default:</strong> <code>0</code> (no repetition)</p>
     </td>
   </tr>
@@ -219,7 +276,7 @@ The `<g-rid>` element let's you easily compose a responsive grid using CSS's Gri
       repeat
     </th>
     <td>
-      <p>The number of times the content (light DOM children) will be repeated e.g. <code>repeat="5"</code>.</p>
+      <p>The number of times the content (light DOM children) will be repeated. Can be an integer e.g. <code>repeat="5"</code> or a range e.g. <code>repeat="5,10"</code> (a random integer within the range is picked).</p>
       <p><strong>Default:</strong> <code>0</code> (no repetition)</p>
     </td>
   </tr>

@@ -1,11 +1,13 @@
 // https://github.com/Heydon/bruck#g-rid
 
+import rangeToNum from '../utilities/rangeToNum.js';
+
 export default class Grid extends HTMLElement {
   constructor() {
     super();
     this.itemWidth = this.getAttribute('itemWidth') || '15rem';
     this.gap = this.getAttribute('gap') || '1';
-    this.times = this.getAttribute('repeat') || '0';
+    this.times = this.getAttribute('repeat') || undefined;
     this.content = this.innerHTML;
 
     const tmpl = document.createElement('template');
@@ -22,15 +24,16 @@ export default class Grid extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
-  }
 
-  connectedCallback() {
-    if (this.times > 0) {
-      for (let i = 1; i < this.times; i++) {
+    if (this.times) {
+      const count = rangeToNum(this.times);
+      for (let i = 1; i < count; i++) {
         this.innerHTML += this.content;
       }
     }
+  }
 
+  connectedCallback() {
     const childAmount = this.children.length;
     this.setAttribute('role', 'group');
     this.setAttribute('aria-label', `Grid of ${childAmount} items, each ${this.itemWidth} wide.`);
