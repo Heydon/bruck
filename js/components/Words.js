@@ -9,9 +9,9 @@ export default class Words extends HTMLElement {
     const count = this.getAttribute('count') || '2,3';
     const sentence = this.hasAttribute('sentence');
     const capitalize = this.hasAttribute('capitalize');
-    const repeat = this.getAttribute('repeat') || undefined;
+    this.repeat = this.getAttribute('repeat') || undefined;
 
-    function generate() {
+    this.generate = () => {
       let words = wordsSample(count);
       if (capitalize) {
         words = words.map(w => w.charAt(0).toUpperCase() + w.slice(1));
@@ -24,10 +24,15 @@ export default class Words extends HTMLElement {
       return words.join(' ');
     }
 
-    const num = !repeat ? 1 : rangeToNum(repeat);
-    for (let i = 0; i < num; i++) {
-      this.innerHTML += generate();
-    }
+    const num = !this.repeat ? 1 : rangeToNum(this.repeat);
+    Promise.all([
+      customElements.whenDefined('g-rid'),
+      customElements.whenDefined('s-tack')
+    ]).then(() => {
+      for (let i = 0; i < num; i++) {
+        this.innerHTML += this.generate();
+      }
+    });
   }
 }
 

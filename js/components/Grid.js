@@ -10,8 +10,8 @@ export default class Grid extends HTMLElement {
     this.times = this.getAttribute('repeat') || undefined;
     this.content = this.innerHTML;
 
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = `
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
       <style>
         :host {
           grid-template-columns: repeat(auto-fill, minmax(${this.itemWidth}, 1fr));
@@ -22,14 +22,13 @@ export default class Grid extends HTMLElement {
       <slot></slot>
     `;
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
-
     if (this.times) {
-      const count = rangeToNum(this.times);
-      for (let i = 1; i < count; i++) {
-        this.innerHTML += this.content;
-      }
+      customElements.whenDefined('s-tack').then(() => {
+        const count = rangeToNum(this.times);
+        for (let i = 1; i < count; i++) {
+          this.innerHTML += this.content;
+        }
+      });
     }
   }
 

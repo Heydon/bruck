@@ -23,10 +23,12 @@ export default class Stack extends HTMLElement {
     this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
     if (this.times) {
-      const count = rangeToNum(this.times);
-      for (let i = 1; i < count; i++) {
-        this.innerHTML += this.content;
-      }
+      customElements.whenDefined('g-rid').then(() => {
+        const count = rangeToNum(this.times);
+        for (let i = 1; i < count; i++) {
+          this.innerHTML += this.content;
+        }
+      });
     }
   }
 
