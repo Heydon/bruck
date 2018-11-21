@@ -34,6 +34,7 @@
 * [`<d-rawer>`](#d-rawer)
 * [`<s-creen>`](#s-creen)
 * [`<g-o>`](#g-o)
+* [`<f-low>`](#f-low)
 * [`<c-omment>`](#c-omment)
 * [`<c-lone>`](#c-lone)
 
@@ -628,6 +629,47 @@ A call-to-action type component, specifically for linking between `<s-creen>` el
 #### Accessibility information
 
 The text content of the link.
+
+### `<f-low>`
+
+The `<f-low>` component lets you group elements as a navigable sequence of steps, such as sections in a form. On hover and focus, previous and next buttons are exposed to change steps.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      hideControls
+    </th>
+    <td>
+      <p>Boolean. Whether to show the previous and next buttons.</p>
+      <p><strong>Default:</strong> <code>false</code> (attribute omitted)</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<f-low>
+  <s-tack>
+    <h2>Step 1</h2>
+    <t-ext></t-ext>
+  </s-tack>
+  <s-tack>
+    <h2>Step 2</h2>
+    <t-ext></t-ext>
+  </s-tack>
+  <s-tack>
+    <h2>Step 3</h2>
+    <t-ext></t-ext>
+  </s-tack>
+</f-low>
+```
+
+#### Accessibility information
+
+_"Sequence of [# of child elements] steps"_
 
 ### `<c-omment>`
 
