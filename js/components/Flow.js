@@ -1,15 +1,13 @@
-/*
-Usage: 
-
-Attributes: 
-*/
+// https://github.com/Heydon/bruck#f-low
 
 export default class Flow extends HTMLElement {
   constructor() {
     super();
 
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = `
+    this.attachShadow({ mode: 'open' });
+    this.hideControls = this.hasAttribute('hideControls');
+
+    this.shadowRoot.innerHTML = `
       <style>
         :host {
           display: block;
@@ -24,7 +22,7 @@ export default class Flow extends HTMLElement {
           padding: var(--s-2);
           position: absolute;
           top: 50%;
-          left: -9999px;
+          left: -9999px ${this.hideControls ? '!important' : ''};
           transform: translateY(-50%);
           z-index: 2;
         }
@@ -65,9 +63,6 @@ export default class Flow extends HTMLElement {
       <slot></slot>
     `;
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
-
     this.elems = Array.from(this.children);
     this.elems.forEach((elem, i) => {
       if (i > 0) {
@@ -99,7 +94,7 @@ export default class Flow extends HTMLElement {
     this.next.onclick = () => this.switchElem('next', this.next);
 
     this.setAttribute('role', 'region');
-    this.setAttribute('aria-label', `Sequence of ${this.elems.length} steps in a flow`);
+    this.setAttribute('aria-label', `Sequence of ${this.elems.length} steps`);
 
   }
 }

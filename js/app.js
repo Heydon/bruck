@@ -1,4 +1,4 @@
-/* ./components */
+/* components */
 import Image from './components/Image.js';
 import Icon from './components/Icon.js';
 import Text from './components/Text.js';
@@ -14,10 +14,13 @@ import Drawer from './components/Drawer.js';
 import Flow from './components/Flow.js';
 import Line from './components/Line.js';
 import Sidebar from './components/Sidebar.js';
-/* ./components that support repetition must be imported last */
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
 import Words from './components/Words.js';
+
+/* actions */
+import Actions from './utilities/Actions.js';
+window.actions = Actions;
 
 /* Paint worker properties */
 if ('registerProperty' in CSS) {
