@@ -2,6 +2,8 @@
 
 **Bruck** is a lo-fi prototyping system made with web components. Quickly create and comment on interface layouts. The output is screen reader accessible, and responsive without you having to author breakpoints. 
 
+[**Try out the demo**](https://heydon.github.io/bruck/)
+
 **Warning: Bruck is experimental, and in its very early stages of development.**
 
 <figure>
