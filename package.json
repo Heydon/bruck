@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
-    "build": "parcel build index.html --out-dir docs"
+    "build": "mkdir -p docs && cp editor.html docs/index.html && cp -r css icons js docs/"
   },
   "repository": {
     "type": "git",
