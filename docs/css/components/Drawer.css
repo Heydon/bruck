@@ -1,0 +1,29 @@
+d-rawer {
+  display: block;
+  padding: var(--s1);
+  border-width: var(--border-thin);
+}
+
+d-rawer .handle {
+  all: inherit;
+  font-size: var(--s1);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+d-rawer .handle:focus {
+  outline: var(--outline);
+}
+
+d-rawer .content {
+  margin-top: var(--s1);
+}
+
+d-rawer .handle[aria-expanded="true"] .v {
+  display: none;
+}
+
+d-rawer + d-rawer {
+  border-top: 0;
+}
