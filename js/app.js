@@ -19,7 +19,7 @@ import Grid from './components/Grid.js';
 import Words from './components/Words.js';
 
 /* actions */
-import Actions from './utilities/Actions.js';
+import Actions from './utilities/actions.js';
 window.actions = Actions;
 
 /* Paint worker properties */
