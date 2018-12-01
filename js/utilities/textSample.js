@@ -32,7 +32,6 @@ export default function textSample(range) {
   const num = rangeToNum(range);
   const wordsOut = [];
   for (let i = 1; i <= num; i++) {
-    console.log(i);
     wordsOut.push(`<span>${words[Math.floor(Math.random() * words.length)]}</span>`);
   }
   return wordsOut.join(' ');
