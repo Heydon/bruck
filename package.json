@@ -4,7 +4,7 @@
   "description": "A web components-based accessible prototyping tool",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "mkdir -p docs && cp editor.html docs/index.html && cp -r css icons js docs/"
   },
   "repository": {
@@ -18,5 +18,11 @@
   },
   "homepage": "https://github.com/Heydon/bruck#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "regenerator-runtime": "^0.13.1"
+  }
 }
