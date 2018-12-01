@@ -121,3 +121,32 @@ hr {
   border-bottom-width: var(--border-thick);
 }
 
+@keyframes squish {
+  0% {
+    width: 100%; 
+  }
+  
+  25% {
+    width: 100%; 
+  }
+  
+  75% {
+    width: 33.333%
+  }
+
+  100% {
+    width: 33.333%
+  }
+}
+
+.squish {
+  margin: 0 auto;
+  animation: 4s linear infinite alternate squish;
+}
+
+.wrap {
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
