@@ -16,7 +16,7 @@ export default class Grid extends HTMLElement {
         :host {
           grid-template-columns: repeat(auto-fill, minmax(${this.itemWidth}, 1fr));
           grid-gap: var(--s${this.gap});
-          align-items: start;
+          align-content: start;
         }
       </style>
       <slot></slot>
