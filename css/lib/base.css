@@ -140,6 +140,7 @@ hr {
 }
 
 .squish {
+  width: 100%;
   margin: 0 auto;
   animation: 4s linear infinite alternate squish;
 }
@@ -149,4 +150,26 @@ hr {
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+
+.browser {
+  padding: 5rem 2rem 2rem;
+  border: 2px solid #fff;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.browser::before {
+  content: '\00d7';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  line-height: 2.25rem;
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 3rem;
+  border-bottom: 2px solid;
 }
