@@ -31,6 +31,7 @@
 * [`<g-rid>`](#g-rid)
 * [`<c-luster>`](#c-luster)
 * [`<s-pread>`](#s-pread)
+* [`<s-idebar>`](#s-idebar)
 * [`<l-ine>`](#l-ine)
 * [`<i-con>`](#i-con)
 * [`<d-rawer>`](#d-rawer)
@@ -343,7 +344,7 @@ The `<c-luster>` component uses Flexbox to let you cluster items around the hori
   <div>Will Something on the left</div>
   <div>Something in the center</div>
   <div>something on the right</div>
-</s-pread>
+</c-luster>
 ```
 
 #### Accessibility information
@@ -396,9 +397,64 @@ The `<s-pread>` component uses Flexbox to let you separate items horizontally. I
 </s-pread>
 ```
 
+### `<s-idebar>`
+
+The `<s-idebar>` component wraps two child elements, with one as the designated 'sidebar' and the other taking up the remaining space. If more than two child elements are supplied, construction ceases and an error is returned. 
+
+The designated sidebar only _appears_ as a sidebar where it is narrower than its sibling. Otherwise, Flexbox reorganizes the two elements into a single column (uses the `flex-grow: 999` hack).
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      gap
+    </th>
+    <td>
+      <p>The gap between the sidebar and adjacent element. A point on the modular scale (<code>-5</code> to <code>10</code>, or <code>none</code>) e.g. <code>gap="2"</code>.</p>
+      <p><strong>Default:</strong> <code>none</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      width
+    </th>
+    <td>
+      <p>The width of the sidebar in contexts wide enough that it can <em>be</em> a sidebar. Any CSS length, e.g. <code>width="25rem"</code>.</p>
+      <p><strong>Default:</strong> <code>20rem</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      to
+    </th>
+    <td>
+      <p>Which child element (left or right) to be the sidebar. Values can only be 'left' or 'right'; If anything different is supplied, 'left' is used by default.</p>
+      <p><strong>Default:</strong> <code>left</code> (omit the attribute)</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+Creates a sidebar of the second element (introduced with the `<h2>` heading). The gap between the sidebar and the adjacent content matches the second point on the modular scale (one point higher than the default).
+
+```html
+<s-idebar to="right" gap="2">
+  <div>
+    <h1>The main content</h1>
+    <!-- etc -->
+  </div>
+  <div>
+    <h2>The sidebar content</h2>
+    <!-- etc -->
+  </div>
+</s-idebar>
+```
+
 #### Accessibility information
 
-_"Distributed row of [# of child elements] elements"_
+_"Content with a [left || right] sidebar"_
 
 ### `<l-ine>`
 
