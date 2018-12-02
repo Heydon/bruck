@@ -1,7 +1,7 @@
 :root {
   /* Colors */
-  --color-dark: hsl(0, 0%, 0%);
-  --color-light: hsl(0, 0%, 100%);
+  --color-dark: hsl(0, 0%, 20%);
+  --color-light: hsl(0, 0%, 80%);
   --color-mid: hsl(0, 0%, 50%);
   
   /* Scale */
@@ -41,4 +41,3 @@
   /* z-index */
   --zHighest: 999;
 }
-

@@ -1,4 +1,4 @@
 s-tack {
   display: grid;
-  align-items: start;
+  align-content: start;
 }
