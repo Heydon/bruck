@@ -14,7 +14,7 @@
 ## Get started
 
 1. Clone this repository.
-2. (No `npm install` because there's no dependencies.)
+2. (No `npm install` because there's no dependencies, unless you want to contribute — then you may need the **Jest** stuff)
 3. Write HTML with the help of the components (below) in the `index.html` and split-screen `editor.html` files. Check out a demo in `demo.html`.
 4. Serve by using something like [http-server](https://www.npmjs.com/package/http-server) at the root
 5. That's pretty much it. Requests and contribution offers welcome.
