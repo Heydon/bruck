@@ -7,7 +7,6 @@ p-rogress ol {
 p-rogress li {
   flex: 1 0 auto;
   text-align: center;
-  font-size: var(--s-1);
   position: relative;
 }
 
@@ -17,7 +16,7 @@ p-rogress li::before {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  border: 0.125rem solid;
+  border: 0.25rem solid;
   background-color: var(--color-dark);
   position: relative;
   z-index: 1;
@@ -42,8 +41,8 @@ p-rogress li::after {
   left: 0;
   right: 0;
   top: 0.5rem;
-  height: 0.125rem;
-  margin-top: -0.06255rem;
+  height: 0.25rem;
+  transform: translateY(-50%);
   background-color: var(--color-dark);
 }
 
