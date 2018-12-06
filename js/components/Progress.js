@@ -22,7 +22,7 @@ export default class Progress extends HTMLElement {
 
   connectedCallback() {
     this.setAttribute('role', 'group');
-    this.setAttribute('aria-label', `Progress meter of ${this.steps.length} steps`);
+    this.setAttribute('aria-label', `Progress bar of ${this.steps.length} steps`);
   }
 }
 
