@@ -10,8 +10,8 @@ export default class Progress extends HTMLElement {
     }
 
     this.steps = stepsAttr.replace(/,\s*/g, ',').split(',');
-    this.current = parseInt(this.getAttribute('current')) || 1;
-    this.items = this.steps.map((s, i) => `<li ${i === this.current - 1 ? `aria-current="step"` : ''}>${s}</li>`);
+    this.current = this.steps.indexOf(this.getAttribute('current')) + 1 || 1;
+    this.items = this.steps.map((s, i) => `<li ${i === this.current - 1 ? `aria-current="step"` : ''}><span>${s}</span></li>`);
 
     this.innerHTML = `
       <ol>

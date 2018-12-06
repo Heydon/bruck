@@ -10,7 +10,29 @@
 </head>
 
 <body>
-  <p-rogress steps="one,two,three" current="2"></p-rogress>
+  <f-low>
+    <div>
+      <p-rogress steps="one,two,three" current="one"></p-rogress>
+      <h2>One</h2>
+      <s-tack repeat="3">
+        <t-ext></t-ext>
+      </s-tack>
+    </div>
+    <div>
+      <p-rogress steps="one,two,three" current="two"></p-rogress>
+      <h2>Two</h2>
+      <s-tack repeat="3">
+        <t-ext></t-ext>
+      </s-tack>
+    </div>
+    <div>
+      <p-rogress steps="one,two,three" current="three"></p-rogress>
+      <h2>Three</h2>
+      <s-tack repeat="3">
+        <t-ext></t-ext>
+      </s-tack>
+    </div>
+  </f-low>
   <script src="js/app.js" type="module"></script>
 </body>
 
