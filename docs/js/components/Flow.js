@@ -70,28 +70,36 @@ export default class Flow extends HTMLElement {
       }
     });
 
-    this.prev = this.shadowRoot.querySelector('[aria-label="previous"]');
-    this.next = this.shadowRoot.querySelector('[aria-label="next"]');
-    this.prev.disabled = true;
+    this.prevBtn = this.shadowRoot.querySelector('[aria-label="previous"]');
+    this.nextBtn = this.shadowRoot.querySelector('[aria-label="next"]');
+    this.prevBtn.disabled = true;
 
-    this.switchElem = (dir, button) => {
+    this.switchElem = (index) => {
       let currentElem = this.elems.find(elem => !elem.hidden);
-      let currentIndex = this.elems.indexOf(currentElem);
+      let newElem = this.elems[index];
 
-      let modifier = dir === 'previous' ? -1 : 1;
-      let newIndex = currentIndex + modifier;
+      index === 0 ? this.prevBtn.disabled = true : this.prevBtn.disabled = false;
+      index === this.elems.length - 1 ? this.nextBtn.disabled = true : this.nextBtn.disabled = false;
 
-      newIndex === 0 ? this.prev.disabled = true : this.prev.disabled = false;
-      newIndex === this.elems.length - 1 ? this.next.disabled = true : this.next.disabled = false;
-
-      if (newIndex < this.elems.length && newIndex > -1) {
+      if (newElem) {
         currentElem.hidden = true;
-        this.elems[newIndex].hidden = false;
+        newElem.hidden = false;
       }
     }
 
-    this.prev.onclick = () => this.switchElem('previous', this.prev);
-    this.next.onclick = () => this.switchElem('next', this.next);
+    this.prev = () => {
+      let currentIndex = this.elems.findIndex(elem => !elem.hidden);
+      this.switchElem(currentIndex - 1);
+    }
+
+
+    this.next = () => {
+      let currentIndex = this.elems.findIndex(elem => !elem.hidden);
+      this.switchElem(currentIndex + 1);
+    }
+
+    this.prevBtn.onclick = () => this.prev();
+    this.nextBtn.onclick = () => this.next();
 
     this.setAttribute('role', 'region');
     this.setAttribute('aria-label', `Sequence of ${this.elems.length} steps`);

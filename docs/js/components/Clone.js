@@ -9,7 +9,12 @@ export default class Clone extends HTMLElement {
       return;
     }
     this.template = document.getElementById(this.id);
-    this.appendChild(this.template.content.cloneNode(true));
+    Promise.all([
+      customElements.whenDefined('g-rid'),
+      customElements.whenDefined('s-tack')
+    ]).then(() => {
+      this.appendChild(this.template.content.cloneNode(true));
+    });
   }
 }
 
