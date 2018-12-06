@@ -34,6 +34,7 @@
 * [`<s-idebar>`](#s-idebar)
 * [`<l-ine>`](#l-ine)
 * [`<i-con>`](#i-con)
+* [`<p-rogress>`](#p-rogress)
 * [`<d-rawer>`](#d-rawer)
 * [`<s-creen>`](#s-creen)
 * [`<g-o>`](#g-o)
@@ -540,6 +541,42 @@ The `<i-con>` component inserts an inline SVG icon, by name, from the **icons** 
 #### Accessibility information
 
 None by default (it is assumed the icon will be accompanied by text). Or you can supply a label via the `label` prop. This will also include the `img` ARIA role.
+
+### `<p-rogress>`
+
+The `<p-rogress>` component displays a series of steps in a continuum to indicate how far along the user is in a process.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      steps (required)
+    </th>
+    <td>
+      <p>A comma-separated set of labels for he consecutive steps, e.g. `steps="one,two,three"`.</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      current
+    </th>
+    <td>
+      <p>The label of the current step, which takes <code>aria-current="step"</code> and a visual style to differentiate it from the other steps, e.g. <code>current="two"</code></p>
+      <p><strong>Default:</strong> the first step (whatever it is named)</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<p-rogress steps="address,payment details,confirmation" current="confirmation"></p-rogress>
+```
+
+#### Accessibility information
+
+_"Progress bar of [# of steps] steps"_ (in addition to list semantics and `aria-current`).
 
 ### `<c-enter>`
 
