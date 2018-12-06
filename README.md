@@ -576,7 +576,7 @@ The `<p-rogress>` component displays a series of steps in a continuum to indicat
 
 #### Accessibility information
 
-_"Progress bar of [# of steps] steps"_ (in addition to list semantics and `aria-current`).
+_"Progress indicator of [# of steps] steps"_ (in addition to list semantics and `aria-current`).
 
 ### `<c-enter>`
 
