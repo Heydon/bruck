@@ -12,6 +12,7 @@ p-rogress li {
 }
 
 p-rogress li::before {
+  content: '';
   display: inline-block;
   width: 1rem;
   height: 1rem;
@@ -36,6 +37,7 @@ p-rogress span {
 }
 
 p-rogress li::after {
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
