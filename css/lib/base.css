@@ -121,3 +121,16 @@ hr {
   border-bottom-width: var(--border-thick);
 }
 
+/* Forms */
+input, textarea, select {
+  font-size: inherit;
+  border-radius: 0;
+  border: var(--border-thin) solid;
+  padding: var(--s-2);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--s-4);
+}
