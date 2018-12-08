@@ -5,7 +5,7 @@ export default class Select extends HTMLElement {
     super();
     this.name = this.getAttribute('name');
     if (!this.name) {
-      console.error('Each <s-elect> component must have a `name` attribute');
+      console.error('Each <s-elect> component must have a unique `name` attribute');
       return;
     }
     this.options = this.getAttribute('options').replace(/,\s*/g, ',').split(',');
@@ -13,7 +13,7 @@ export default class Select extends HTMLElement {
       console.error('Each <s-elect> component must have an `options` attribute containing a comma-separated list of <option> labels');
       return;
     }
-    this.label = this.getAttribute('label') || 'Your selection';
+    this.label = this.getAttribute('label') || 'Select';
     this.selected = this.options.indexOf(this.getAttribute('selected')) + 1 || -1;
 
     this.optionElems = this.options.map((o, i) => {

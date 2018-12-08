@@ -13,6 +13,7 @@ html {
   color: inherit;
   background-color: inherit;
   box-sizing: border-box;
+  border-color: var(--color-dark);
   border-style: solid;
   border-width: 0;
   scroll-behavior: smooth;
@@ -122,7 +123,7 @@ hr {
 }
 
 /* Forms */
-input, textarea, select {
+input[type="text"], textarea, select {
   font-size: inherit;
   border-radius: 0;
   border: var(--border-thin) solid;
@@ -133,4 +134,27 @@ label {
   display: block;
   font-weight: bold;
   margin-bottom: var(--s-4);
+}
+
+fieldset {
+  border-width: var(--border-thin);
+  padding: var(--s-1);
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 var(--s-1);
+}
+
+/* Visually hidden */
+.vh {
+  border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }

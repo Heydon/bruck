@@ -15,7 +15,12 @@ export default class Model extends HTMLElement {
     this.form = this.querySelector('form');
     this.form.addEventListener('submit', e => {
       e.preventDefault();
-      console.log(dataFromForm(this.name));
+      const data = dataFromForm(this.name);
+      var dataEvent = new CustomEvent(this.name, {
+        detail: { data },
+        bubbles: true
+      });
+      this.dispatchEvent(dataEvent);
     });
   }
 }
