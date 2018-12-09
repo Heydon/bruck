@@ -25,6 +25,21 @@ import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
 import Words from './components/Words.js';
 
+
+
+/* Data */
+import data from './data.js';
+window.data = data;
+customElements.whenDefined('o-utput').then(() => {
+  const dataEvent = new CustomEvent('stored', {
+    detail: {
+      property: 'all'
+    },
+    bubbles: true
+  });
+  window.dispatchEvent(dataEvent);
+});
+
 /* actions */
 import Actions from './utilities/actions.js';
 window.actions = Actions;

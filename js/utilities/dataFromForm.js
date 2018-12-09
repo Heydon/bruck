@@ -1,5 +1,5 @@
-export default function dataFromForm(formId) {
-  const data = new FormData(document.getElementById(formId));
+export default function dataFromForm(form) {
+  const data = new FormData(form);
   const values = {};
   for (let [key, value] of data.entries()) {
     let safe = value.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');

@@ -1,5 +1,5 @@
 export default function (html, options) {
-  var re = /{{(.+?)}}/g,
+  var re = /{{%(.+?)%}}/g,
     reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g,
     code = 'with(obj) { var r=[];\n',
     cursor = 0,

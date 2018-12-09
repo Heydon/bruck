@@ -11,26 +11,21 @@
 
 <body>
   <b-ox>
-    <m-odel name="nameAndNumber">
+    <m-odel property="names">
       <s-tack>
         <i-nput label="Your name" name="name"></i-nput>
-        <r-adios options="poo, wee, dick" checked="dick" name="profanity"></r-adios>
-        <c-heckbox checked name="ticky" label="Check me out"></c-heckbox>
         <button type="submit">Submit</button>
       </s-tack>
     </m-odel>
-    <o-utput input="nameAndNumber">
-      <g-rid>
-        <p>
-          {{ this.name }}
-        </p>
-        <p>
-          {{ 1 + 1 }}
-        </p>
-        <p>
-          {{ this.ticky }}
-        </p>
-      </g-rid>
+    <o-utput property="names">
+      <ul>
+        {{% for (let name in this) { %}}
+        <li>
+          {{% this[name] %}}
+          {{% this[name] === 'Heydon' ? '(me)' : '' %}}
+        </li>
+        {{% } %}}
+      </ul>
     </o-utput>
   </b-ox>
   <script src="js/app.js" type="module"></script>

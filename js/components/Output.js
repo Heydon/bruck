@@ -5,18 +5,21 @@ import parser from '../utilities/parser.js';
 export default class Output extends HTMLElement {
   constructor() {
     super();
-    this.input = this.getAttribute('input');
-    if (!this.input) {
-      console.error('Each <o-utput> component must have an `input` attribute that corresponds to a data namespace');
+    this.property = this.getAttribute('property');
+    if (!this.property) {
+      console.error('Each <o-utput> component must have an `property` attribute that corresponds to a data namespace');
       return;
     }
     this.template = this.innerHTML;
     this.innerHTML = '';
 
-    window.addEventListener(this.input, e => {
-      console.log(e.detail.data);
-      console.log(this.template);
-      this.innerHTML = parser(this.template, e.detail.data);
+    window.addEventListener('stored', e => {
+      if (e.detail.property === this.property || 'all') {
+        this.innerHTML = parser(
+          this.template,
+          window.data[this.property]
+        );
+      }
     })
   }
 }
