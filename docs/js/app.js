@@ -15,6 +15,7 @@ import Flow from './components/Flow.js';
 import Line from './components/Line.js';
 import Sidebar from './components/Sidebar.js';
 import Progress from './components/Progress.js';
+import Input from './components/Input.js';
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
 import Words from './components/Words.js';

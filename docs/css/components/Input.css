@@ -1,0 +1,14 @@
+i-nput {
+  display: block;
+}
+
+i-nput label {
+  font-weight: bold;
+}
+
+i-nput input {
+  border: var(--border-thin) solid;
+  padding: var(--s-1);
+  margin-top: var(--s-4);
+  width: 100%;
+}

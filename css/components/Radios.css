@@ -1,0 +1,22 @@
+r-adios label {
+  font-weight: normal;
+}
+
+r-adios label + label {
+  margin-top: var(--s-1);
+  margin-bottom: 0;
+}
+
+r-adios .radio-radio {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: var(--border-thin) solid;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+r-adios :checked + .radio-label .radio-radio {
+  background-color: var(--color-dark);
+  box-shadow: inset 0 0 0 0.25rem var(--color-light);
+}
