@@ -41,6 +41,12 @@
 * [`<f-low>`](#f-low)
 * [`<c-omment>`](#c-omment)
 * [`<c-lone>`](#c-lone)
+* [`<i-nput>`](#i-nput)
+* [`<s-elect>`](#s-elect)
+* [`<c-heckbox>`](#c-heckbox)
+* [`<r-adios>`](#r-adios)
+* `<o-utput>` ([see **Working with data**](#working-with-data))
+* `<m-odel>` ([see **Working with data**](#working-with-data))
 
 ### `<t-ext>`
 
@@ -833,6 +839,202 @@ The `<c-lone>` lets you instantiate content from a named `<template>`. It's the 
 
 NA (whatever the cloned elements provide)
 
+### `<i-nput>`
+
+The `<i-nput>` component is an abstraction of a basic `type="text"` input/label, with accessible labeling built in.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      label
+    </th>
+    <td>
+      <p>A string for the `<label>` element e.g. <code>label="Your favorite animal"</code></p>
+      <p><strong>Default:</strong> <code>'Text'</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      name (required)
+    </th>
+    <td>
+      <p>A valid <code>name</code> value (mapping to the standard <code>name</code> attribute), e.g. <code>name="favoriteAnimal"</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      value
+    </th>
+    <td>
+      <p>Optionally prepopulate a value, e.g. <code>value="aardvark"</code></p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<i-nput name="favoriteAnimal" label="Your favorite animal"></i-nput>
+```
+
+#### Accessibility information
+
+Standard `<label>` and `<input>` elements are used (and associated with one another) and convey the standard/expected semantics to assistive technologies.
+
+### `<s-elect>`
+
+The `<s-elect>` component is an abstraction of a basic `<select>`/`<option>`s pattern, with accessible labeling built in.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      label
+    </th>
+    <td>
+      <p>A string for the `<label>` element e.g. <code>label="Your favorite animal"</code></p>
+      <p><strong>Default:</strong> <code>'Select'</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      name (required)
+    </th>
+    <td>
+      <p>A valid <code>name</code> value (mapping to the standard <code>name</code> attribute), e.g. <code>name="favoriteAnimal"</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      options (required)
+    </th>
+    <td>
+      <p>A comma-separated list of available options, e.g. <code>options="dog, cat, fish, aardvark"</code></p>
+      <p><strong>Note:</strong> Both <code>"dog,cat,fish,aardvark"</code> and <code>"dog, cat, fish, aardvark"</code> are acceptable (the spaces are removed)</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      selected
+    </th>
+    <td>
+      <p>The string that represents the selected option (if any), e.g. <code>selected="aardvark"</code></p>
+      <p><strong>Default:</strong> No item is selected</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<s-elect label="Your favorite animal" name="favoriteAnimal" options="dog, cat, fish, aardvark" selected="aardvark"></s-elect>
+```
+
+#### Accessibility information
+
+Standard `<label>` and `<select>` elements are used (and associated with one another) and convey the standard/expected semantics to assistive technologies.
+
+### `<c-heckbox>`
+
+The `<c-heckbox>` component is an abstraction of a basic `type="checkbox"` input/label, with accessible labeling built in.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      label
+    </th>
+    <td>
+      <p>A string for the `<label>` element, e.g. <code>label="Do you like animals?"</code></p>
+      <p><strong>Default:</strong> <code>'Check'</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      name (required)
+    </th>
+    <td>
+      <p>A valid <code>name</code> value (mapping to the standard <code>name</code> attribute), e.g. <code>name="likesAnimals"</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      checked
+    </th>
+    <td>
+      <p>Boolean: whether the checkbox is checked by default</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<c-heckbox name="likesAnimals" label="Do you like animals?" checked></c-heckbox>
+```
+
+#### Accessibility information
+
+Standard `<label>` and `<input>` elements are used (and associated with one another) and convey the standard/expected semantics to assistive technologies.
+
+### `<r-adios>`
+
+The `<r-adios>` component is an abstraction of a basic radio group pattern (using `<fieldset>` and `<legend>` for the group labeling).
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      legend
+    </th>
+    <td>
+      <p>A string for the `<legend>` element e.g. <code>legend="Your favorite animal"</code></p>
+      <p><strong>Default:</strong> <code>'Choose'</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      name (required)
+    </th>
+    <td>
+      <p>A valid <code>name</code> value (mapping to the standard <code>name</code> attribute), e.g. <code>name="favoriteAnimal"</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      options (required)
+    </th>
+    <td>
+      <p>A comma-separated list of available options, e.g. <code>options="dog, cat, fish, aardvark"</code></p>
+      <p><strong>Note:</strong> Both <code>"dog,cat,fish,aardvark"</code> and <code>"dog, cat, fish, aardvark"</code> are acceptable (the spaces are removed)</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      checked
+    </th>
+    <td>
+      <p>The string that represents the checked option (if any), e.g. <code>checked="aardvark"</code></p>
+      <p><strong>Default:</strong> No item is checked</p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<r-adios label="Your favorite animal" name="favoriteAnimal" options="dog, cat, fish, aardvark" checked="aardvark"></r-adios>
+```
+
+#### Accessibility information
+
+Standard `<fieldset>`, `<legend>`, `<label>`, `<input>` and `<select>` elements are used (and associated with one another) and convey the standard/expected semantics to assistive technologies.
+
 ## Utility styles
 
 A set of utility classes. Each is prefixed with `u-`.
@@ -853,3 +1055,104 @@ For emulating the font sizes of semantic headings without introducing heading el
 
 Rounds the edges of an element with a `50%` border radius (making square elements circles).
 
+## Working with data
+
+Sometimes you'll want to work with dummy text (like `<w-ords>` and `<t-ext>`). Other times, you'll want to add real content using basic elements like `<h2>` and `<p>`. But you can also work with data.
+
+### The `data.js` file
+
+This file defines a global data object and is found in the root of the **/js** folder. You can add properties to the data object as you wish. For example, I might add a `people` property defining an array of usernames:
+
+```js
+// in js/data.js
+export default {
+  people: [
+    {
+      firstName: 'Lara',
+      lastName: 'Hogan'
+    },
+    {
+      firstName: 'Hulk',
+      lastName: 'Hogan'
+    },
+    {
+      firstName: 'Paul',
+      lastName: 'Hogan'
+    },
+    {
+      firstName: 'Heydon',
+      lastName: 'Pickering'
+    }
+  ]
+}
+```
+
+Using the `<o-utput>` component, you can template the data. Note that `this` refers to the property identified using the mandatory `property` attribute (`property="people"` here).
+
+```html
+<o-utput property="people">
+  <b-ox>
+    <g-rid>
+      {{% for (let name in this) { %}}
+      <s-tack>
+        <i-mage ratio="5:9"></i-mage>
+        <h3 class="u-text-center">{{% this[name].lastName %}}, {{% this[name].firstName %}}</h3>
+        {{% this[name].firstName === 'Heydon' ? '(me!)' : '' %}}
+      </s-tack>
+      {{% } %}}
+    </g-rid>
+  </b-ox>
+</o-utput>
+```
+
+There you have it: a set of user 'cards' laid out in a `<g-rid>`.
+
+### The `<m-odel>` component
+
+The `<m-odel>` component wraps a form and lets you change or add data to the global data object. It too takes a `property` attribute (i.e. it can only affect one property at a time, and only works to one level of depth).
+
+```html
+<m-odel property="people">
+  <form>
+    <s-tack>
+      <i-nput label="First name" name="firstName"></i-nput>
+      <i-nput label="Last name" name="lastName"></i-nput>
+      <button type="submit">Submit</button>
+    </s-tack>
+  </form>
+</m-odel>
+```
+
+When the submit button is pressed, a `FormData` object of values is created based on the form fields' `name` attributes. In this case, the object would be:
+
+```js
+{
+  firstName: /* value from `name="firstName"` */,
+  lastName: /* value from `name="lastName"` */
+}
+```
+
+If the `window.data.people` property's value is an object, it will be overridden with the new data. If it is an _array_, the data will be pushed as a new item (as in the `people` example). If the `<m-odel>` contains just one field, the `FormData` object will be flattened into a simple string of that single value. That is:
+
+```js
+// This would be avoided...
+people: [
+  {
+    person: 'Heydon Pickering'
+  }
+]
+
+// ...in preference of this:
+
+people: [
+  'Heydon Pickering'
+]
+```
+
+(**Note:** In this scenario, the field's `name` attribute would actually be immaterial because the first and only property of the `FormData` object is taken, whatever it is called.)
+
+Whenever a `<m-odel>` changes the data, a `'stored'` event is fired, alerting any `<o-utput>` elements of the new data so they can rerender accordingly. This event also fires on page load, rendering out the original data.
+
+### Security
+
+Be careful not to allow the use of `<m-odel>` or the creation of `<o-utput>` on domains that expose personal/sensitive data. You may invite XSS.

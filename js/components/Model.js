@@ -10,9 +10,11 @@ export default class Model extends HTMLElement {
       console.error('Each <m-odel> component must have a unique `property` attribute representing a property on the global data object');
       return;
     }
-
-    this.innerHTML = `<form>${this.innerHTML}</form>`;
     this.form = this.querySelector('form');
+    if (!this.form) {
+      console.error('Each <m-odel> component must have a <form>, containing form controls, as its only child element');
+      return;
+    }
     this.form.addEventListener('submit', e => {
       e.preventDefault();
       let data = dataFromForm(this.form);

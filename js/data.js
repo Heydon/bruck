@@ -1,9 +1,13 @@
 export default {
   names: [
-    'Henry',
-    'Harrold',
-    'Heydon',
-    'Hank'
+    {
+      firstName: 'Heydon',
+      lastName: 'Pickering'
+    },
+    {
+      firstName: 'Hulk',
+      lastName: 'Hogan'
+    }
   ],
   thing: 'word'
 }

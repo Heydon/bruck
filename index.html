@@ -12,20 +12,25 @@
 <body>
   <b-ox>
     <m-odel property="names">
-      <s-tack>
-        <i-nput label="Your name" name="name"></i-nput>
-        <button type="submit">Submit</button>
-      </s-tack>
+      <form>
+        <s-tack>
+          <i-nput label="First name" name="firstName"></i-nput>
+          <i-nput label="Last name" name="lastName"></i-nput>
+          <button type="submit">Submit</button>
+        </s-tack>
+      </form>
     </m-odel>
     <o-utput property="names">
-      <ul>
-        {{% for (let name in this) { %}}
-        <li>
-          {{% this[name] %}}
-          {{% this[name] === 'Heydon' ? '(me)' : '' %}}
-        </li>
-        {{% } %}}
-      </ul>
+      <b-ox>
+        <g-rid>
+          {{% for (let name in this) { %}}
+          <s-tack>
+            <i-mage ratio="5:9"></i-mage>
+            <h3 class="u-text-center">{{% this[name].lastName %}}, {{% this[name].firstName %}}</h3>
+          </s-tack>
+          {{% } %}}
+        </g-rid>
+      </b-ox>
     </o-utput>
   </b-ox>
   <script src="js/app.js" type="module"></script>
