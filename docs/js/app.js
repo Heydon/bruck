@@ -15,10 +15,30 @@ import Flow from './components/Flow.js';
 import Line from './components/Line.js';
 import Sidebar from './components/Sidebar.js';
 import Progress from './components/Progress.js';
+import Model from './components/Model.js';
 import Input from './components/Input.js';
+import Select from './components/Select.js';
+import Radios from './components/Radios.js';
+import Checkbox from './components/Checkbox.js';
+import Output from './components/Output.js';
 import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
 import Words from './components/Words.js';
+
+
+
+/* Data */
+import data from './data.js';
+window.data = data;
+customElements.whenDefined('o-utput').then(() => {
+  const dataEvent = new CustomEvent('stored', {
+    detail: {
+      property: 'all'
+    },
+    bubbles: true
+  });
+  window.dispatchEvent(dataEvent);
+});
 
 /* actions */
 import Actions from './utilities/actions.js';

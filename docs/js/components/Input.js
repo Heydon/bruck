@@ -3,11 +3,16 @@
 export default class Input extends HTMLElement {
   constructor() {
     super();
-    this.label = this.getAttribute('label') || 'Your text';
-    this.unique = + new Date();
+    this.name = this.getAttribute('name');
+    if (!this.name) {
+      console.error('Each <i-nput> component must have a unique `name` attribute');
+      return;
+    }
+    this.label = this.getAttribute('label') || 'Text';
+    this.value = this.getAttribute('value') || null;
     this.innerHTML = `
-      <label for="${this.unique}">${this.label}</label>
-      <input type="text" id="${this.unique}">
+      <label for="${this.name}">${this.label}</label>
+      <input type="text" id="${this.name}" name="${this.name}" ${this.value ? `value="${this.value}"` : ''}>
     `;
   }
 }
