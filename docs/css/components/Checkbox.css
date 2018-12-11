@@ -15,6 +15,10 @@ c-heckbox svg {
   vertical-align: 0;
 }
 
+c-heckbox :focus + .checkbox-label .checkbox-check {
+  outline: var(--outline);
+}
+
 c-heckbox :checked + .checkbox-label i-con {
   visibility: visible;
 }
