@@ -258,6 +258,15 @@ The `<s-tack>` component lets you inject whitespace between flow elements. Wrap 
       <p><strong>Default:</strong> <code>0</code> (no repetition)</p>
     </td>
   </tr>
+  <tr>
+    <th>
+      lines
+    </th>
+    <td>
+      <p>Boolean: Whether or not to divide items with horizontal lines/borders</p>
+      <p><strong>Default:</strong> omitted (no lines)</p>
+    </td>
+  </tr>
 </table>
 
 #### Example
