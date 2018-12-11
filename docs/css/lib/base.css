@@ -44,6 +44,15 @@ mark {
   line-height: 1;
 }
 
+kbd {
+  display: inline-block;
+  border-width: var(--border-thin);
+  border-radius: var(--border-radius);
+  font-size: var(--s-1);
+  padding: 0 0.25em;
+  vertical-align: middle;
+}
+
 /* Lists */
 ol, ul {
   margin-left: var(--s1);
@@ -94,10 +103,11 @@ button {
 /* Code */
 code {
   font-family: monospace;
-  padding: 0.25em;
+  padding: 0 0.25em;
   line-height: var(--line-height-small);
   background-color: var(--color-dark);
   color: var(--color-light);
+  white-space: nowrap;
 }
 
 pre code {

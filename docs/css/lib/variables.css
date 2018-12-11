@@ -32,6 +32,9 @@
   --border-thin: 3px;
   --border-thick: 6px;
 
+  /* Border radius */
+  --border-radius: 0.25rem;
+
   /* Outline (focus) style */
   --outline: var(--border-thin) solid var(--color-mid);
 

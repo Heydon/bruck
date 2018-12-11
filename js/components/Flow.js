@@ -74,7 +74,7 @@ export default class Flow extends HTMLElement {
     this.nextBtn = this.shadowRoot.querySelector('[aria-label="next"]');
     this.prevBtn.disabled = true;
 
-    this.switchElem = (index) => {
+    this.goTo = (index) => {
       let currentElem = this.elems.find(elem => !elem.hidden);
       let newElem = this.elems[index];
 
@@ -89,13 +89,13 @@ export default class Flow extends HTMLElement {
 
     this.prev = () => {
       let currentIndex = this.elems.findIndex(elem => !elem.hidden);
-      this.switchElem(currentIndex - 1);
+      this.goTo(currentIndex - 1);
     }
 
 
     this.next = () => {
       let currentIndex = this.elems.findIndex(elem => !elem.hidden);
-      this.switchElem(currentIndex + 1);
+      this.goTo(currentIndex + 1);
     }
 
     this.prevBtn.onclick = () => this.prev();

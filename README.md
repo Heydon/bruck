@@ -19,34 +19,40 @@
 4. Serve by using something like [http-server](https://www.npmjs.com/package/http-server) at the root
 5. That's pretty much it. Requests and contribution offers welcome.
 
-## Components
+## Documentation
 
 (Used in conjunction with the [utility styles](#utility-styles).)
 
-* [`<t-ext>`](#t-ext)
-* [`<w-ords>`](#w-ords)
-* [`<i-mage>`](#i-mage)
-* [`<b-ox>`](#b-ox)
-* [`<s-tack>`](#s-tack)
-* [`<g-rid>`](#g-rid)
-* [`<c-luster>`](#c-luster)
-* [`<s-pread>`](#s-pread)
-* [`<s-idebar>`](#s-idebar)
-* [`<l-ine>`](#l-ine)
-* [`<i-con>`](#i-con)
-* [`<p-rogress>`](#p-rogress)
-* [`<d-rawer>`](#d-rawer)
-* [`<s-creen>`](#s-creen)
-* [`<g-o>`](#g-o)
-* [`<f-low>`](#f-low)
-* [`<c-omment>`](#c-omment)
-* [`<c-lone>`](#c-lone)
-* [`<i-nput>`](#i-nput)
-* [`<s-elect>`](#s-elect)
-* [`<c-heckbox>`](#c-heckbox)
-* [`<r-adios>`](#r-adios)
-* `<o-utput>` ([see **Working with data**](#working-with-data))
-* `<m-odel>` ([see **Working with data**](#working-with-data))
+* [Components](#components)
+    * [`<t-ext>`](#t-ext)
+    * [`<w-ords>`](#w-ords)
+    * [`<i-mage>`](#i-mage)
+    * [`<b-ox>`](#b-ox)
+    * [`<s-tack>`](#s-tack)
+    * [`<g-rid>`](#g-rid)
+    * [`<c-luster>`](#c-luster)
+    * [`<s-pread>`](#s-pread)
+    * [`<s-idebar>`](#s-idebar)
+    * [`<l-ine>`](#l-ine)
+    * [`<i-con>`](#i-con)
+    * [`<p-rogress>`](#p-rogress)
+    * [`<d-rawer>`](#d-rawer)
+    * [`<s-creen>`](#s-creen)
+    * [`<g-o>`](#g-o)
+    * [`<f-low>`](#f-low)
+    * [`<c-omment>`](#c-omment)
+    * [`<c-lone>`](#c-lone)
+    * [`<i-nput>`](#i-nput)
+    * [`<s-elect>`](#s-elect)
+    * [`<c-heckbox>`](#c-heckbox)
+    * [`<r-adios>`](#r-adios)
+    * `<o-utput>` ([see **Working with data**](#working-with-data))
+    * `<m-odel>` ([see **Working with data**](#working-with-data))
+* [Utility classes](#utility-classes)
+* [Working with data](#working-with-data)
+* [Actions](#actions)
+
+## Components
 
 ### `<t-ext>`
 
@@ -749,6 +755,35 @@ The `<f-low>` component lets you group elements as a navigable sequence of steps
   </tr>
 </table>
 
+#### Methods
+
+<table>
+  <tr>
+    <th>
+      prev()
+    </th>
+    <td>
+      <p>Show the previous element</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      next()
+    </th>
+    <td>
+      <p>Show the next element</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      goTo(index)
+    </th>
+    <td>
+      <p>Show the element with the supplied index</p>
+    </td>
+  </tr>
+</table>
+
 #### Example
 
 ```html
@@ -1035,9 +1070,9 @@ The `<r-adios>` component is an abstraction of a basic radio group pattern (usin
 
 Standard `<fieldset>`, `<legend>`, `<label>`, `<input>` and `<select>` elements are used (and associated with one another) and convey the standard/expected semantics to assistive technologies.
 
-## Utility styles
+## Utility classes
 
-A set of utility classes. Each is prefixed with `u-`.
+A set of utility classes for global styling. Each is prefixed with `u-`.
 
 ### `u-invert`
 
@@ -1156,3 +1191,75 @@ Whenever a `<m-odel>` changes the data, a `'stored'` event is fired, alerting an
 ### Security
 
 Be careful not to allow the use of `<m-odel>` or the creation of `<o-utput>` on domains that expose personal/sensitive data. You may invite XSS.
+
+## Actions
+
+A set of global functions to be used with inline handlers (`onClick` etc). It is recommended these are used primarily on `<button>` elements, since they are accessible. Each action is prefixed with the `actions` namespace, like `onClick="actions.nameOfAction(arg1, arg2)"`.
+
+### `show(id)`
+
+Shows an element by its `id` (removes the `hidden` property).
+
+#### Example
+
+Shows the element with the `id` 'myElem':
+
+```html
+<button onClick="action.show('myElem')">SHow the element</button>
+```
+
+### `hide(id)`
+
+Hides an element by its `id` (adds the `hidden` property).
+
+#### Example
+
+Hides the element with the `id` 'myElem':
+
+```html
+<button onClick="action.hide('myElem')">SHow the element</button>
+```
+
+### `showHide(id)`
+
+Toggles the visibility of an element by its `id` (toggles the `hidden` property).
+
+#### Example
+
+Toggles the visibility of the element with the `id` 'myElem':
+
+```html
+<button onClick="action.showHide('myElem')">SHow the element</button>
+```
+
+### `flowPrev(this)`
+
+Shows the previous element/slide/step within a `<f-low>` component. **Must be called from inside the `<f-low>` component, with `this` as the only argument**.
+
+#### Example
+
+```html
+<button onClick="action.flowPrev(this)">Previous</button>
+```
+
+### `flowNext(this)`
+
+Shows the next element/slide/step within a `<f-low>` component. **Must be called from inside the `<f-low>` component, with `this` as the only argument**.
+
+#### Example
+
+```html
+<button onClick="action.flowNext(this)">Previous</button>
+```
+
+### `flowGoTo(this, index)`
+
+Shows the next element/slide/step within a `<f-low>` component. **Must be called from inside the `<f-low>` component, with `this` as the first argument**. The second argument is the index of the element/slide/step (not zero-based; the first item is `1`).
+
+#### Example
+
+Shows the third element/slide/step within the `<f-low>`.
+
+```html
+<button onClick="action.flowGoTo(this, 3)">Previous</button>
+```
