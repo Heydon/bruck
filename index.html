@@ -10,7 +10,26 @@
 </head>
 
 <body>
-  <!-- start here -->
+  <b-ox>
+    <button onClick="actions.showHide('theThing')">Show it</button>
+    <div id="theThing">
+      <p>Hi there!</p>
+    </div>
+  </b-ox>
+  <b-ox class="u-invert">
+    <f-low>
+      <div>
+        <h2>Step 1</h2>
+        <p><button onClick="actions.flowGoTo(this, 3)"></button></p>
+      </div>
+      <div>
+        <h2>Step 2</h2>
+      </div>
+      <div>
+        <h2>Step 3</h2>
+      </div>
+    </f-low>
+  </b-ox>
   <script src="js/app.js" type="module"></script>
 </body>
 

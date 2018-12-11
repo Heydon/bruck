@@ -25,8 +25,6 @@ import Stack from './components/Stack.js';
 import Grid from './components/Grid.js';
 import Words from './components/Words.js';
 
-
-
 /* Data */
 import data from './data.js';
 window.data = data;
@@ -43,6 +41,7 @@ customElements.whenDefined('o-utput').then(() => {
 /* actions */
 import Actions from './utilities/actions.js';
 window.actions = Actions;
+
 
 /* Paint worker properties */
 if ('registerProperty' in CSS) {
