@@ -6,8 +6,8 @@ export default class Output extends HTMLElement {
   constructor() {
     super();
     this.property = this.getAttribute('property');
-    if (!this.property) {
-      console.error('Each <o-utput> component must have an `property` attribute that corresponds to a data namespace');
+    if (!this.property || this.property === 'all') {
+      console.error('Each <o-utput> component must have a `property` attribute that corresponds to a property name on the global data object. The string \'all\' is reserved.');
       return;
     }
     this.template = this.innerHTML;

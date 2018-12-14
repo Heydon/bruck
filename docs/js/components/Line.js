@@ -14,8 +14,8 @@ export default class Line extends HTMLElement {
     this.gap = this.getAttribute('gap') || '1';
     this.between = this.getAttribute('between');
 
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = `
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
       <style>
         :host {
           display: block;
@@ -43,14 +43,16 @@ export default class Line extends HTMLElement {
       </div>
     `;
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
-
     if (this.between) {
-      separateNodes(
-        this.children,
-        `<div class="sep" aria-hidden="true">${this.between}</div>`
-      );
+      Promise.all([
+        customElements.whenDefined('g-rid'),
+        customElements.whenDefined('s-tack')
+      ]).then(() => {
+        separateNodes(
+          this.children,
+          `<div class="sep" aria-hidden="true">${this.between}</div>`
+        );
+      });
     }
   }
 

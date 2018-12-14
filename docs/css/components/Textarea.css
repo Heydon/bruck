@@ -1,0 +1,4 @@
+t-extarea textarea {
+  width: 100%;
+  min-height: calc(var(--s1) * 4);
+}

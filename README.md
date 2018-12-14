@@ -43,6 +43,7 @@
     * [`<c-omment>`](#c-omment)
     * [`<c-lone>`](#c-lone)
     * [`<i-nput>`](#i-nput)
+    * [`<t-extarea>`](#t-extarea)
     * [`<s-elect>`](#s-elect)
     * [`<c-heckbox>`](#c-heckbox)
     * [`<r-adios>`](#r-adios)
@@ -926,6 +927,50 @@ The `<i-nput>` component is an abstraction of a basic `type="text"` input/label,
 #### Accessibility information
 
 Standard `<label>` and `<input>` elements are used (and associated with one another) and convey the standard/expected semantics to assistive technologies.
+
+### `<t-extarea>`
+
+The `<t-extarea>` component is an abstraction of a basic `<textarea>` with accessible labeling built in.
+
+#### Props
+
+<table>
+  <tr>
+    <th>
+      label
+    </th>
+    <td>
+      <p>A string for the `<label>` element e.g. <code>label="Tell us about your favorite animal"</code></p>
+      <p><strong>Default:</strong> <code>'Text box'</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      name (required)
+    </th>
+    <td>
+      <p>A valid <code>name</code> value (mapping to the standard <code>name</code> attribute), e.g. <code>name="favoriteAnimal"</code></p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      value
+    </th>
+    <td>
+      <p>Optionally prepopulate the <code>&lt;textarea></code>, e.g. <code>value="The aardvark is my favorite because it is telepathic"</code></p>
+    </td>
+  </tr>
+</table>
+
+#### Example
+
+```html
+<t-extarea name="favoriteAnimal" label="Tell us about your favorite animal"></t-extarea>
+```
+
+#### Accessibility information
+
+Standard `<label>` and `<textarea>` elements are used (and associated with one another) and convey the standard/expected semantics to assistive technologies.
 
 ### `<s-elect>`
 

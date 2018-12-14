@@ -17,6 +17,7 @@ import Sidebar from './components/Sidebar.js';
 import Progress from './components/Progress.js';
 import Model from './components/Model.js';
 import Input from './components/Input.js';
+import Textarea from './components/Textarea.js';
 import Select from './components/Select.js';
 import Radios from './components/Radios.js';
 import Checkbox from './components/Checkbox.js';

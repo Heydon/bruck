@@ -7,6 +7,7 @@ export default class Stack extends HTMLElement {
     super();
     this.gap = this.getAttribute('gap') || '1';
     this.times = this.getAttribute('repeat') || undefined;
+    this.lines = this.hasAttribute('lines');
     this.content = this.innerHTML;
 
     const tmpl = document.createElement('template');
@@ -15,6 +16,19 @@ export default class Stack extends HTMLElement {
         :host {
           grid-gap: var(--s${this.gap});
         }
+
+        ${this.lines ?
+        `::slotted(*) {
+          border-top-width: var(--border-thin) !important;
+          padding-top: var(--s${this.gap}) !important;
+        }
+
+        ::slotted(:last-child) {
+          border-bottom-width: var(--border-thin) !important;
+          padding-bottom: var(--s${this.gap}) !important;
+        }`
+        : ''}
+        
       </style>
       <slot></slot>
     `;
