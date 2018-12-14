@@ -6,8 +6,8 @@ export default class Model extends HTMLElement {
   constructor() {
     super();
     this.property = this.getAttribute('property');
-    if (!this.property) {
-      console.error('Each <m-odel> component must have a unique `property` attribute representing a property on the global data object');
+    if (!this.property || this.property === 'all') {
+      console.error('Each <m-odel> component must have a unique `property` attribute representing a property on the global data object. The string \'all\' is reserved.');
       return;
     }
     this.form = this.querySelector('form');
