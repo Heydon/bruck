@@ -67,15 +67,11 @@ if ('paintWorklet' in CSS) {
 }
 
 /* Handle <s-creen> elements on hash change */
-const screens = document.querySelectorAll('s-creen');
+const screens = Array.from(document.querySelectorAll('s-creen'));
 const setScreen = () => {
-  let screen = Array.prototype.find.call(screens, s => {
-    return s.id === window.location.hash.substring(1);
-  });
+  let screen = screens.find(s => s.id === window.location.hash.substring(1));
   if (screen) {
-    Array.prototype.forEach.call(screens, s => {
-      s.removeAttribute('current');
-    });
+    screens.forEach(s => s.removeAttribute('current'));
     screen.setAttribute('current', 'current');
   }
 }
@@ -88,6 +84,4 @@ window.addEventListener('load', () => {
   }
 });
 
-window.addEventListener('hashchange', () => {
-  setScreen();
-});
+window.addEventListener('hashchange', setScreen);
