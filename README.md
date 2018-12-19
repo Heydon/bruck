@@ -1,6 +1,6 @@
 # ![Bruck](logo.png)
 
-**Bruck** is a lo-fi prototyping system made with web components. Quickly create and comment on interface layouts. The output is screen reader accessible, and responsive without you having to author breakpoints. 
+**Bruck** is a lo-fi prototyping system made with web components. Quickly create and comment on interface layouts. The output is screen reader accessible, and responsive without you having to author breakpoints.
 
 [**Try out the demo**](https://heydon.github.io/bruck/)
 
@@ -21,7 +21,7 @@
 
 ## Documentation
 
-(Used in conjunction with the [utility styles](#utility-styles).)
+(Used in conjunction with the [utility classes](#utility-classes).)
 
 * [Components](#components)
     * [`<t-ext>`](#t-ext)
@@ -335,7 +335,7 @@ _"Grid of [# of child elements] elements, each [itemWidth] wide"_
 
 ### `<c-luster>`
 
-The `<c-luster>` component uses Flexbox to let you cluster items around the horizontal center of their context. Items wrap where there is no room for them all on one line, maintaining responsiveness. 
+The `<c-luster>` component uses Flexbox to let you cluster items around the horizontal center of their context. Items wrap where there is no room for them all on one line, maintaining responsiveness.
 
 #### Props
 
@@ -376,7 +376,7 @@ _"Set of [# of child elements] centrally grouped elements"_
 
 ### `<s-pread>`
 
-The `<s-pread>` component uses Flexbox to let you separate items horizontally. Items wrap where there is no room for them all on one line, maintaining responsiveness. 
+The `<s-pread>` component uses Flexbox to let you separate items horizontally. Items wrap where there is no room for them all on one line, maintaining responsiveness.
 
 #### Props
 
@@ -422,7 +422,7 @@ The `<s-pread>` component uses Flexbox to let you separate items horizontally. I
 
 ### `<s-idebar>`
 
-The `<s-idebar>` component wraps two child elements, with one as the designated 'sidebar' and the other taking up the remaining space. If more than two child elements are supplied, construction ceases and an error is returned. 
+The `<s-idebar>` component wraps two child elements, with one as the designated 'sidebar' and the other taking up the remaining space. If more than two child elements are supplied, construction ceases and an error is returned.
 
 The designated sidebar only _appears_ as a sidebar where it is narrower than its sibling. Otherwise, Flexbox reorganizes the two elements into a single column (uses the `flex-grow: 999` hack).
 
@@ -635,9 +635,9 @@ The `<c-enter>` component simply creates a centralized column (with horizontal m
 
 NA
 
-### `<d-rawer>` 
+### `<d-rawer>`
 
-A basic collapsible section, as you might find in an accordion. The first child (light DOM) element is use to form a button. This is wrapped in a heading, for which the level can be adjusted using the `level` prop. 
+A basic collapsible section, as you might find in an accordion. The first child (light DOM) element is use to form a button. This is wrapped in a heading, for which the level can be adjusted using the `level` prop.
 
 #### Props
 
@@ -675,7 +675,7 @@ A basic collapsible section, as you might find in an accordion. The first child 
 
 _"Collapsible section"_
 
-### `<s-creen>` 
+### `<s-creen>`
 
 The `<s-creen>` element lets you define whole screens (like those defined within a routed Single Page Application). You can link between screens using either the `<g-o>` call-to-action component, or regular links pointing to hash fragments that match the screens' `id`s.
 
@@ -720,7 +720,7 @@ The `<s-creen>` with the `index` `id` is displayed on page load.
 
 The value of the <code>label</code> prop (or the <code>id</code> value as a fallback).
 
-### `<g-o>` 
+### `<g-o>`
 
 A call-to-action type component, specifically for linking between `<s-creen>` elements.
 
@@ -1130,7 +1130,7 @@ A set of utility classes for global styling. Each is prefixed with `u-`.
 
 ### `u-invert`
 
-With `class="u-invert"` a CSS filter inverts the colors of the element in hand. 
+With `class="u-invert"` a CSS filter inverts the colors of the element in hand.
 
 ### `u-text-center`, `u-text-left`, `u-text-right`
 
