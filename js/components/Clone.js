@@ -3,12 +3,12 @@
 export default class Clone extends HTMLElement {
   constructor() {
     super();
-    this.id = this.getAttribute('of');
-    if (!this.id) {
+    this.of = this.getAttribute('of');
+    if (!this.of) {
       console.error('Each <c-lone> element must have an `of` attribute pointing to a <template> id.');
       return;
     }
-    this.template = document.getElementById(this.id);
+    this.template = document.getElementById(this.of);
     Promise.all([
       customElements.whenDefined('g-rid'),
       customElements.whenDefined('s-tack')
