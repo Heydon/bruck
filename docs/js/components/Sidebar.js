@@ -24,7 +24,8 @@ export default class Sidebar extends HTMLElement {
         }
 
         ::slotted(*) {
-          flex: 1 1 ${this.width};
+          flex-grow: 1;
+          flex-basis: ${this.width};
           margin: calc(var(--s${this.gap}) * 0.5) !important;
         }
 
@@ -38,7 +39,7 @@ export default class Sidebar extends HTMLElement {
       </div>
     `;
 
-    const not = this.on === 'left' ? 1 : 0;
+    const not = this.to === 'left' ? 1 : 0;
     this.children[not].classList.add('not-sidebar');
   }
 
