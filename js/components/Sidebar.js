@@ -40,7 +40,6 @@ export default class Sidebar extends HTMLElement {
     `;
 
     const not = this.to === 'left' ? 1 : 0;
-    console.log(this.children);
     this.children[not].classList.add('not-sidebar');
   }
 
