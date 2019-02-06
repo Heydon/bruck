@@ -39,7 +39,7 @@ export default class Sidebar extends HTMLElement {
         }
 
         ::slotted(.not-sidebar) {
-          flex: 9999;
+          flex-grow: 9999;
           min-width: 50%;
         }
       </style>

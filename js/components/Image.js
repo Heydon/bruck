@@ -26,8 +26,7 @@ export default class Image extends HTMLElement {
 
         figure > div {
           display: block;
-          border: var(--border-thin) solid var(--color-dark);
-          background-image: paint(image-cross);
+          border: var(--border-thin) dashed var(--color-dark);
           padding-top: ${padding};
         }
 
