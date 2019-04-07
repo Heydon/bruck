@@ -28,7 +28,6 @@ export default class Stack extends HTMLElement {
           padding-bottom: var(--s${this.gap}) !important;
         }`
         : ''}
-        
       </style>
       <slot></slot>
     `;

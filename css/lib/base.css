@@ -13,9 +13,6 @@ html {
   color: inherit;
   background-color: inherit;
   box-sizing: border-box;
-  border-color: var(--color-dark);
-  border-style: solid;
-  border-width: 0;
   scroll-behavior: smooth;
 }
 

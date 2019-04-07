@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "jest",
+    "serve": "http-server . -c-0",
     "build": "mkdir -p docs && cp editor.html docs/index.html && cp -r css icons js docs/"
   },
   "repository": {

@@ -27,6 +27,7 @@
     * [`<t-ext>`](#t-ext)
     * [`<w-ords>`](#w-ords)
     * [`<i-mage>`](#i-mage)
+    * [`<c-enter>`](#c-enter)
     * [`<b-ox>`](#b-ox)
     * [`<s-tack>`](#s-tack)
     * [`<g-rid>`](#g-rid)

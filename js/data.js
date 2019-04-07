@@ -7,7 +7,14 @@ export default {
     {
       firstName: 'Hulk',
       lastName: 'Hogan'
+    },
+    {
+      firstName: 'Lara',
+      lastName: 'Hogan'
+    },
+    {
+      firstName: 'Paul',
+      lastName: 'Hogan'
     }
-  ],
-  thing: 'word'
+  ]
 }

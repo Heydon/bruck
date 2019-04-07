@@ -1,13 +1,4 @@
-/*
-Usage: 
-  <c-enter maxWidth="50ch">
-    <p>Child</p>
-    <div>Child</div>
-    <t-ext words="20,30"></t-ext>
-  </c-enter>
-Attributes: 
-  - maxWidth: [CSS width value] (default: var(--measure))
-*/
+// https://github.com/Heydon/bruck#c-enter
 
 export default class Center extends HTMLElement {
   constructor() {
