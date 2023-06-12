@@ -1,8 +1,0 @@
-i-nput {
-  display: block;
-}
-
-i-nput input {
-  margin-top: var(--s-4);
-  width: 100%;
-}

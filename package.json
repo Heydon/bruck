@@ -1,12 +1,15 @@
 {
   "name": "bruck",
+  "type": "module",
   "version": "0.0.1",
-  "description": "A web components-based accessible prototyping tool",
+  "description": "The declarative interface prototyping tool.",
   "main": "index.html",
   "scripts": {
-    "test": "jest",
-    "serve": "http-server . -c-0",
-    "build": "mkdir -p docs && cp editor.html docs/index.html && cp -r css icons js docs/"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "lint": "npx eslint ./elements/** --fix",
+    "analyze": "npx cem analyze --globs 'elements/**/*'",
+    "build": "npm run analyze && node utils/build.js",
+    "start": "live-server build"
   },
   "repository": {
     "type": "git",
@@ -18,12 +21,17 @@
     "url": "https://github.com/Heydon/bruck/issues"
   },
   "homepage": "https://github.com/Heydon/bruck#readme",
-  "dependencies": {},
+  "dependencies": {
+    "fs-jetpack": "^5.1.0",
+    "live-server": "^1.2.2",
+    "nunjucks": "^3.2.4"
+  },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "babel-preset-env": "^1.7.0",
-    "regenerator-runtime": "^0.13.1"
+    "@custom-elements-manifest/analyzer": "^0.6.6",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "prettier": "2.8.1"
   }
 }

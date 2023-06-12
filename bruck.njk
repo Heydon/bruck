@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title>
+  </head>
+  <body>
+    <e-llipse></e-llipse>
+    <script type="module">
+      {% for module in manifest.modules %}import { {{ module.exports[0].name }} } from './js/{{ module.path }}'; {% endfor %}
+      {% for module in manifest.modules %}{% set name = module.exports[0].name %}{% set tagName = module.declarations[0].tagName %}{% if tagName %}customElements.define('{{tagName}}', {{name}}); {% endif %}{% endfor %}
+    </script>
+  </body>
+</html>
