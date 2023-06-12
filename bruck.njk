@@ -5,7 +5,9 @@
     <title>{{ pageTitle }}</title>
   </head>
   <body>
-    <e-llipse></e-llipse>
+    <s-tripes>
+     <h1>Fucking hell oh no</h1>
+    </s-tripes>
     <script type="module">
       {% for module in manifest.modules %}import { {{ module.exports[0].name }} } from './js/{{ module.path }}'; {% endfor %}
       {% for module in manifest.modules %}{% set name = module.exports[0].name %}{% set tagName = module.declarations[0].tagName %}{% if tagName %}customElements.define('{{tagName}}', {{name}}); {% endif %}{% endfor %}

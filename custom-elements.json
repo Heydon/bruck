@@ -101,6 +101,143 @@
     },
     {
       "kind": "javascript-module",
+      "path": "elements/pattern/Pattern.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PatternElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/elements/Base.js"
+          },
+          "summary": "The base element for pattern elements"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PatternElement",
+          "declaration": {
+            "name": "PatternElement",
+            "module": "elements/pattern/Pattern.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "elements/shape/Shape.js",
       "declarations": [
         {
@@ -254,6 +391,356 @@
           "declaration": {
             "name": "ShapeElement",
             "module": "elements/shape/Shape.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/pattern/Dots/Dots.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DotsElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "compile"
+            },
+            {
+              "kind": "field",
+              "name": "size"
+            },
+            {
+              "kind": "field",
+              "name": "radius"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "template",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the space taken up by each part of the pattern",
+              "name": "size"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A float between 0 and 1 representing the radius of the dot relative to the size of the pattern",
+              "name": "radius"
+            }
+          ],
+          "superclass": {
+            "name": "PatternElement",
+            "module": "/elements/pattern/Pattern.js"
+          },
+          "tagName": "d-ots",
+          "summary": "A mask that applies a dotted pattern to descendant elements",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DotsElement",
+          "declaration": {
+            "name": "DotsElement",
+            "module": "elements/pattern/Dots/Dots.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/pattern/Stripes/Stripes.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "StripesElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "compile"
+            },
+            {
+              "kind": "field",
+              "name": "width"
+            },
+            {
+              "kind": "field",
+              "name": "space"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "template",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the width of each stripe",
+              "name": "width"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the space between each stripe",
+              "name": "space"
+            }
+          ],
+          "superclass": {
+            "name": "PatternElement",
+            "module": "/elements/pattern/Pattern.js"
+          },
+          "tagName": "s-tripes",
+          "summary": "A mask that applies a striped pattern to descendant elements",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "StripesElement",
+          "declaration": {
+            "name": "StripesElement",
+            "module": "elements/pattern/Stripes/Stripes.js"
           }
         }
       ]
@@ -584,187 +1071,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/shape/Rectangle/Rectangle.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "RectangleElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "draw",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "createCanvas",
-              "parameters": [
-                {
-                  "name": "aspectRatio"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "aspectRatio",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "catchType",
-              "parameters": [
-                {
-                  "name": "val"
-                },
-                {
-                  "name": "target"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "ShapeElement",
-            "module": "/elements/shape/Shape.js"
-          },
-          "tagName": "r-ectangle",
-          "summary": "A rectangle shape",
-          "customElement": true,
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "a CSS `aspect-ratio` value",
-              "name": "aspectratio",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "RectangleElement",
-          "declaration": {
-            "name": "RectangleElement",
-            "module": "elements/shape/Rectangle/Rectangle.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "elements/shape/Polygon/Polygon.js",
       "declarations": [
         {
@@ -951,6 +1257,187 @@
           "declaration": {
             "name": "PolygonElement",
             "module": "elements/shape/Polygon/Polygon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/shape/Rectangle/Rectangle.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "RectangleElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "draw",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createCanvas",
+              "parameters": [
+                {
+                  "name": "aspectRatio"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "aspectRatio",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ShapeElement",
+            "module": "/elements/shape/Shape.js"
+          },
+          "tagName": "r-ectangle",
+          "summary": "A rectangle shape",
+          "customElement": true,
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "a CSS `aspect-ratio` value",
+              "name": "aspectratio",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RectangleElement",
+          "declaration": {
+            "name": "RectangleElement",
+            "module": "elements/shape/Rectangle/Rectangle.js"
           }
         }
       ]
