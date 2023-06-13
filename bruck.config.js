@@ -1,7 +1,7 @@
 export default {
   pageTitle: 'Bruck innit',
-  theme: {
-    'color-fore': '#fff',
+  tokens: {
+    'color-fore': '#c0c0c0',
     'color-back': '#000'
   }
 }

@@ -1,4 +1,4 @@
-@import url('./lib/theme.css') layer(theme);
+@import url('./lib/tokens.css') layer(theme);
 @import url('./lib/elements.css') layer(elements);
 
 

@@ -747,6 +747,149 @@
     },
     {
       "kind": "javascript-module",
+      "path": "elements/shape/Line/Line.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LineElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "thickness"
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/elements/Base.js"
+          },
+          "tagName": "l-ine",
+          "summary": "A simple line / horizontal rule",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LineElement",
+          "declaration": {
+            "name": "LineElement",
+            "module": "elements/shape/Line/Line.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "elements/shape/Ellipse/Ellipse.js",
       "declarations": [
         {
@@ -922,149 +1065,6 @@
           "declaration": {
             "name": "EllipseElement",
             "module": "elements/shape/Ellipse/Ellipse.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/shape/Line/Line.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "LineElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "field",
-              "name": "thickness"
-            },
-            {
-              "kind": "field",
-              "name": "template"
-            },
-            {
-              "kind": "method",
-              "name": "catchType",
-              "parameters": [
-                {
-                  "name": "val"
-                },
-                {
-                  "name": "target"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/elements/Base.js"
-          },
-          "tagName": "l-ine",
-          "summary": "A simple line / horizontal rule",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "LineElement",
-          "declaration": {
-            "name": "LineElement",
-            "module": "elements/shape/Line/Line.js"
           }
         }
       ]
