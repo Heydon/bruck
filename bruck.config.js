@@ -1,4 +1,7 @@
 export default {
   pageTitle: 'Bruck innit',
-  includeCategories: ['shape', 'pattern', 'layout']
+  theme: {
+    'color-fore': '#fff',
+    'color-back': '#000'
+  }
 }

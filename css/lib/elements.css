@@ -1,0 +1,30 @@
+:root {
+  color: var(--color-fore);
+  background-color: var(--color-back);
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: clamp(100%, 1rem + 0.75vw, 1.5rem);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.125;
+}

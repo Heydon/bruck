@@ -1675,14 +1675,6 @@
               "name": "kind"
             },
             {
-              "kind": "field",
-              "name": "ariaLabel",
-              "type": {
-                "text": "string"
-              },
-              "default": "'triangle'"
-            },
-            {
               "kind": "method",
               "name": "createCanvas",
               "parameters": [

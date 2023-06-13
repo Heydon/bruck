@@ -8,7 +8,6 @@ import { ShapeElement } from '../Shape.js';
 class TriangleElement extends ShapeElement {
 	constructor() {
 		super();
-		this.internals.ariaLabel = 'triangle';
 	}
   
 	draw() {
