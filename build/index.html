@@ -6,6 +6,14 @@
     <title>Bruck innit</title>
   </head>
   <body>
+    <template id="fucko">
+      <s-tack>
+        <p>piss</p>
+        <p>shit</p>
+        <p>fuck</p>
+      </s-tack>
+    </template>
+    <c-lone of="fucko"></c-lone>
     <s-idebar sideWidth="10rem">
       <div slot="start">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est unde laborum non ullam facilis culpa rem vitae natus eos, nisi numquam quia quas eveniet blanditiis et? Sequi ipsa tempora corporis.</p>
@@ -42,8 +50,8 @@
       </g-rid>
     </c-enter>
     <script type="module">
-      import { BaseElement } from './js/elements/Base.js'; import { PatternElement } from './js/elements/pattern/Pattern.js'; import { ShapeElement } from './js/elements/shape/Shape.js'; import { LayoutElement } from './js/elements/layout/Layout.js'; import { DotsElement } from './js/elements/pattern/Dots/Dots.js'; import { StripesElement } from './js/elements/pattern/Stripes/Stripes.js'; import { EllipseElement } from './js/elements/shape/Ellipse/Ellipse.js'; import { LineElement } from './js/elements/shape/Line/Line.js'; import { PolygonElement } from './js/elements/shape/Polygon/Polygon.js'; import { RectangleElement } from './js/elements/shape/Rectangle/Rectangle.js'; import { StarElement } from './js/elements/shape/Star/Star.js'; import { TriangleElement } from './js/elements/shape/Triangle/Triangle.js'; import { CenterElement } from './js/elements/layout/Center/Center.js'; import { ClusterElement } from './js/elements/layout/Cluster/Cluster.js'; import { GridElement } from './js/elements/layout/Grid/Grid.js'; import { RepelElement } from './js/elements/layout/Repel/Repel.js'; import { SidebarElement } from './js/elements/layout/Sidebar/Sidebar.js'; import { StackElement } from './js/elements/layout/Stack/Stack.js'; 
-      customElements.define('d-ots', DotsElement); customElements.define('s-tripes', StripesElement); customElements.define('e-llipse', EllipseElement); customElements.define('l-ine', LineElement); customElements.define('p-olygon', PolygonElement); customElements.define('r-ectangle', RectangleElement); customElements.define('s-tar', StarElement); customElements.define('t-riangle', TriangleElement); customElements.define('c-enter', CenterElement); customElements.define('c-luster', ClusterElement); customElements.define('g-rid', GridElement); customElements.define('r-epel', RepelElement); customElements.define('s-idebar', SidebarElement); customElements.define('s-tack', StackElement); 
+      import { BaseElement } from './js/elements/Base.js'; import { PatternElement } from './js/elements/pattern/Pattern.js'; import { LayoutElement } from './js/elements/layout/Layout.js'; import { ShapeElement } from './js/elements/shape/Shape.js'; import { CloneElement } from './js/elements/composition/Clone/Clone.js'; import { DotsElement } from './js/elements/pattern/Dots/Dots.js'; import { StripesElement } from './js/elements/pattern/Stripes/Stripes.js'; import { CenterElement } from './js/elements/layout/Center/Center.js'; import { ClusterElement } from './js/elements/layout/Cluster/Cluster.js'; import { GridElement } from './js/elements/layout/Grid/Grid.js'; import { RepelElement } from './js/elements/layout/Repel/Repel.js'; import { SidebarElement } from './js/elements/layout/Sidebar/Sidebar.js'; import { StackElement } from './js/elements/layout/Stack/Stack.js'; import { EllipseElement } from './js/elements/shape/Ellipse/Ellipse.js'; import { LineElement } from './js/elements/shape/Line/Line.js'; import { PolygonElement } from './js/elements/shape/Polygon/Polygon.js'; import { RectangleElement } from './js/elements/shape/Rectangle/Rectangle.js'; import { StarElement } from './js/elements/shape/Star/Star.js'; import { TriangleElement } from './js/elements/shape/Triangle/Triangle.js'; 
+      customElements.define('c-lone', CloneElement); customElements.define('d-ots', DotsElement); customElements.define('s-tripes', StripesElement); customElements.define('c-enter', CenterElement); customElements.define('c-luster', ClusterElement); customElements.define('g-rid', GridElement); customElements.define('r-epel', RepelElement); customElements.define('s-idebar', SidebarElement); customElements.define('s-tack', StackElement); customElements.define('e-llipse', EllipseElement); customElements.define('l-ine', LineElement); customElements.define('p-olygon', PolygonElement); customElements.define('r-ectangle', RectangleElement); customElements.define('s-tar', StarElement); customElements.define('t-riangle', TriangleElement); 
     </script>
   </body>
 </html>
