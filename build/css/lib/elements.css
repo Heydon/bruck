@@ -10,7 +10,9 @@
   box-sizing: border-box;
 }
 
-* {
+body, h1, h2, h3, h4, h5, p, ul, ol, li, dl, 
+dd, blockquote, figure, hr, menu, dir , fieldset,
+pre, input {
   margin: 0;
   padding: 0;
   overflow-wrap: break-word;

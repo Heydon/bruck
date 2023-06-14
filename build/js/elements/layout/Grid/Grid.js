@@ -23,7 +23,7 @@ class GridElement extends LayoutElement {
 					${this.masonry ? 'grid-template-rows: masonry' : ''}
         }
       </style>
-      <slot></slot>    
+      <slot></slot>
     `;
 	}
   

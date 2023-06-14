@@ -18,7 +18,7 @@ class LayoutElement extends BaseElement {
   
 	render() {
 		this.template.innerHTML = this.compile();
-		this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+		this.shadowRoot.replaceChildren(this.template.content.cloneNode(true));
 	}
   
 	get gap() {
