@@ -6,8 +6,21 @@
     <title>Bruck innit</title>
   </head>
   <body>
-    <c-enter>
-      <g-rid items="center">
+    <s-tack>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
+      <s-tack gap="3rem">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
+      </s-tack>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
+    </s-tack>
+    <c-luster justify="flex-end">
+      <button>Confirm</button>
+      <button>Cancel</button>
+    </c-luster>
+    <c-enter max="50rem">
+      <g-rid>
         <t-riangle aspectratio="1/2"></t-riangle>
         <s-tar aspectRatio="16/9"></s-tar>
         <p-olygon sides="7" aspectratio="3/2"></p-olygon>
@@ -19,8 +32,8 @@
       </g-rid>
     </c-enter>
     <script type="module">
-      import { BaseElement } from './js/elements/Base.js'; import { LayoutElement } from './js/elements/layout/Layout.js'; import { ShapeElement } from './js/elements/shape/Shape.js'; import { PatternElement } from './js/elements/pattern/Pattern.js'; import { CenterElement } from './js/elements/layout/Center/Center.js'; import { GridElement } from './js/elements/layout/Grid/Grid.js'; import { EllipseElement } from './js/elements/shape/Ellipse/Ellipse.js'; import { LineElement } from './js/elements/shape/Line/Line.js'; import { PolygonElement } from './js/elements/shape/Polygon/Polygon.js'; import { RectangleElement } from './js/elements/shape/Rectangle/Rectangle.js'; import { StarElement } from './js/elements/shape/Star/Star.js'; import { TriangleElement } from './js/elements/shape/Triangle/Triangle.js'; import { DotsElement } from './js/elements/pattern/Dots/Dots.js'; import { StripesElement } from './js/elements/pattern/Stripes/Stripes.js'; 
-      customElements.define('c-enter', CenterElement); customElements.define('g-rid', GridElement); customElements.define('e-llipse', EllipseElement); customElements.define('l-ine', LineElement); customElements.define('p-olygon', PolygonElement); customElements.define('r-ectangle', RectangleElement); customElements.define('s-tar', StarElement); customElements.define('t-riangle', TriangleElement); customElements.define('d-ots', DotsElement); customElements.define('s-tripes', StripesElement); 
+      import { BaseElement } from './js/elements/Base.js'; import { PatternElement } from './js/elements/pattern/Pattern.js'; import { LayoutElement } from './js/elements/layout/Layout.js'; import { ShapeElement } from './js/elements/shape/Shape.js'; import { DotsElement } from './js/elements/pattern/Dots/Dots.js'; import { StripesElement } from './js/elements/pattern/Stripes/Stripes.js'; import { CenterElement } from './js/elements/layout/Center/Center.js'; import { ClusterElement } from './js/elements/layout/Cluster/Cluster.js'; import { GridElement } from './js/elements/layout/Grid/Grid.js'; import { StackElement } from './js/elements/layout/Stack/Stack.js'; import { EllipseElement } from './js/elements/shape/Ellipse/Ellipse.js'; import { LineElement } from './js/elements/shape/Line/Line.js'; import { PolygonElement } from './js/elements/shape/Polygon/Polygon.js'; import { RectangleElement } from './js/elements/shape/Rectangle/Rectangle.js'; import { StarElement } from './js/elements/shape/Star/Star.js'; import { TriangleElement } from './js/elements/shape/Triangle/Triangle.js'; 
+      customElements.define('d-ots', DotsElement); customElements.define('s-tripes', StripesElement); customElements.define('c-enter', CenterElement); customElements.define('c-luster', ClusterElement); customElements.define('g-rid', GridElement); customElements.define('s-tack', StackElement); customElements.define('e-llipse', EllipseElement); customElements.define('l-ine', LineElement); customElements.define('p-olygon', PolygonElement); customElements.define('r-ectangle', RectangleElement); customElements.define('s-tar', StarElement); customElements.define('t-riangle', TriangleElement); 
     </script>
   </body>
 </html>
