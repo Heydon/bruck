@@ -1,5 +1,2 @@
-@import url('./lib/tokens.css') layer(theme);
-@import url('./lib/elements.css') layer(elements);
-
-
-
+@import url('./lib/tokens.css');
+@import url('./lib/elements.css');

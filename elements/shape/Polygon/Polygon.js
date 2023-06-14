@@ -12,10 +12,12 @@ class PolygonElement extends ShapeElement {
 		let h = this.canvasHeight;
 		let radius = Math.min(w, h) / 2;
 		let angle  = Math.PI / sides;
+		let centerX = w / 2;
+		let centerY = h / 2;
 		let points = [];
 		for (let i = 0; i < sides * 2; i++) {
-			points.push(radius + radius * Math.sin(i * angle));
-			points.push(radius - radius * Math.cos(i * angle));
+			points.push(centerX + radius * Math.sin(i * angle));
+			points.push(centerY - radius * Math.cos(i * angle));
 		}
 		return `<polygon fill="currentColor" points="${points}"></polygon>`;
 	}

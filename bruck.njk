@@ -6,16 +6,18 @@
     <title>{{ pageTitle }}</title>
   </head>
   <body>
-    <g-rid items="center">
-      <t-riangle aspectratio="1/2"></t-riangle>
-      <t-riangle></t-riangle>
-      <t-riangle aspectratio="3/2"></t-riangle>
-      <t-riangle></t-riangle>
-      <t-riangle aspectratio="16/9"></t-riangle>
-      <t-riangle></t-riangle>
-      <t-riangle aspectratio="1/2"></t-riangle>
-      <t-riangle></t-riangle>
-    </g-rid>
+    <c-enter>
+      <g-rid items="center">
+        <t-riangle aspectratio="1/2"></t-riangle>
+        <s-tar aspectRatio="16/9"></s-tar>
+        <p-olygon sides="7" aspectratio="3/2"></p-olygon>
+        <e-llipse></e-llipse>
+        <r-ectangle aspectratio="16/9"></r-ectangle>
+        <t-riangle></t-riangle>
+        <t-riangle aspectratio="1/2"></t-riangle>
+        <t-riangle></t-riangle>
+      </g-rid>
+    </c-enter>
     <script type="module">
       {% for module in manifest.modules %}import { {{ module.exports[0].name }} } from './js/{{ module.path }}'; {% endfor %}
       {% for module in manifest.modules %}{% set name = module.exports[0].name %}{% set tagName = module.declarations[0].tagName %}{% if tagName %}customElements.define('{{tagName}}', {{name}}); {% endif %}{% endfor %}

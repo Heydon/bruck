@@ -9,7 +9,6 @@ import { ShapeElement } from '../Shape.js';
 class StarElement extends ShapeElement {
 	constructor() {
 		super();
-		this.internals.ariaLabel = 'star';
 	}
 
 	draw() {
