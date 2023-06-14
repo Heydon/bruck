@@ -15,6 +15,10 @@ class LineElement extends BaseElement {
 		this.shadowRoot.innerHTML = '';
 		this.template.innerHTML = `
       <style>
+				:host {
+					display: contents;
+				}
+
         hr {
           border-top: ${this.thickness} solid;
         }

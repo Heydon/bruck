@@ -101,16 +101,28 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/pattern/Pattern.js",
+      "path": "elements/layout/Layout.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "PatternElement",
+          "name": "LayoutElement",
           "members": [
             {
               "kind": "method",
+              "name": "compile"
+            },
+            {
+              "kind": "method",
               "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "gap"
+            },
+            {
+              "kind": "field",
+              "name": "items"
             },
             {
               "kind": "field",
@@ -218,20 +230,29 @@
               }
             }
           ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "the spacing (gutter) between child elements * @attr {string} items - the CSS `align-items` value",
+              "name": "gap"
+            }
+          ],
           "superclass": {
             "name": "BaseElement",
             "module": "/elements/Base.js"
           },
-          "summary": "The base element for pattern elements"
+          "summary": "The base element used for constructing layouts. Not to be rendered itself."
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "PatternElement",
+          "name": "LayoutElement",
           "declaration": {
-            "name": "PatternElement",
-            "module": "elements/pattern/Pattern.js"
+            "name": "LayoutElement",
+            "module": "elements/layout/Layout.js"
           }
         }
       ]
@@ -397,39 +418,67 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/pattern/Dots/Dots.js",
+      "path": "elements/layout/Grid/Grid.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "DotsElement",
+          "name": "GridElement",
           "members": [
             {
               "kind": "method",
-              "name": "compile"
+              "name": "compile",
+              "inheritedFrom": {
+                "name": "LayoutElement",
+                "module": "elements/layout/Layout.js"
+              }
             },
             {
               "kind": "field",
-              "name": "size"
+              "name": "min"
             },
             {
               "kind": "field",
-              "name": "radius"
+              "name": "masonry"
+            },
+            {
+              "kind": "field",
+              "name": "align",
+              "type": {
+                "text": "string"
+              },
+              "default": "'start'"
             },
             {
               "kind": "method",
               "name": "render",
               "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
+                "name": "LayoutElement",
+                "module": "elements/layout/Layout.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "gap",
+              "inheritedFrom": {
+                "name": "LayoutElement",
+                "module": "elements/layout/Layout.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "items",
+              "inheritedFrom": {
+                "name": "LayoutElement",
+                "module": "elements/layout/Layout.js"
               }
             },
             {
               "kind": "field",
               "name": "template",
               "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
+                "name": "LayoutElement",
+                "module": "elements/layout/Layout.js"
               }
             },
             {
@@ -539,228 +588,60 @@
               "type": {
                 "text": "string"
               },
-              "description": "A CSS size value representing the space taken up by each part of the pattern",
-              "name": "size"
+              "description": "The minimum width of items/cells in the grid (never exceeding 100%)",
+              "name": "min"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to apply a masonry layout",
+              "name": "masonry"
             },
             {
               "type": {
                 "text": "string"
               },
-              "description": "A float between 0 and 1 representing the radius of the dot relative to the size of the pattern",
-              "name": "radius"
+              "description": "the spacing (gutter) between child elements * @attr {string} items - the CSS `align-items` value",
+              "name": "gap",
+              "inheritedFrom": {
+                "name": "LayoutElement",
+                "module": "elements/layout/Layout.js"
+              }
             }
           ],
           "superclass": {
-            "name": "PatternElement",
-            "module": "/elements/pattern/Pattern.js"
+            "name": "LayoutElement",
+            "module": "/elements/layout/Layout.js"
           },
-          "tagName": "d-ots",
-          "summary": "A mask that applies a dotted pattern to descendant elements",
+          "tagName": "g-rid",
+          "summary": "Renders child elements in a basic CSS Grid formation",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "DotsElement",
+          "name": "GridElement",
           "declaration": {
-            "name": "DotsElement",
-            "module": "elements/pattern/Dots/Dots.js"
+            "name": "GridElement",
+            "module": "elements/layout/Grid/Grid.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "elements/pattern/Stripes/Stripes.js",
+      "path": "elements/pattern/Pattern.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "StripesElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "compile"
-            },
-            {
-              "kind": "field",
-              "name": "width"
-            },
-            {
-              "kind": "field",
-              "name": "space"
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "template",
-              "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "catchType",
-              "parameters": [
-                {
-                  "name": "val"
-                },
-                {
-                  "name": "target"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "A CSS size value representing the width of each stripe",
-              "name": "width"
-            },
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "A CSS size value representing the space between each stripe",
-              "name": "space"
-            }
-          ],
-          "superclass": {
-            "name": "PatternElement",
-            "module": "/elements/pattern/Pattern.js"
-          },
-          "tagName": "s-tripes",
-          "summary": "A mask that applies a striped pattern to descendant elements",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "StripesElement",
-          "declaration": {
-            "name": "StripesElement",
-            "module": "elements/pattern/Stripes/Stripes.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/shape/Line/Line.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "LineElement",
+          "name": "PatternElement",
           "members": [
             {
               "kind": "method",
               "name": "render"
-            },
-            {
-              "kind": "field",
-              "name": "thickness"
             },
             {
               "kind": "field",
@@ -872,18 +753,16 @@
             "name": "BaseElement",
             "module": "/elements/Base.js"
           },
-          "tagName": "l-ine",
-          "summary": "A simple line / horizontal rule",
-          "customElement": true
+          "summary": "The base element for pattern elements"
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "LineElement",
+          "name": "PatternElement",
           "declaration": {
-            "name": "LineElement",
-            "module": "elements/shape/Line/Line.js"
+            "name": "PatternElement",
+            "module": "elements/pattern/Pattern.js"
           }
         }
       ]
@@ -1065,6 +944,149 @@
           "declaration": {
             "name": "EllipseElement",
             "module": "elements/shape/Ellipse/Ellipse.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/shape/Line/Line.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LineElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "thickness"
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/elements/Base.js"
+          },
+          "tagName": "l-ine",
+          "summary": "A simple line / horizontal rule",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LineElement",
+          "declaration": {
+            "name": "LineElement",
+            "module": "elements/shape/Line/Line.js"
           }
         }
       ]
@@ -1841,6 +1863,356 @@
           "declaration": {
             "name": "TriangleElement",
             "module": "elements/shape/Triangle/Triangle.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/pattern/Dots/Dots.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DotsElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "compile"
+            },
+            {
+              "kind": "field",
+              "name": "size"
+            },
+            {
+              "kind": "field",
+              "name": "radius"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "template",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the space taken up by each part of the pattern",
+              "name": "size"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A float between 0 and 1 representing the radius of the dot relative to the size of the pattern",
+              "name": "radius"
+            }
+          ],
+          "superclass": {
+            "name": "PatternElement",
+            "module": "/elements/pattern/Pattern.js"
+          },
+          "tagName": "d-ots",
+          "summary": "A mask that applies a dotted pattern to descendant elements",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DotsElement",
+          "declaration": {
+            "name": "DotsElement",
+            "module": "elements/pattern/Dots/Dots.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/pattern/Stripes/Stripes.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "StripesElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "compile"
+            },
+            {
+              "kind": "field",
+              "name": "width"
+            },
+            {
+              "kind": "field",
+              "name": "space"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "template",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "catchType",
+              "parameters": [
+                {
+                  "name": "val"
+                },
+                {
+                  "name": "target"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the width of each stripe",
+              "name": "width"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the space between each stripe",
+              "name": "space"
+            }
+          ],
+          "superclass": {
+            "name": "PatternElement",
+            "module": "/elements/pattern/Pattern.js"
+          },
+          "tagName": "s-tripes",
+          "summary": "A mask that applies a striped pattern to descendant elements",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "StripesElement",
+          "declaration": {
+            "name": "StripesElement",
+            "module": "elements/pattern/Stripes/Stripes.js"
           }
         }
       ]

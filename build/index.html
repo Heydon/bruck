@@ -6,10 +6,19 @@
     <title>Bruck innit</title>
   </head>
   <body>
-    <t-riangle></t-riangle>
+    <g-rid items="center">
+      <t-riangle aspectratio="1/2"></t-riangle>
+      <t-riangle></t-riangle>
+      <t-riangle aspectratio="3/2"></t-riangle>
+      <t-riangle></t-riangle>
+      <t-riangle aspectratio="16/9"></t-riangle>
+      <t-riangle></t-riangle>
+      <t-riangle aspectratio="1/2"></t-riangle>
+      <t-riangle></t-riangle>
+    </g-rid>
     <script type="module">
-      import { BaseElement } from './js/elements/Base.js'; import { PatternElement } from './js/elements/pattern/Pattern.js'; import { ShapeElement } from './js/elements/shape/Shape.js'; import { DotsElement } from './js/elements/pattern/Dots/Dots.js'; import { StripesElement } from './js/elements/pattern/Stripes/Stripes.js'; import { LineElement } from './js/elements/shape/Line/Line.js'; import { EllipseElement } from './js/elements/shape/Ellipse/Ellipse.js'; import { PolygonElement } from './js/elements/shape/Polygon/Polygon.js'; import { RectangleElement } from './js/elements/shape/Rectangle/Rectangle.js'; import { StarElement } from './js/elements/shape/Star/Star.js'; import { TriangleElement } from './js/elements/shape/Triangle/Triangle.js'; 
-      customElements.define('d-ots', DotsElement); customElements.define('s-tripes', StripesElement); customElements.define('l-ine', LineElement); customElements.define('e-llipse', EllipseElement); customElements.define('p-olygon', PolygonElement); customElements.define('r-ectangle', RectangleElement); customElements.define('s-tar', StarElement); customElements.define('t-riangle', TriangleElement); 
+      import { BaseElement } from './js/elements/Base.js'; import { LayoutElement } from './js/elements/layout/Layout.js'; import { ShapeElement } from './js/elements/shape/Shape.js'; import { GridElement } from './js/elements/layout/Grid/Grid.js'; import { PatternElement } from './js/elements/pattern/Pattern.js'; import { EllipseElement } from './js/elements/shape/Ellipse/Ellipse.js'; import { LineElement } from './js/elements/shape/Line/Line.js'; import { PolygonElement } from './js/elements/shape/Polygon/Polygon.js'; import { RectangleElement } from './js/elements/shape/Rectangle/Rectangle.js'; import { StarElement } from './js/elements/shape/Star/Star.js'; import { TriangleElement } from './js/elements/shape/Triangle/Triangle.js'; import { DotsElement } from './js/elements/pattern/Dots/Dots.js'; import { StripesElement } from './js/elements/pattern/Stripes/Stripes.js'; 
+      customElements.define('g-rid', GridElement); customElements.define('e-llipse', EllipseElement); customElements.define('l-ine', LineElement); customElements.define('p-olygon', PolygonElement); customElements.define('r-ectangle', RectangleElement); customElements.define('s-tar', StarElement); customElements.define('t-riangle', TriangleElement); customElements.define('d-ots', DotsElement); customElements.define('s-tripes', StripesElement); 
     </script>
   </body>
 </html>

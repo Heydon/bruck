@@ -10,7 +10,7 @@ child.execSync(`echo "ffffffffffffffffffffffffffffuck a doodle"`);
 child.execSync(`npx cem analyze --globs 'elements/**/*'`);
 
 // Convert theme to custom properties
-const customProps = toCustomProps(config.tokens);
+const customProps = toCustomProps(config.theme.tokens);
 fs.write('css/lib/tokens.css', customProps);
 
 // Inline and minify CSS
