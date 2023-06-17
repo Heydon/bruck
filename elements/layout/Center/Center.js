@@ -13,13 +13,15 @@ class CenterElement extends LayoutElement {
 	compile() {
 		return `
       <style>
-				:host {
+				.center {
 					display: block;
 					margin-inline: auto;
 					max-inline-size: ${this.max};
 				}
       </style>
-      <slot></slot>
+			<div class="center">
+      	<slot></slot>
+			</div>
     `;
 	}
 

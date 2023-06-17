@@ -7,15 +7,10 @@ import { LayoutElement } from '../Layout.js';
  * @summary Renders child elements in a basic CSS Grid formation
  */
 class GridElement extends LayoutElement {
-	constructor() {
-		super();
-		this.align = 'start';
-	}
-
 	compile() {
 		return `
       <style>
-        :host {
+        .grid {
           display: grid;
           gap: ${this.gap};
 					align-items: ${this.items};
@@ -23,7 +18,9 @@ class GridElement extends LayoutElement {
 					${this.masonry ? 'grid-template-rows: masonry' : ''}
         }
       </style>
-      <slot></slot>
+			<div class="grid">
+      	<slot></slot>
+			</div>
     `;
 	}
   

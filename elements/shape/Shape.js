@@ -21,11 +21,10 @@ class ShapeElement extends BaseElement {
 	}
   
 	render() {
-		this.innerHTML = '';
 		const canvas = this.createCanvas(this.aspectRatio);
 		const shape = this.draw();
 		canvas.innerHTML = shape;
-		this.appendChild(canvas);
+		this.replaceChildren(canvas);
 	}
 
 	get aspectRatio() {

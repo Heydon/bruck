@@ -6,51 +6,13 @@
     <title>{{ pageTitle }}</title>
   </head>
   <body>
-    <template id="fucko">
-      <s-tack>
-        <p>piss</p>
-        <p>shit</p>
-        <p>fuck</p>
-      </s-tack>
-    </template>
-    <c-lone of="fucko"></c-lone>
-    <s-idebar sideWidth="10rem">
-      <div slot="start">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est unde laborum non ullam facilis culpa rem vitae natus eos, nisi numquam quia quas eveniet blanditiis et? Sequi ipsa tempora corporis.</p>
-      </div>
-      <div slot="end">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ad quae, non, laborum aut molestias deleniti eos, vero nemo similique rem tenetur eius suscipit dolores! Asperiores a magni impedit porro.</p>
-      </div>
-    </s-idebar>
-    <s-tack>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
-      <s-tack gap="3rem">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
-      </s-tack>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum provident quos perferendis eius, hic quae accusantium voluptate magnam suscipit, qui illo saepe beatae recusandae? Pariatur quos cupiditate tenetur sint ducimus.</p>
-    </s-tack>
-    <c-luster justify="flex-end">
-      <button>Confirm</button>
-      <r-epel from="left">
-        <button>Cancel</button>
-      </r-epel>
-    </c-luster>
-    <c-enter max="50rem">
-      <g-rid>
-        <t-riangle aspectratio="1/2"></t-riangle>
-        <s-tar aspectRatio="16/9"></s-tar>
-        <p-olygon sides="7" aspectratio="3/2"></p-olygon>
-        <e-llipse></e-llipse>
-        <r-ectangle aspectratio="16/9"></r-ectangle>
-        <t-riangle></t-riangle>
-        <t-riangle aspectratio="1/2"></t-riangle>
-        <t-riangle></t-riangle>
-      </g-rid>
-    </c-enter>
+    <p><s-entences count="1"></s-entences></p>
     <script type="module">
-      {% for module in manifest.modules %}import { {{ module.exports[0].name }} } from './js/{{ module.path }}'; {% endfor %}
+      {% for module in manifest.modules %}
+        {% if module.exports.length > 0 %}
+        import { {{ module.exports[0].name }} } from './{{ module.path }}'; 
+        {% endif %}
+      {% endfor %}
       {% for module in manifest.modules %}{% set name = module.exports[0].name %}{% set tagName = module.declarations[0].tagName %}{% if tagName %}customElements.define('{{tagName}}', {{name}}); {% endif %}{% endfor %}
     </script>
   </body>

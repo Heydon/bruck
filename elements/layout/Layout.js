@@ -2,13 +2,12 @@ import { BaseElement } from '../Base.js';
 
 /**
  * @attr {string} gap - the spacing (gutter) between child elements 
- * * @attr {string} items - the CSS `align-items` value
+ * @attr {string} items - the CSS `align-items` value (where applicable only)
  * @summary The base element used for constructing layouts. Not to be rendered itself.
  */
 class LayoutElement extends BaseElement {
 	constructor() {
 		super();
-		this.attachShadow({mode: 'open'});
 		this.template = document.createElement('template');
 	}
   
@@ -34,7 +33,7 @@ class LayoutElement extends BaseElement {
 	}
 
 	get items() {
-		return this.getAttribute('items') || 'flex-start';
+		return this.getAttribute('items');
 	}
 
 	set items(value) {

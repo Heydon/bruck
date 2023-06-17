@@ -1,9 +1,15 @@
+import baseSheet from './Base.css' assert { type: 'css' };
+
 /**
  * @summary The base class for creating elements
  */
 class BaseElement extends HTMLElement {
 	constructor() {
 		super();
+		
+		this.attachShadow({mode: 'open'});
+		this.shadowRoot.adoptedStyleSheets = [baseSheet];
+
 		this.random =  { 
 			integerBetween(min, max) {
 				min = min > max ? max : min;
@@ -30,26 +36,6 @@ class BaseElement extends HTMLElement {
 		};
 		this.betweenPattern = new RegExp('[0-9]+[-]{1}[0-9]+');
 		this.integerPattern = new RegExp('^[0-9]*$');
-	}
-
-	catchType(val, target) {
-		let types;
-		if (target === 'float') {
-			target = 'number';
-		}
-		if (val.isArray) {
-			types = ['array'];
-		} else if (Number(val) === val && target !== 'number') {
-			 types = val % 1 === 0 ? ['integer', 'number'] : ['number'];
-		} else {
-			types = [typeof val];
-		}
-		console.log(types);
-		if (!types.some(type => type === target)) {
-			throw new Error(`“${val}” is not a ${target}`);
-		} else {
-			return val;
-		}
 	}
 
 	toArray(string) {

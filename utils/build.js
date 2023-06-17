@@ -4,8 +4,6 @@ import config from '../bruck.config.js';
 import { toCustomProps } from './toCustomProps.js';
 import * as child from 'child_process';
 
-child.execSync(`echo "ffffffffffffffffffffffffffffuck a doodle"`);
-
 // Analyze custom elements and create manifest
 child.execSync(`npx cem analyze --globs 'elements/**/*'`);
 
@@ -21,6 +19,7 @@ const manifest = fs.read('custom-elements.json', 'json');
 const html = nunjucks.render('bruck.njk', {...config, manifest});
 
 // Write files
-fs.copy('elements', 'build/js/elements', { overwrite: true });
+fs.copy('elements', 'build/elements', { overwrite: true });
+fs.copy('data', 'build/data', { overwrite: true });
 fs.copy('css', 'build/css', { overwrite: true });
 fs.write('build/index.html', html);

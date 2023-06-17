@@ -3,7 +3,7 @@
   background-color: var(--color-back);
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   line-height: 1.5;
-  font-size: clamp(100%, 1rem + 0.75vw, 1.5rem);
+  font-size: clamp(100%, 1rem + 0.5vw, 1.5rem);
 }
 
 *, *::before, *::after {

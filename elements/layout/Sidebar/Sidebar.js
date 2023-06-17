@@ -15,7 +15,7 @@ class SidebarElement extends LayoutElement {
 		const end = this.end ? 'side' : 'main';
 		return `
       <style>
-        :host {
+        .with-sidebar {
           display: flex;
           flex-wrap: wrap;
           gap: ${this.gap};
@@ -32,12 +32,14 @@ class SidebarElement extends LayoutElement {
           flex-basis: ${this.sideWidth || 'auto'};
         }
       </style>
-      <div class="${start}">
-        <slot name="start"></slot> 
-      </div>
-      <div class="${end}">
-        <slot name="end"></slot>
-      </div>
+			<div class="with-sidebar">
+				<div class="${start}">
+					<slot name="start"></slot> 
+				</div>
+				<div class="${end}">
+					<slot name="end"></slot>
+				</div>
+			</div>
     `;
 	}
   

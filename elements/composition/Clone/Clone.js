@@ -6,6 +6,13 @@ import { BaseElement } from '../../Base.js';
  * @summary Clones the content of a referenced template element as a subtree
  */
 class CloneElement extends BaseElement {
+	constructor() {
+		super();
+		this.shadowRoot.innerHTML = `
+			<slot></slot>
+		`;
+	}
+
 	get of() {
 		return this.getAttribute('of');
 	}

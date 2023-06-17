@@ -8,29 +8,21 @@ import { LayoutElement } from '../Layout.js';
 class ClusterElement extends LayoutElement {
 	constructor() {
 		super();
-		this.aliases = {
-			start: 'flex-start',
-			end: 'flex-end',
-			left: 'flex-start',
-			right: 'flex-end'
-		};
 	}
 	compile() {
-		let aliasKeys = Object.keys(this.aliases);
-		if (aliasKeys.includes(this.justify)) {
-			this.justify = this.aliases[this.justify];
-		}
 		return `
       <style>
-        :host {
+        .cluster {
           display: flex;
           flex-wrap: wrap;
-          gap: ${this.gap || 'var(--size-m-20)'};
+          gap: ${this.gap};
           ${this.justify ? `justify-content: ${this.justify};` : ''}
 					align-items: ${this.items};
         }
       </style>
-      <slot></slot>
+			<div class="cluster">
+      	<slot></slot>
+			</div>
     `;
 	}
 

@@ -28,12 +28,14 @@ class RepelElement extends LayoutElement {
 		});
 		return `
 			<style>
-				:host {
+				.repel {
 					${marginCSS.join('')}
 					align-self: ${this.items};
 				}
 			</style>
-			<slot></slot>    
+			<div class="repel">
+				<slot></slot>    
+			</div>
 		`;
 	}
 

@@ -8,13 +8,15 @@ class StackElement extends LayoutElement {
 	compile() {
 		return `
       <style>
-        :host {
+        .stack {
           display: flex;
           flex-direction: column;
           gap: ${this.gap};
         }
       </style>
-      <slot></slot>    
+      <div class="stack">
+        <slot></slot>
+      </div>
     `;
 	}
 }
