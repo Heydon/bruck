@@ -16,10 +16,6 @@ class DotsElement extends PatternElement {
 		let radius = this.radius * 20 / 2;
 		return `
       <style>
-        :host {
-          display: contents;
-        }
-
         ::slotted(*) {
           mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle cx="10" cy="10" r="${radius}" fill="white"></circle></svg>');
           mask-size: ${this.size};

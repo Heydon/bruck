@@ -6,7 +6,6 @@ import { BaseElement } from '../Base.js';
 class PatternElement extends BaseElement {
 	constructor() {
 		super();
-		this.attachShadow({mode: 'open'});
 		this.template = document.createElement('template');
 	}
   

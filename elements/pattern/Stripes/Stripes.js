@@ -15,10 +15,6 @@ class StripesElement extends PatternElement {
 	compile() {
 		return `
       <style>
-				:host {
-					display: contents;
-				}
-
         ::slotted(*) {
           --width: ${this.width};
           --space: ${this.space ? this.space : this.width};

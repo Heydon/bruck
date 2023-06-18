@@ -6,7 +6,7 @@ import baseSheet from './Base.css' assert { type: 'css' };
 class BaseElement extends HTMLElement {
 	constructor() {
 		super();
-		
+		this.internals = this.attachInternals();
 		this.attachShadow({mode: 'open'});
 		this.shadowRoot.adoptedStyleSheets = [baseSheet];
 
