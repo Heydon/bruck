@@ -8,9 +8,7 @@ import { BaseElement } from '../../Base.js';
 class CloneElement extends BaseElement {
 	constructor() {
 		super();
-		this.shadowRoot.innerHTML = `
-			<slot></slot>
-		`;
+		this.shadowRoot.innerHTML = `<slot></slot>`;
 	}
 
 	get of() {
