@@ -7,6 +7,7 @@ class BaseElement extends HTMLElement {
 	constructor() {
 		super();
 		this.internals = this.attachInternals();
+		this.internals.role = 'img';
 		this.attachShadow({mode: 'open'});
 		this.shadowRoot.adoptedStyleSheets = [baseSheet];
 

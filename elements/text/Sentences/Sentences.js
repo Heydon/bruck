@@ -11,7 +11,6 @@ class SentencesElement extends TextElement {
 		let shuffled = this.random.shuffle(sentences);
 		let subset = shuffled.splice(0, count);
 		this.textContent = `${subset.join(' ')}`;
-		console.log(this.textContent);
 	}
 }
 

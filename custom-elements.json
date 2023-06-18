@@ -58,6 +58,18 @@
             },
             {
               "kind": "field",
+              "name": "internals"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'"
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -97,6 +109,159 @@
           "declaration": {
             "name": "BaseElement",
             "module": "elements/Base.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/pattern/Pattern.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PatternElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "template"
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/elements/Base.js"
+          },
+          "summary": "The base element for pattern elements"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PatternElement",
+          "declaration": {
+            "name": "PatternElement",
+            "module": "elements/pattern/Pattern.js"
           }
         }
       ]
@@ -188,6 +353,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -252,6 +437,170 @@
           "declaration": {
             "name": "ShapeElement",
             "module": "elements/shape/Shape.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/text/Text.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TextElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "count"
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<slot></slot>`"
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
+              "name": "count",
+              "default": "3-5"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/elements/Base.js"
+          },
+          "summary": "The base element for text elements"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TextElement",
+          "declaration": {
+            "name": "TextElement",
+            "module": "elements/text/Text.js"
           }
         }
       ]
@@ -342,6 +691,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -419,283 +788,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/text/Text.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "TextElement",
-          "members": [
-            {
-              "kind": "field",
-              "name": "count"
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "`<slot></slot>`"
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
-              "name": "count",
-              "default": "3-5"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/elements/Base.js"
-          },
-          "summary": "The base element for text elements"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "TextElement",
-          "declaration": {
-            "name": "TextElement",
-            "module": "elements/text/Text.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/pattern/Pattern.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "PatternElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "field",
-              "name": "template"
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/elements/Base.js"
-          },
-          "summary": "The base element for pattern elements"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "PatternElement",
-          "declaration": {
-            "name": "PatternElement",
-            "module": "elements/pattern/Pattern.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "elements/composition/Clone/Clone.js",
       "declarations": [
         {
@@ -762,6 +854,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -928,6 +1040,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -995,6 +1127,590 @@
           "declaration": {
             "name": "RepeatElement",
             "module": "elements/composition/Repeat/Repeat.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/media/Image/Image.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ImageElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<slot></slot>`"
+            },
+            {
+              "kind": "method",
+              "name": "createCanvas",
+              "parameters": [
+                {
+                  "name": "aspectRatio"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "draw",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "aspectRatio",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ShapeElement",
+            "module": "/elements/shape/Shape.js"
+          },
+          "tagName": "i-mage",
+          "summary": "Placeholder image element, with control over aspect ratio",
+          "customElement": true,
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "a CSS `aspect-ratio` value",
+              "name": "aspectratio",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ImageElement",
+          "declaration": {
+            "name": "ImageElement",
+            "module": "elements/media/Image/Image.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/pattern/Dots/Dots.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DotsElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "compile"
+            },
+            {
+              "kind": "field",
+              "name": "size"
+            },
+            {
+              "kind": "field",
+              "name": "radius"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "template",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the space taken up by each part of the pattern",
+              "name": "size"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A float between 0 and 1 representing the radius of the dot relative to the size of the pattern",
+              "name": "radius"
+            }
+          ],
+          "superclass": {
+            "name": "PatternElement",
+            "module": "/elements/pattern/Pattern.js"
+          },
+          "tagName": "d-ots",
+          "summary": "A mask that applies a dotted pattern to descendant elements",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DotsElement",
+          "declaration": {
+            "name": "DotsElement",
+            "module": "elements/pattern/Dots/Dots.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/pattern/Stripes/Stripes.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "StripesElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "compile"
+            },
+            {
+              "kind": "field",
+              "name": "width"
+            },
+            {
+              "kind": "field",
+              "name": "space"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "template",
+              "inheritedFrom": {
+                "name": "PatternElement",
+                "module": "elements/pattern/Pattern.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the width of each stripe",
+              "name": "width"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS size value representing the space between each stripe",
+              "name": "space"
+            }
+          ],
+          "superclass": {
+            "name": "PatternElement",
+            "module": "/elements/pattern/Pattern.js"
+          },
+          "tagName": "s-tripes",
+          "summary": "A mask that applies a striped pattern to descendant elements",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "StripesElement",
+          "declaration": {
+            "name": "StripesElement",
+            "module": "elements/pattern/Stripes/Stripes.js"
           }
         }
       ]
@@ -1095,6 +1811,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1247,6 +1983,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1415,6 +2171,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1606,6 +2382,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -1784,6 +2580,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1986,6 +2802,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2069,53 +2905,36 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/media/Image/Image.js",
+      "path": "elements/text/Date/Date.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "ImageElement",
+          "name": "DateElement",
           "members": [
             {
               "kind": "method",
-              "name": "render",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "expanded"
+            },
+            {
+              "kind": "field",
+              "name": "count",
               "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
               }
             },
             {
               "kind": "field",
               "name": "innerHTML",
-              "default": "`<slot></slot>`"
-            },
-            {
-              "kind": "method",
-              "name": "createCanvas",
-              "parameters": [
-                {
-                  "name": "aspectRatio"
-                }
-              ],
+              "default": "`<slot></slot>`",
               "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "draw",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "aspectRatio",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
               }
             },
             {
@@ -2175,6 +2994,419 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to output in longform",
+              "name": "expanded"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
+              "name": "count",
+              "default": "3-5",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "TextElement",
+            "module": "/elements/text/Text.js"
+          },
+          "tagName": "d-ate",
+          "summary": "Randomly generate a date",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DateElement",
+          "declaration": {
+            "name": "DateElement",
+            "module": "elements/text/Date/Date.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/text/Name/Name.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NameElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "first"
+            },
+            {
+              "kind": "field",
+              "name": "last"
+            },
+            {
+              "kind": "field",
+              "name": "count",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<slot></slot>`",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "just output a first name",
+              "name": "first"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "just output last name",
+              "name": "last"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
+              "name": "count",
+              "default": "3-5",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "TextElement",
+            "module": "/elements/text/Text.js"
+          },
+          "tagName": "n-ame",
+          "summary": "Randomly generate a name",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NameElement",
+          "declaration": {
+            "name": "NameElement",
+            "module": "elements/text/Name/Name.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/text/Sentences/Sentences.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SentencesElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "count",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<slot></slot>`",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2217,22 +3449,23 @@
             }
           ],
           "superclass": {
-            "name": "ShapeElement",
-            "module": "/elements/shape/Shape.js"
+            "name": "TextElement",
+            "module": "/elements/text/Text.js"
           },
-          "tagName": "i-mage",
-          "summary": "Placeholder image element, with control over aspect ratio",
+          "tagName": "s-entences",
+          "summary": "Generate a number of sentences",
           "customElement": true,
           "attributes": [
             {
               "type": {
                 "text": "string"
               },
-              "description": "a CSS `aspect-ratio` value",
-              "name": "aspectratio",
+              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
+              "name": "count",
+              "default": "3-5",
               "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
               }
             }
           ]
@@ -2241,10 +3474,406 @@
       "exports": [
         {
           "kind": "js",
-          "name": "ImageElement",
+          "name": "SentencesElement",
           "declaration": {
-            "name": "ImageElement",
-            "module": "elements/media/Image/Image.js"
+            "name": "SentencesElement",
+            "module": "elements/text/Sentences/Sentences.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/text/Time/Time.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TimeElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "precise"
+            },
+            {
+              "kind": "field",
+              "name": "count",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<slot></slot>`",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to include seconds, in the form 00:00:00",
+              "name": "precise"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
+              "name": "count",
+              "default": "3-5",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "TextElement",
+            "module": "/elements/text/Text.js"
+          },
+          "tagName": "t-ime",
+          "summary": "Randomly generate a time (24 hour clock)",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TimeElement",
+          "declaration": {
+            "name": "TimeElement",
+            "module": "elements/text/Time/Time.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/text/Words/Words.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WordsElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "method",
+              "name": "capitalize",
+              "parameters": [
+                {
+                  "name": "word"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "case"
+            },
+            {
+              "kind": "field",
+              "name": "count",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<slot></slot>`",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "The case: title, sentence, upper, or lower.",
+              "name": "case",
+              "default": "sentence"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
+              "name": "count",
+              "default": "3-5",
+              "inheritedFrom": {
+                "name": "TextElement",
+                "module": "elements/text/Text.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "TextElement",
+            "module": "/elements/text/Text.js"
+          },
+          "tagName": "w-ords",
+          "summary": "Generate a number of words",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WordsElement",
+          "declaration": {
+            "name": "WordsElement",
+            "module": "elements/text/Words/Words.js"
           }
         }
       ]
@@ -2356,6 +3985,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -2574,6 +4223,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2769,6 +4438,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -2974,6 +4663,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3166,6 +4875,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -3383,6 +5112,26 @@
                   "name": "url"
                 }
               ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -3610,6 +5359,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3822,6 +5591,26 @@
             },
             {
               "kind": "field",
+              "name": "internals",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "'img'",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3903,1223 +5692,6 @@
           "declaration": {
             "name": "StackElement",
             "module": "elements/layout/Stack/Stack.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/text/Date/Date.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "DateElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "field",
-              "name": "expanded"
-            },
-            {
-              "kind": "field",
-              "name": "count",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "`<slot></slot>`",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Whether to output in longform",
-              "name": "expanded"
-            },
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
-              "name": "count",
-              "default": "3-5",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "TextElement",
-            "module": "/elements/text/Text.js"
-          },
-          "tagName": "d-ate",
-          "summary": "Randomly generate a date",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "DateElement",
-          "declaration": {
-            "name": "DateElement",
-            "module": "elements/text/Date/Date.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/text/Name/Name.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "NameElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "field",
-              "name": "first"
-            },
-            {
-              "kind": "field",
-              "name": "last"
-            },
-            {
-              "kind": "field",
-              "name": "count",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "`<slot></slot>`",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "boolean"
-              },
-              "description": "just output a first name",
-              "name": "first"
-            },
-            {
-              "type": {
-                "text": "boolean"
-              },
-              "description": "just output last name",
-              "name": "last"
-            },
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
-              "name": "count",
-              "default": "3-5",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "TextElement",
-            "module": "/elements/text/Text.js"
-          },
-          "tagName": "n-ame",
-          "summary": "Randomly generate a name",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "NameElement",
-          "declaration": {
-            "name": "NameElement",
-            "module": "elements/text/Name/Name.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/text/Sentences/Sentences.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "SentencesElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "field",
-              "name": "count",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "`<slot></slot>`",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "TextElement",
-            "module": "/elements/text/Text.js"
-          },
-          "tagName": "s-entences",
-          "summary": "Generate a number of sentences",
-          "customElement": true,
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
-              "name": "count",
-              "default": "3-5",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "SentencesElement",
-          "declaration": {
-            "name": "SentencesElement",
-            "module": "elements/text/Sentences/Sentences.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/text/Time/Time.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "TimeElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "field",
-              "name": "precise"
-            },
-            {
-              "kind": "field",
-              "name": "count",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "`<slot></slot>`",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Whether to include seconds, in the form 00:00:00",
-              "name": "precise"
-            },
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
-              "name": "count",
-              "default": "3-5",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "TextElement",
-            "module": "/elements/text/Text.js"
-          },
-          "tagName": "t-ime",
-          "summary": "Randomly generate a time (24 hour clock)",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "TimeElement",
-          "declaration": {
-            "name": "TimeElement",
-            "module": "elements/text/Time/Time.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/text/Words/Words.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "WordsElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "method",
-              "name": "capitalize",
-              "parameters": [
-                {
-                  "name": "word"
-                }
-              ]
-            },
-            {
-              "kind": "field",
-              "name": "case"
-            },
-            {
-              "kind": "field",
-              "name": "count",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "`<slot></slot>`",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "The case: title, sentence, upper, or lower.",
-              "name": "case",
-              "default": "sentence"
-            },
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "Either a straight integer or a random integer chosen from the range [integer]-[integer]",
-              "name": "count",
-              "default": "3-5",
-              "inheritedFrom": {
-                "name": "TextElement",
-                "module": "elements/text/Text.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "TextElement",
-            "module": "/elements/text/Text.js"
-          },
-          "tagName": "w-ords",
-          "summary": "Generate a number of words",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "WordsElement",
-          "declaration": {
-            "name": "WordsElement",
-            "module": "elements/text/Words/Words.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/pattern/Dots/Dots.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "DotsElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "compile"
-            },
-            {
-              "kind": "field",
-              "name": "size"
-            },
-            {
-              "kind": "field",
-              "name": "radius"
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "template",
-              "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "A CSS size value representing the space taken up by each part of the pattern",
-              "name": "size"
-            },
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "A float between 0 and 1 representing the radius of the dot relative to the size of the pattern",
-              "name": "radius"
-            }
-          ],
-          "superclass": {
-            "name": "PatternElement",
-            "module": "/elements/pattern/Pattern.js"
-          },
-          "tagName": "d-ots",
-          "summary": "A mask that applies a dotted pattern to descendant elements",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "DotsElement",
-          "declaration": {
-            "name": "DotsElement",
-            "module": "elements/pattern/Dots/Dots.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/pattern/Stripes/Stripes.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "StripesElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "compile"
-            },
-            {
-              "kind": "field",
-              "name": "width"
-            },
-            {
-              "kind": "field",
-              "name": "space"
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "template",
-              "inheritedFrom": {
-                "name": "PatternElement",
-                "module": "elements/pattern/Pattern.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "A CSS size value representing the width of each stripe",
-              "name": "width"
-            },
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "A CSS size value representing the space between each stripe",
-              "name": "space"
-            }
-          ],
-          "superclass": {
-            "name": "PatternElement",
-            "module": "/elements/pattern/Pattern.js"
-          },
-          "tagName": "s-tripes",
-          "summary": "A mask that applies a striped pattern to descendant elements",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "StripesElement",
-          "declaration": {
-            "name": "StripesElement",
-            "module": "elements/pattern/Stripes/Stripes.js"
           }
         }
       ]
