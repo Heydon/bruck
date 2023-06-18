@@ -1,0 +1,3 @@
+const words = ['lorem', 'ipsum', 'dolor', 'consectetur', 'adipiscing', 'elit', 'ornare', 'tortor', 'feugiat', 'scelerisque', 'finibus', 'consectetur', 'tincidunt', 'accumsan', 'lectus', 'libero', 'auctor', 'interdum', 'quis', 'tempus', 'ante', 'vulputate', 'ligula', 'imperdiet', 'neque', 'dapibus', 'facilisis', 'aptent', 'taciti', 'sociosqu', 'litora', 'torquent', 'conubia', 'nostra', 'inceptos', 'himenaeos', 'praesent', 'venenatis', 'metus', 'malesuada', 'orci', 'aliquet', 'rhoncus', 'consequat', 'ultrices', 'posuere', 'cubilia', 'fringilla', 'blandit', 'suspendisse', 'condimentum', 'molestie', 'dignissim', 'etiam', 'euismod', 'tincidunt', 'viverra'];
+
+export { words }
