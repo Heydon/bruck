@@ -6,7 +6,20 @@
     <title>{{ pageTitle }}</title>
   </head>
   <body>
-    <p><s-entences count="1"></s-entences></p>
+    <template id="card">
+      <b-ox>
+        <s-tack>
+          <i-mage aspectRatio="16/9"></i-mage>
+          <h3><n-ame></n-ame></h3>
+          <p><s-entences count="1"></s-entences></p>
+        </s-tack>
+      </b-ox>
+    </template>
+    <g-rid items="start">
+      <r-epeat total="9">
+        <c-lone of="card"></c-lone>
+      </r-epeat>
+    </g-rid>
     <script type="module">
       {% for module in manifest.modules %}
         {% if module.exports.length > 0 %}
