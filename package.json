@@ -12,6 +12,9 @@
     "build": "node utils/build.js",
     "start": "npm run build && live-server build"
   },
+  "pre-commit": [
+    "analyze"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Heydon/bruck.git"
@@ -37,6 +40,7 @@
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "live-server": "^1.1.0",
+    "pre-commit": "^1.2.2",
     "prettier": "2.8.1"
   }
 }
