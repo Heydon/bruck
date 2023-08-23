@@ -58,18 +58,6 @@
             },
             {
               "kind": "field",
-              "name": "internals"
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'"
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -82,7 +70,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}"
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}"
             },
             {
               "kind": "field",
@@ -187,26 +175,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -223,7 +191,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -353,26 +321,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -389,7 +337,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -516,26 +464,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -552,7 +480,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -691,26 +619,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -727,7 +635,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -782,6 +690,344 @@
           "declaration": {
             "name": "LayoutElement",
             "module": "elements/layout/Layout.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/media/Image/Image.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ImageElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "render",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`<slot></slot>`"
+            },
+            {
+              "kind": "method",
+              "name": "createCanvas",
+              "parameters": [
+                {
+                  "name": "aspectRatio"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "draw",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "aspectRatio",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[baseSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ShapeElement",
+            "module": "/elements/shape/Shape.js"
+          },
+          "tagName": "i-mage",
+          "summary": "Placeholder image element, with control over aspect ratio",
+          "customElement": true,
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "a CSS `aspect-ratio` value",
+              "name": "aspectratio",
+              "inheritedFrom": {
+                "name": "ShapeElement",
+                "module": "elements/shape/Shape.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ImageElement",
+          "declaration": {
+            "name": "ImageElement",
+            "module": "elements/media/Image/Image.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/meta/Comment/Comment.css",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/meta/Comment/Comment.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CommentElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[commentSheet]",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "`\n\t\t\t<div class=\"comment\">\n        <button part=\"button\" type=\"button\" aria-label=\"read comment\" popovertarget=\"comment-${id}\">?</button>\n        <div part=\"popover\" id=\"comment-${id}\" popover>\n          <slot name=\"comment\"></slot>\n        </div>\n        <slot name=\"commented\"></slot>\n      </div>\n    `"
+            },
+            {
+              "kind": "method",
+              "name": "toArray",
+              "parameters": [
+                {
+                  "name": "string"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toString",
+              "parameters": [
+                {
+                  "name": "array"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "integerOrBetween",
+              "parameters": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "prop"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "isValidUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "random",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "betweenPattern",
+              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "integerPattern",
+              "default": "new RegExp('^[0-9]*$')",
+              "inheritedFrom": {
+                "name": "BaseElement",
+                "module": "elements/Base.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS padding value",
+              "name": "padding",
+              "default": "1.5rem"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "A CSS length value for the border’s width",
+              "name": "border",
+              "default": "0.125rem"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/elements/Base.js"
+          },
+          "tagName": "c-omment",
+          "summary": "Encloses elements in a box",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CommentElement",
+          "declaration": {
+            "name": "CommentElement",
+            "module": "elements/meta/Comment/Comment.js"
           }
         }
       ]
@@ -861,26 +1107,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -897,7 +1123,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1040,26 +1266,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -1076,7 +1282,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1127,208 +1333,6 @@
           "declaration": {
             "name": "RepeatElement",
             "module": "elements/composition/Repeat/Repeat.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/media/Image/Image.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "ImageElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "render",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "`<slot></slot>`"
-            },
-            {
-              "kind": "method",
-              "name": "createCanvas",
-              "parameters": [
-                {
-                  "name": "aspectRatio"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "draw",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "aspectRatio",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toArray",
-              "parameters": [
-                {
-                  "name": "string"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "toString",
-              "parameters": [
-                {
-                  "name": "array"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "integerOrBetween",
-              "parameters": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "prop"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "isValidUrl",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[baseSheet]",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "random",
-              "type": {
-                "text": "object"
-              },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "betweenPattern",
-              "default": "new RegExp('[0-9]+[-]{1}[0-9]+')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "integerPattern",
-              "default": "new RegExp('^[0-9]*$')",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "ShapeElement",
-            "module": "/elements/shape/Shape.js"
-          },
-          "tagName": "i-mage",
-          "summary": "Placeholder image element, with control over aspect ratio",
-          "customElement": true,
-          "attributes": [
-            {
-              "type": {
-                "text": "string"
-              },
-              "description": "a CSS `aspect-ratio` value",
-              "name": "aspectratio",
-              "inheritedFrom": {
-                "name": "ShapeElement",
-                "module": "elements/shape/Shape.js"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ImageElement",
-          "declaration": {
-            "name": "ImageElement",
-            "module": "elements/media/Image/Image.js"
           }
         }
       ]
@@ -1427,26 +1431,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -1463,7 +1447,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1618,26 +1602,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -1654,7 +1618,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1818,26 +1782,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -1854,7 +1798,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -1990,26 +1934,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2026,7 +1950,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -2178,26 +2102,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2214,7 +2118,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -2382,26 +2286,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2418,7 +2302,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -2587,26 +2471,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2623,7 +2487,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -2802,26 +2666,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -2838,7 +2682,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -2994,26 +2838,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3030,7 +2854,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -3191,26 +3015,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3227,7 +3031,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -3387,26 +3191,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3423,7 +3207,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -3573,26 +3357,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3609,7 +3373,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -3775,26 +3539,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -3811,7 +3555,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -3992,26 +3736,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -4028,7 +3752,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -4223,26 +3947,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -4259,7 +3963,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -4445,26 +4149,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -4481,7 +4165,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -4663,26 +4347,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -4699,7 +4363,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -4882,26 +4546,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -4918,7 +4562,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -5119,26 +4763,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -5155,7 +4779,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -5359,26 +4983,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -5395,7 +4999,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"
@@ -5591,26 +5195,6 @@
             },
             {
               "kind": "field",
-              "name": "internals",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "role",
-              "type": {
-                "text": "string"
-              },
-              "default": "'img'",
-              "inheritedFrom": {
-                "name": "BaseElement",
-                "module": "elements/Base.js"
-              }
-            },
-            {
-              "kind": "field",
               "name": "adoptedStyleSheets",
               "type": {
                 "text": "array"
@@ -5627,7 +5211,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t}\n\t\t}",
+              "default": "{ \n\t\t\tintegerBetween(min, max) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn Math.floor(Math.random() * (max - min + 1) + min);\n\t\t\t},\n\t\t\tfloatBetween(min, max, places = 3) {\n\t\t\t\tmin = min > max ? max : min;\n\t\t\t\tmax = max < min ? min : max;\n\t\t\t\treturn (Math.random() * (max - min + 1) + min).toFixed(places);\n\t\t\t},\n\t\t\toneOf(array) {\n\t\t\t\tarray = array || [0];\n\t\t\t\treturn array[Math.floor(Math.random() * array.length)];\n\t\t\t},\n\t\t\tshuffle(array) {\n\t\t\t\treturn array.map(value => ({ value, sort: Math.random() }))\n\t\t\t\t\t.sort((a, b) => a.sort - b.sort)\n\t\t\t\t\t.map(({ value }) => value);\n\t\t\t},\n\t\t\tprobability(fraction) {\n\t\t\t\treturn Math.random() <= fraction;\n\t\t\t},\n\t\t\tstring(length = 6) {\n\t\t\t\treturn Math.random().toString(36).slice(0 - length);\n\t\t\t}\n\t\t}",
               "inheritedFrom": {
                 "name": "BaseElement",
                 "module": "elements/Base.js"

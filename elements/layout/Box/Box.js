@@ -45,9 +45,12 @@ class BoxElement extends LayoutElement {
 		}
 	}  
 
+
 	static get observedAttributes() {
 		return ['border', 'padding'].concat(super.observedAttributes);
 	}
+
+	
 }
 
 export { BoxElement };

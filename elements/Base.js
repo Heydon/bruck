@@ -6,8 +6,6 @@ import baseSheet from './Base.css' assert { type: 'css' };
 class BaseElement extends HTMLElement {
 	constructor() {
 		super();
-		this.internals = this.attachInternals();
-		this.internals.role = 'img';
 		this.attachShadow({mode: 'open'});
 		this.shadowRoot.adoptedStyleSheets = [baseSheet];
 
@@ -33,6 +31,9 @@ class BaseElement extends HTMLElement {
 			},
 			probability(fraction) {
 				return Math.random() <= fraction;
+			},
+			string(length = 6) {
+				return Math.random().toString(36).slice(0 - length);
 			}
 		};
 		this.betweenPattern = new RegExp('[0-9]+[-]{1}[0-9]+');

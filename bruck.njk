@@ -6,19 +6,36 @@
     <title>{{ pageTitle }}</title>
   </head>
   <body>
-    <template id="card">
-      <b-ox>
-        <s-tack>
-          <i-mage aspectRatio="16/9"></i-mage>
-          <h3><n-ame></n-ame></h3>
-          <p><s-entences count="1"></s-entences></p>
-        </s-tack>
-      </b-ox>
+    <template id="stack">
+      <s-tack>
+        <p><s-entences count="1"></s-entences></p>
+      </s-tack>
     </template>
-    <g-rid items="start">
-      <r-epeat total="9">
-        <c-lone of="card"></c-lone>
-      </r-epeat>
+    <g-rid items="start" slot="commented">
+      <c-omment>
+        <b-ox slot="commented">
+          <s-tack>
+            <i-mage aspectRatio="16/9"></i-mage>
+            <h3><n-ame></n-ame></h3>
+            <p><s-entences count="1"></s-entences></p>
+          </s-tack>
+        </b-ox>
+        <div slot="comment">
+          Here is a card.
+        </div>
+      </c-omment>
+      <c-omment>
+        <b-ox slot="commented">
+          <s-tack>
+            <i-mage aspectRatio="16/9"></i-mage>
+            <h3><n-ame></n-ame></h3>
+            <p><s-entences count="1"></s-entences></p>
+          </s-tack>
+        </b-ox>
+        <div slot="comment">
+          Here is another card.
+        </div>
+      </c-omment>
     </g-rid>
     <script type="module">
       {% for module in manifest.modules %}
