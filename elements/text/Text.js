@@ -7,7 +7,7 @@ import { BaseElement } from '../Base.js';
 class TextElement extends BaseElement {
 	constructor() {
 		super();
-		this.shadowRoot.innerHTML = `<slot></slot>`;
+		this.shadowRoot.innerHTML = '<slot></slot>';
 	}
 	
 	connectedCallback() {

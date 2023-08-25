@@ -7,7 +7,7 @@ import { ShapeElement } from '../../shape/Shape.js';
 class ImageElement extends ShapeElement {
 	constructor() {
 		super();
-		this.shadowRoot.innerHTML = `<slot></slot>`;
+		this.shadowRoot.innerHTML = '<slot></slot>';
 	}
 
 	render() {

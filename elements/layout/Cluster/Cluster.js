@@ -10,13 +10,14 @@ class ClusterElement extends LayoutElement {
 		super();
 	}
 	compile() {
+		const justify = this.translateVal('justify-content', this.justify);
 		return `
       <style>
         .cluster {
           display: flex;
           flex-wrap: wrap;
           gap: ${this.gap};
-          ${this.justify ? `justify-content: ${this.justify};` : ''}
+          ${justify ? `justify-content: ${justify};` : ''}
 					align-items: ${this.items};
         }
       </style>
@@ -27,7 +28,7 @@ class ClusterElement extends LayoutElement {
 	}
 
 	get justify() {
-		return this.getAttribute('justify');
+		return this.getAttribute('justify') || 'flex-start';
 	}
 
 	set justify(value) {

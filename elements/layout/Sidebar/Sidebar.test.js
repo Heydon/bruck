@@ -10,6 +10,6 @@ test('element `margin-top` is set to `auto`', () => {
     </s-idebar>
   `;
 	const testElement = document.querySelector('s-idebar');
-  const shadowHTML = testElement.shadowRoot.innerHTML;
+	const shadowHTML = testElement.shadowRoot.innerHTML;
 	expect(shadowHTML.includes('min-width: 75%')).toBe(true);
 });

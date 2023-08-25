@@ -10,6 +10,6 @@ test('Clones blockquote from template', () => {
     <c-lone of="test"></c-lone>
   `;
 	const testElement = document.querySelector('c-lone');
-  const blockquote = testElement.querySelector('blockquote');
+	const blockquote = testElement.querySelector('blockquote');
 	expect(blockquote).toBeTruthy();
 });

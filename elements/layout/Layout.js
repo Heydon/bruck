@@ -9,6 +9,20 @@ class LayoutElement extends BaseElement {
 	constructor() {
 		super();
 		this.template = document.createElement('template');
+		this.valueTranslations = {
+			'justify-content': {
+				left: 'flex-start',
+				right: 'flex-end'
+			}
+		};
+	}
+
+	translateVal(property, value) {
+		const translations = this.valueTranslations[property];
+		if (!(value in translations)) {
+			return value;
+		}
+		return translations[value];
 	}
   
 	compile() {

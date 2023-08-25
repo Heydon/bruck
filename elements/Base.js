@@ -1,5 +1,3 @@
-import baseSheet from './Base.css' assert { type: 'css' };
-
 /**
  * @summary The base class for creating elements
  */
@@ -7,7 +5,6 @@ class BaseElement extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({mode: 'open'});
-		this.shadowRoot.adoptedStyleSheets = [baseSheet];
 
 		this.random =  { 
 			integerBetween(min, max) {
@@ -36,6 +33,8 @@ class BaseElement extends HTMLElement {
 				return Math.random().toString(36).slice(0 - length);
 			}
 		};
+
+		this.dataset.bruck = '';
 		this.betweenPattern = new RegExp('[0-9]+[-]{1}[0-9]+');
 		this.integerPattern = new RegExp('^[0-9]*$');
 	}
@@ -72,7 +71,6 @@ class BaseElement extends HTMLElement {
 		}
 		return true;
 	}
-	
 
 	static get observedAttributes() {
 		return [];

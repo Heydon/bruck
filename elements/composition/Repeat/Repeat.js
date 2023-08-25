@@ -10,7 +10,7 @@ class RepeatElement extends BaseElement {
 	constructor() {
 		super();
 		this.content = this.innerHTML;
-		this.shadowRoot.innerHTML = `<slot></slot>`;
+		this.shadowRoot.innerHTML = '<slot></slot>';
 	}
   
 	repeat() {
